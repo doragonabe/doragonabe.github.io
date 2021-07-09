@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>doragonabe site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--
+    <meta name="description" content="test">
+    <meta name="keywords" content="test1,test2,test3">
+    -->
+
+    <meta name="robots" content="noindex,nofollow,noarchive">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $.ajaxSetup({
+            cache: false
+        });
+
+        $(function () {
+            $('#main').load('main/top.html');
+        });
+
+        function link_top() {
+            $('#main').load('main/top.html');
+        }
+
+    </script>
+</head>
+
+<body class="home">
+
+<div id="container">
+    <header>
+        <h1 id="sub_title">
+            <a href="./">
+                <img src="images/logo.png" alt="top">
+            </a>
+        </h1>
+    </header>
+
+    <div id="contents">
+        <div id="sub">
+            <nav id="menubar">
+                <ul class="submenu">
+                    <li><button type="button" onclick="link_top()">トップ<span>Top</span></button></li>
+                    <!--
+                    <li><a href="test.html">test<span>test</span></a></li>
+                    <li><a href="test.html">test<span>test</span></a></li>
+                    -->
+                </ul>
+            </nav>
+
+            <nav id="menubar-s">
+                <ul>
+                    <li><button type="button" onclick="link_top()">トップ<span>Top</span></button></li>
+                    <!--
+                    <li><a href="test.html">test<span>test</span></a></li>
+                    <li><a href="test.html">test<span>test</span></a></li>
+                    -->
+                </ul>
+            </nav>
+
+            <ul class="submenu">
+                <li><a href="test.html">dynmap</a></li>
+                <li><a href="test.html">独自機能</a></li>
+                <li><a href="test.html">独自レシピ</a></li>
+            </ul>
+            <!--
+            <address class="box">
+                <h2>test</h2>
+                <img src="images/tel.png" alt="TEL:0120-000-000">
+                <table class="ta2">
+                    <tr>
+                        <th>月</th>
+                        <th>火</th>
+                        <th>水</th>
+                        <th>木</th>
+                        <th>金</th>
+                        <th>土</th>
+                        <th>日</th>
+                    </tr>
+                    <tr>
+                        <td>○</td>
+                        <td>○</td>
+                        <td>○</td>
+                        <td>○</td>
+                        <td>○</td>
+                        <td>△</td>
+                        <td>ー</td>
+                    </tr>
+                </table>
+                <p class="check">※</p>
+                <p></p>
+            </address>
+            -->
+
+        </div>
+
+        <div id="main">
+        </div>
+    </div>
+
+    <!--
+    <aside class="mainimg pc">
+        <div class="inner">
+            <img src="images/1.jpg" alt="" class="slide0">
+            <img src="images/1.jpg" alt="" class="slide1">
+            <img src="images/2.jpg" alt="" class="slide2">
+            <img src="images/3.jpg" alt="" class="slide3">
+            <img src="images/123_kazari1.png" alt="" classs="kazari">
+        </div>
+    </aside>
+
+    <aside class="mainimg sh">
+        <div class="inner">
+            <img src="images/1s.jpg" alt="" class="slide0">
+            <img src="images/1s.jpg" alt="" class="slide1">
+            <img src="images/2s.jpg" alt="" class="slide2">
+            <img src="images/3s.jpg" alt="" class="slide3">
+            <img src="images/123s_kazari1.png" alt="" classs="kazari">
+        </div>
+    </aside>
+    -->
+</div>
+
+<!--
+<footer>
+    <ul id="footermenu">
+        <li><a href="#">フッターメニュー</a></li>
+        <li><a href="#">フッターメニュー</a></li>
+        <li><a href="#">フッターメニュー</a></li>
+        <li><a href="#">フッターメニュー</a></li>
+        <li><a href="#">フッターメニュー</a></li>
+        <li><a href="#">フッターメニュー</a></li>
+    </ul>
+
+    <div id="copyright">
+        <small>Copyright&copy; <a href="./">test</a> All Rights Reserved.</small>
+        <span class="pr">test</span>
+    </div>
+</footer>
+-->
+
+<!--
+<p class="nav-fix-pos-pagetop"><a href="#"><img src="images/pagetop.png" alt="PAGE TOP"></a></p>
+-->
+
+<div id="menubar_hdr" class="close"></div>
+
+</body>
+</html>
