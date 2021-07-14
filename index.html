@@ -36,6 +36,10 @@
             $('#main').load('main/top.html');
         }
 
+        function link_server_rules() {
+          $('#main').load('main/server_rules.html');
+        }
+
     </script>
 
     <script>
@@ -75,7 +79,32 @@
         <div id="sub">
             <nav id="menubar">
                 <ul class="submenu">
-                    <li><button type="button" onclick="link_top()">トップ<span>Top</span></button></li>
+                    <li>
+                        <button type="button" onclick="link_top()">
+                            トップ<span>Top</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" onclick="link_server_rules()">
+                            サーバールール<span>Server rules</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button">
+                            サーバー紹介<span>Server introduction</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button">
+                            サーバー仕様<span>Server specifications</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button">
+                            Q & A<span>Q & A</span>
+                        </button>
+                    </li>
+
                     <!--
                     <li><a href="test.html">test<span>test</span></a></li>
                     <li><a href="test.html">test<span>test</span></a></li>
@@ -94,9 +123,15 @@
             </nav>
 
             <ul class="submenu">
+                <li><button type="button">dynmap</button></li>
+                <li><button type="button">独自機能</button></li>
+                <li><button type="button">独自レシピ</button></li>
+                <!--
                 <li><a href="test.html">dynmap</a></li>
                 <li><a href="test.html">独自機能</a></li>
                 <li><a href="test.html">独自レシピ</a></li>
+                -->
+
             </ul>
             <!--
             <address class="box">
