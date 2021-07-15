@@ -45,6 +45,8 @@
     <script>
       $(function () {
         $('.your-class').slick({
+          accessibility: false,
+          arrows: false,
           autoplay: true,
           fade: true,
         });
@@ -52,13 +54,23 @@
     </script>
 
     <style>
+
         .mainimg {
             position: absolute;
             left: 0;
             top: 0;
             width: 100%;
+
             z-index: -1;
+
             overflow: hidden;
+        }
+
+        .mask {
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
         }
     </style>
 
@@ -170,11 +182,11 @@
 
     <div class="mainimg">
         <div class="your-class">
-            <div><img src="images/123_kazari1.png" alt=""></div>
-            <div><img src="images/minecraft1.jpg" alt=""></div>
-            <div><img src="images/minecraft2.jpg" alt=""></div>
-            <div><img src="images/minecraft3.jpg" alt=""></div>
+            <div><img src="images/minecraft1.png" alt=""></div>
+            <div><img src="images/minecraft2.png" alt=""></div>
+            <div><img src="images/minecraft3.png" alt=""></div>
         </div>
+        <div class="mask"><img src="images/123_kazari1.png" alt=""></div>
     </div>
     <!--
     <aside class="mainimg pc">
