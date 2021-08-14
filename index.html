@@ -2,26 +2,26 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <title>doragonabe site</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <!--
     <meta name="description" content="test">
     <meta name="keywords" content="test1,test2,test3">
     -->
 
-    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta content="noindex,nofollow,noarchive" name="robots">
 
-    <link rel="stylesheet" href="css/reset.css">
+    <link href="css/reset.css" rel="stylesheet">
 
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/jquery-migrate-3.3.2.min.js"></script>
 
-    <link rel="stylesheet" href="js/slick/slick.css">
-    <link rel="stylesheet" href="js/slick/slick-theme.css">
+    <link href="js/slick/slick.css" rel="stylesheet">
+    <link href="js/slick/slick-theme.css" rel="stylesheet">
     <script src="js/slick/slick.min.js"></script>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link href="css/style.css" rel="stylesheet">
 
     <script>
         $.ajaxSetup({
@@ -37,24 +37,23 @@
         }
 
         function link_server_rules() {
-          $('#main').load('main/server_rules.html');
+            $('#main').load('main/server_rules.html');
         }
 
     </script>
 
     <script>
-      $(function () {
-        $('.your-class').slick({
-          accessibility: false,
-          arrows: false,
-          autoplay: true,
-          fade: true,
+        $(function () {
+            $('.your-class').slick({
+                accessibility: false,
+                arrows: false,
+                autoplay: true,
+                fade: true,
+            });
         });
-      });
     </script>
 
     <style>
-
         .mainimg {
             position: absolute;
             left: 0;
@@ -72,6 +71,19 @@
             bottom: -3px;
             width: 100%;
         }
+
+
+        .mc_craft_table {
+            display: inline-block;
+            position: relative;
+            background-color: #C6C6C6;
+            border: 2px solid;
+            border-color: #DBDBDB #5B5B5B #5B5B5B #DBDBDB;
+            padding: 6px;
+            text-align: left;
+            white-space: nowrap;
+            vertical-align: bottom;
+        }
     </style>
 
 </head>
@@ -82,7 +94,7 @@
     <header>
         <h1 id="sub_title">
             <a href="./">
-                <img src="images/logo.png" alt="top">
+                <img alt="top" src="images/logo.png">
             </a>
         </h1>
     </header>
@@ -92,12 +104,12 @@
             <nav id="menubar">
                 <ul class="submenu">
                     <li>
-                        <button type="button" onclick="link_top()">
+                        <button onclick="link_top()" type="button">
                             トップ<span>Top</span>
                         </button>
                     </li>
                     <li>
-                        <button type="button" onclick="link_server_rules()">
+                        <button onclick="link_server_rules()" type="button">
                             サーバールール<span>Server rules</span>
                         </button>
                     </li>
@@ -126,7 +138,9 @@
 
             <nav id="menubar-s">
                 <ul>
-                    <li><button type="button" onclick="link_top()">トップ<span>Top</span></button></li>
+                    <li>
+                        <button onclick="link_top()" type="button">トップ<span>Top</span></button>
+                    </li>
                     <!--
                     <li><a href="test.html">test<span>test</span></a></li>
                     <li><a href="test.html">test<span>test</span></a></li>
@@ -135,9 +149,15 @@
             </nav>
 
             <ul class="submenu">
-                <li><button type="button">dynmap</button></li>
-                <li><button type="button">独自機能</button></li>
-                <li><button type="button">独自レシピ</button></li>
+                <li>
+                    <button type="button">dynmap</button>
+                </li>
+                <li>
+                    <button type="button">独自機能</button>
+                </li>
+                <li>
+                    <button type="button">独自レシピ</button>
+                </li>
                 <!--
                 <li><a href="test.html">dynmap</a></li>
                 <li><a href="test.html">独自機能</a></li>
@@ -174,6 +194,8 @@
             </address>
             -->
 
+
+
         </div>
 
         <div id="main">
@@ -182,11 +204,11 @@
 
     <div class="mainimg">
         <div class="your-class">
-            <div><img src="images/minecraft1.png" alt=""></div>
-            <div><img src="images/minecraft2.png" alt=""></div>
-            <div><img src="images/minecraft3.png" alt=""></div>
+            <div><img alt="" src="images/minecraft1.png"></div>
+            <div><img alt="" src="images/minecraft2.png"></div>
+            <div><img alt="" src="images/minecraft3.png"></div>
         </div>
-        <div class="mask"><img src="images/123_kazari1.png" alt=""></div>
+        <div class="mask"><img alt="" src="images/123_kazari1.png"></div>
     </div>
     <!--
     <aside class="mainimg pc">
@@ -233,7 +255,7 @@
 <p class="nav-fix-pos-pagetop"><a href="#"><img src="images/pagetop.png" alt="PAGE TOP"></a></p>
 -->
 
-<div id="menubar_hdr" class="close"></div>
+<div class="close" id="menubar_hdr"></div>
 
 </body>
 </html>
