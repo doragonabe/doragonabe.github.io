@@ -1,5 +1,12 @@
+<script>
+  $(function () {
+    $('#recipe_test').load('components/recipe_test.html');
+  });
+
+</script>
+
 <section>
-    <h2>トップ</h2>
+    <h2>プラグイン</h2>
 
     <div class="list">
         <a href="//takaty921.mydns.jp:8123/" target="_blank" rel="noopener noreferrer">
@@ -25,18 +32,26 @@
         </a>
     </div>
 
+    <!--
+    <div class="list">
+        <figure><img src="images/sample1.jpg" alt=""></figure>
+        <h4>独自レシピ</h4>
+        <p></p>
+    </div>
+    -->
+
     <p class="clear"></p>
 </section>
 
-<section id="new">
-    <h2>更新情報・お知らせ</h2>
-    <dl>
-        <dt>2021/12/24</dt>
-        <dd>test<span class="newicon">NEW</span></dd>
-    </dl>
-    <!--
-    <p class="r">&raquo;&nbsp;<a href="#">過去ログ</a></p>
-    -->
+<section>
+    <h2>独自レシピ</h2>
+
+    <h3>バンドル</h3>
+    <p>
+        現在1.17のバージョンでは、アイテムID自体は存在するものの、<br>
+        レシピが実装されていないため作りました。
+    </p>
+    <div id="recipe_test"></div>
 </section>
 
 <div style="margin-bottom: 10em;"></div>
