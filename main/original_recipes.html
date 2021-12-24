@@ -1,12 +1,12 @@
 <script>
   $(function () {
-    $('#recipe_test').load('components/recipe_test.html');
+    $('#recipe_test').load('components/recipes/test.html');
   });
 
 </script>
 
 <section>
-    <h2>プラグイン</h2>
+    <h2>独自レシピ</h2>
 
     <div class="list">
         <a href="//takaty921.mydns.jp:8123/" target="_blank" rel="noopener noreferrer">
@@ -17,7 +17,7 @@
     </div>
 
     <div class="list">
-        <a href="#">
+        <a href="javascript:" onclick="link_unique_function()">
             <figure><img src="images/sample2.jpg" alt=""></figure>
             <h4>独自機能</h4>
             <p></p>
@@ -25,7 +25,7 @@
     </div>
 
     <div class="list">
-        <a href="javascript:" onclick="link_custom_recipes()">
+        <a href="javascript:" onclick="link_original_recipes()">
             <figure><img src="images/sample1.jpg" alt=""></figure>
             <h4>独自レシピ</h4>
             <p></p>
@@ -44,14 +44,16 @@
 </section>
 
 <section>
-    <h2>独自レシピ</h2>
+    <div>
+        <h3>バンドル</h3>
+        <p>
+            1.17のバージョンでは、アイテムID自体は存在するものの、<br>
+            レシピが実装されていないため作りました。
+        </p>
+        <div id="recipe_test"></div>
+    </div>
 
-    <h3>バンドル</h3>
-    <p>
-        現在1.17のバージョンでは、アイテムID自体は存在するものの、<br>
-        レシピが実装されていないため作りました。
-    </p>
-    <div id="recipe_test"></div>
+
 </section>
 
 <div style="margin-bottom: 10em;"></div>
