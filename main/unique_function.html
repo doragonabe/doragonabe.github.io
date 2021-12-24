@@ -2,7 +2,7 @@
     <h2>独自機能</h2>
 
     <div class="list">
-        <a href="//takaty921.mydns.jp:8123/" target="_blank" rel="noopener noreferrer">
+        <a href="http://takaty921.mydns.jp:8123/" target="_blank" rel="noopener noreferrer">
             <figure><img src="images/sample1.jpg" alt=""></figure>
             <h4>dynmap</h4>
             <p></p>
@@ -41,17 +41,68 @@
 
     <h3>MyPet</h3>
     <p>
-        いろいろ
+        リードで敵MOBや動物に止めを刺すとそのMOBが仲間になるよ<br>
+        仲間にならないMOBもいるよ
     </p>
 
     <h3>Skript</h3>
     <p>
-        いろいろ
+        javaのコードを書かなくてもプラグインが作れる<br>
+        スクリプト言語なので作れるものに限界はあるが、使いこなせればかなり自由に機能を拡張できる。
     </p>
+
+    <h4>作った機能</h4>
+    <ul>
+        <li>
+            <table style="border: 1px black solid;">
+                <tr>
+                    <th>便利つるはし</th>
+                </tr>
+                <tr>
+                    <td>つるはしを右クリックで１×２マスのブロックを掘る機能に切り替えられる</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px black solid;">
+                        発動条件
+                        <ol>
+                            <li>つるはしを右クリックして機能がオンになっていること</li>
+                            <li>破壊したブロックが発動対象のブロックであること(石ブロックなど)</li>
+                            <li>正方形の高さのブロックの上に、自プレイヤーが立っていること(ハーフブロック、チェスト、ソウルサンドなどのブロックや、空中では発動しない)</li>
+                            <li>視点が正面にあるブロック(下から２個目のブロック)を破壊すること</li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+        </li>
+        <li>
+            <table style="border: 1px black solid;">
+                <tr>
+                    <th>リード機能拡張</th>
+                </tr>
+                <tr>
+                    <td>リードを右クリックで様々な便利機能を呼び出すGUIを表示する</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px black solid;">
+                        機能一覧
+                        <ol>
+                            <li>MyPetプラグインでよく使用されるコマンドをクリック一つで呼び出せる</li>
+                            <li>作業台や、エンダーチェストのGUIを開くことができる</li>
+                            <li>登録されているポイントにテレポートすることができる</li>
+                            <li>自分のホームポイントを設定できる</li>
+                            <li>自分や他プレイヤーが設定したホームポイントにテレポートできる</li>
+                            <li>アイテムを拾った際に、自動で共有チェストへ転送する機能が有効にできる</li>
+                            <li>共有チェストからアイテムを取り出すことができる</li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+        </li>
+    </ul>
 
     <h3>RecipeManager</h3>
     <p>
-        いろいろ
+        <a href="javascript:" onclick="link_original_recipes()">独自レシピ</a>のページにてレシピ一覧参照
     </p>
 
     <h3>TreeAssist</h3>

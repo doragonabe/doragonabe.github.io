@@ -21,43 +21,46 @@
     <link href="js/slick/slick-theme.css" rel="stylesheet">
     <script src="js/slick/slick.min.js"></script>
 
+    <link href="js/mmenu/mmenu.css" rel="stylesheet">
+
     <link href="css/style.css" rel="stylesheet">
 
     <script>
         $.ajaxSetup({
-            cache: false
+            cache: false,
+            //cache: true,
         });
 
         $(function () {
-            $('#main').load('main/top.html');
+            $('#main').load('main/top.html?ver=1.0');
         });
 
         function link_top() {
-            $('#main').load('main/top.html');
+            $('#main').load('main/top.html?ver=1.0');
         }
 
         function link_server_rules() {
-            $('#main').load('main/server_rules.html');
+            $('#main').load('main/server_rules.html?ver=1.0');
         }
 
         function link_server_introduction() {
-            $('#main').load('main/server_introduction.html');
+            $('#main').load('main/server_introduction.html?ver=1.0');
         }
 
         function link_server_specifications() {
-            $('#main').load('main/server_specifications.html');
+            $('#main').load('main/server_specifications.html?ver=1.0');
         }
 
         function link_q_and_a() {
-            $('#main').load('main/q_and_a.html');
+            $('#main').load('main/q_and_a.html?ver=1.0');
         }
 
         function link_unique_function() {
-            $('#main').load('main/unique_function.html');
+            $('#main').load('main/unique_function.html?ver=1.0');
         }
 
         function link_original_recipes() {
-            $('#main').load('main/original_recipes.html');
+            $('#main').load('main/original_recipes.html?ver=1.0');
         }
 
     </script>
@@ -193,173 +196,161 @@
         }
     </style>
 
+    <script src="js/mmenu/mmenu.js"></script>
+    <script>
+      document.addEventListener(
+        "DOMContentLoaded", () => {
+          new Mmenu("#menu", {
+            "extensions": [
+              "position-right"
+            ]
+          });
+        }
+      );
+    </script>
+
 </head>
 
 <body class="home">
 
-<div id="container">
-    <header>
-        <h1 id="sub_title">
-            <a href="./">
-                <img alt="top" src="images/logo.png">
-            </a>
-        </h1>
-    </header>
+<div id="page">
+    <div id="header">
+        <a href="#menu"><div class="close" id="menubar_hdr"></div></a>
+    </div>
 
-    <div id="contents">
-        <div id="sub">
-            <nav id="menubar">
-                <ul class="submenu">
-                    <li>
-                        <button onclick="link_top()" type="button">
-                            トップ<span>Top</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button onclick="link_server_rules()" type="button">
-                            サーバールール<span>Server Rules</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button onclick="link_server_introduction()" type="button">
-                            サーバー紹介<span>Server Introduction</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button onclick="link_server_specifications()" type="button">
-                            サーバー仕様<span>Server Specifications</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button onclick="link_q_and_a()" type="button">
-                            Q & A<span>Q & A</span>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-
-            <nav id="menubar-s">
-                <ul>
-                    <li>
-                        <button onclick="link_top()" type="button">トップ<span>Top</span></button>
-                    </li>
-                    <!--
-                    <li><a href="test.html">test<span>test</span></a></li>
-                    <li><a href="test.html">test<span>test</span></a></li>
-                    -->
-                </ul>
-            </nav>
-
-            <ul class="submenu">
-                <li>
-                    <a href="//takaty921.mydns.jp:8123/" target="_blank" rel="noopener noreferrer">
-                        dynmap
+    <div class="content">
+        <div id="container">
+            <header>
+                <h1 id="sub_title">
+                    <a href="./">
+                        <img alt="top" src="images/logo.png">
                     </a>
-                </li>
-                <li>
-                    <button onclick="link_unique_function()" type="button">独自機能</button>
-                </li>
-                <li>
-                    <button onclick="link_original_recipes()" type="button">独自レシピ</button>
-                </li>
-                <!--
-                <li><a href="test.html">dynmap</a></li>
-                <li><a href="test.html">独自機能</a></li>
-                <li><a href="test.html">独自レシピ</a></li>
-                -->
+                </h1>
+            </header>
 
-            </ul>
+            <div id="contents">
+                <div id="sub">
+                    <nav id="menubar">
+                        <ul class="submenu">
+                            <li>
+                                <button onclick="link_top()" type="button">
+                                    トップ<span>Top</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="link_server_rules()" type="button">
+                                    サーバールール<span>Server Rules</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="link_server_introduction()" type="button">
+                                    サーバー紹介<span>Server Introduction</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="link_server_specifications()" type="button">
+                                    サーバー仕様<span>Server Specifications</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button onclick="link_q_and_a()" type="button">
+                                    Q & A<span>Q & A</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <nav id="menubar-s">
+                        <ul>
+                            <li>
+                                <button onclick="link_top()" type="button">トップ<span>Top</span></button>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <ul class="submenu">
+                        <li>
+                            <a href="http://takaty921.mydns.jp:8123/" target="_blank" rel="noopener noreferrer">
+                                dynmap
+                            </a>
+                        </li>
+                        <li>
+                            <button onclick="link_unique_function()" type="button">独自機能</button>
+                        </li>
+                        <li>
+                            <button onclick="link_original_recipes()" type="button">独自レシピ</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="main">
+                </div>
+            </div>
+
+            <div class="mainimg">
+                <div class="your-class">
+                    <div><img alt="" src="images/minecraft1.png"></div>
+                    <div><img alt="" src="images/minecraft2.png"></div>
+                    <div><img alt="" src="images/minecraft3.png"></div>
+                </div>
+                <div class="mask"><img alt="" src="images/123_kazari1.png"></div>
+            </div>
             <!--
-            <address class="box">
-                <h2>test</h2>
-                <img src="images/tel.png" alt="TEL:0120-000-000">
-                <table class="ta2">
-                    <tr>
-                        <th>月</th>
-                        <th>火</th>
-                        <th>水</th>
-                        <th>木</th>
-                        <th>金</th>
-                        <th>土</th>
-                        <th>日</th>
-                    </tr>
-                    <tr>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>○</td>
-                        <td>△</td>
-                        <td>ー</td>
-                    </tr>
-                </table>
-                <p class="check">※</p>
-                <p></p>
-            </address>
+            <aside class="mainimg pc">
+                <div class="inner">
+                    <img src="images/1.jpg" alt="" class="slide0">
+                    <img src="images/1.jpg" alt="" class="slide1">
+                    <img src="images/2.jpg" alt="" class="slide2">
+                    <img src="images/3.jpg" alt="" class="slide3">
+                    <img src="images/123_kazari1.png" alt="" classs="kazari">
+                </div>
+            </aside>
+
+            <aside class="mainimg sh">
+                <div class="inner">
+                    <img src="images/1s.jpg" alt="" class="slide0">
+                    <img src="images/1s.jpg" alt="" class="slide1">
+                    <img src="images/2s.jpg" alt="" class="slide2">
+                    <img src="images/3s.jpg" alt="" class="slide3">
+                    <img src="images/123s_kazari1.png" alt="" classs="kazari">
+                </div>
+            </aside>
             -->
-
-
-
         </div>
 
-        <div id="main">
-        </div>
+        <!--
+        <footer>
+            <ul id="footermenu">
+                <li><a href="#">フッターメニュー</a></li>
+                <li><a href="#">フッターメニュー</a></li>
+                <li><a href="#">フッターメニュー</a></li>
+                <li><a href="#">フッターメニュー</a></li>
+                <li><a href="#">フッターメニュー</a></li>
+                <li><a href="#">フッターメニュー</a></li>
+            </ul>
+
+            <div id="copyright">
+                <small>Copyright&copy; <a href="./">test</a> All Rights Reserved.</small>
+                <span class="pr">test</span>
+            </div>
+        </footer>
+        -->
+
+        <!--
+        <p class="nav-fix-pos-pagetop"><a href="#"><img src="images/pagetop.png" alt="PAGE TOP"></a></p>
+        -->
     </div>
-
-    <div class="mainimg">
-        <div class="your-class">
-            <div><img alt="" src="images/minecraft1.png"></div>
-            <div><img alt="" src="images/minecraft2.png"></div>
-            <div><img alt="" src="images/minecraft3.png"></div>
-        </div>
-        <div class="mask"><img alt="" src="images/123_kazari1.png"></div>
-    </div>
-    <!--
-    <aside class="mainimg pc">
-        <div class="inner">
-            <img src="images/1.jpg" alt="" class="slide0">
-            <img src="images/1.jpg" alt="" class="slide1">
-            <img src="images/2.jpg" alt="" class="slide2">
-            <img src="images/3.jpg" alt="" class="slide3">
-            <img src="images/123_kazari1.png" alt="" classs="kazari">
-        </div>
-    </aside>
-
-    <aside class="mainimg sh">
-        <div class="inner">
-            <img src="images/1s.jpg" alt="" class="slide0">
-            <img src="images/1s.jpg" alt="" class="slide1">
-            <img src="images/2s.jpg" alt="" class="slide2">
-            <img src="images/3s.jpg" alt="" class="slide3">
-            <img src="images/123s_kazari1.png" alt="" classs="kazari">
-        </div>
-    </aside>
-    -->
 </div>
 
-<!--
-<footer>
-    <ul id="footermenu">
-        <li><a href="#">フッターメニュー</a></li>
-        <li><a href="#">フッターメニュー</a></li>
-        <li><a href="#">フッターメニュー</a></li>
-        <li><a href="#">フッターメニュー</a></li>
-        <li><a href="#">フッターメニュー</a></li>
-        <li><a href="#">フッターメニュー</a></li>
+<nav id="menu">
+    <ul>
+        <li><a href="#page" onclick="return link_top()">トップ</a></li>
+        <li><a href="#page" onclick="return link_server_rules()">サーバールール</a></li>
+        <li><a href="#page" onclick="return link_server_introduction()">サーバー紹介</a></li>
+        <li><a href="#page" onclick="return link_server_specifications()">サーバー仕様</a></li>
+        <li><a href="#page" onclick="return link_q_and_a()">Q & A</a></li>
     </ul>
-
-    <div id="copyright">
-        <small>Copyright&copy; <a href="./">test</a> All Rights Reserved.</small>
-        <span class="pr">test</span>
-    </div>
-</footer>
--->
-
-<!--
-<p class="nav-fix-pos-pagetop"><a href="#"><img src="images/pagetop.png" alt="PAGE TOP"></a></p>
--->
-
-<div class="close" id="menubar_hdr"></div>
+</nav>
 
 </body>
 </html>
