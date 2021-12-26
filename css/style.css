@@ -622,8 +622,14 @@ ol {
 @media screen and (max-width: 900px) {
     header {
         position: absolute;
-        left: 3%;
         top: 0;
+        left: 3%;
+    }
+
+    #menubar_hdr {
+        position: absolute;
+        top: 0;
+        right: 3%;
     }
 
     header #sub_title {
@@ -632,10 +638,6 @@ ol {
 
     .home #contents {
         padding-top: 25%;
-    }
-
-    #contents {
-        padding-top: 200px;
     }
 
     @keyframes menu1 {
@@ -680,13 +682,16 @@ ol {
         display: none;
     }
 
-    #menubar_hdr {
+    #header {
         display: block;
-        position: absolute;
+        position: sticky;
         z-index: 11;
         top: 50px;
         right: 3%;
-        border: 1px solid #fff;
+    }
+
+    .submenu {
+        display: none;
     }
 
     #menubar_hdr.close,
@@ -712,6 +717,16 @@ ol {
 
     body.s-n #sub, body.s-n #side {
         display: none;
+    }
+
+    #header a {
+        display: inline-block;
+        content: '';
+        width: 50px;
+        height: 50px;
+
+        border: 1px solid #fff;
+
     }
 }
 
