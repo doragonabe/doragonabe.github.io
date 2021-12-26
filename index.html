@@ -24,6 +24,7 @@
     <link href="js/mmenu/mmenu.css" rel="stylesheet">
 
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/craft.css" rel="stylesheet">
 
     <script>
         $.ajaxSetup({
@@ -76,125 +77,6 @@
         });
     </script>
 
-    <style>
-        .mainimg {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-
-            z-index: -1;
-
-            overflow: hidden;
-        }
-
-        .mask {
-            position: absolute;
-            left: 0;
-            bottom: -3px;
-            width: 100%;
-        }
-
-
-        .mc_craft_table {
-            display: inline-block;
-            position: relative;
-            background-color: #C6C6C6;
-            border: 2px solid;
-            border-color: #DBDBDB #5B5B5B #5B5B5B #DBDBDB;
-            padding: 6px;
-            text-align: left;
-            white-space: nowrap;
-            vertical-align: bottom;
-        }
-
-        .inv-sprite, .slot-sprite {
-            width: 32px;
-            height: 32px;
-            vertical-align: middle;
-        }
-
-        .sprite {
-            display: inline-block;
-            vertical-align: text-top;
-            /*
-            height: 16px;
-            width: 16px;
-            */
-            width: 32px;
-            height: 32px;
-            background-repeat: no-repeat;
-        }
-
-        .invslot-item, .invslot-item > a:first-child {
-            position: relative;
-            display: block;
-            margin: -2px;
-            padding: 2px;
-            width: 32px;
-            height: 32px;
-        }
-
-        .mcui-row {
-            font-size: 0;
-        }
-
-        .mcui-Crafting_Table .mcui-row {
-            display: block;
-        }
-
-        .mcui-Crafting_Table > *, .mcui-Furnace > * {
-            display: inline-block;
-            vertical-align: top;
-        }
-
-        .mcui-Crafting_Table > .mcui-arrow {
-            background: url('images/arrow.png') no-repeat;
-            width: 32px;
-            height: 26px;
-            margin: 40px 4px 0;
-        }
-
-        .mcui-Crafting_Table > .mcui-output {
-            margin-top: 28px;
-        }
-
-        #content .invslot {
-            box-sizing: content-box;
-        }
-
-        .invslot {
-            position: relative;
-            display: inline-block;
-            background: #8B8B8B no-repeat center center / 32px 32px;
-            border: 2px solid;
-            border-color: #373737 #FFF #FFF #373737;
-            width: 32px;
-            height: 32px;
-            font-size: 16px;
-            line-height: 1;
-            text-align: left;
-            vertical-align: bottom;
-        }
-
-        .invslot::before {
-            bottom: -2px;
-            left: -2px;
-        }
-
-        .invslot::before, .invslot::after {
-            content: "";
-            position: absolute;
-            background-color: #8B8B8B;
-            height: 2px;
-            width: 2px;
-            pointer-events: none;
-        }
-
-        .invslot-large {
-            padding: 8px;
-        }
-    </style>
 
     <script src="js/mmenu/mmenu.js"></script>
     <script>
@@ -287,27 +169,6 @@
                 </div>
                 <div class="mask"><img alt="" src="images/123_kazari1.png"></div>
             </div>
-            <!--
-            <aside class="mainimg pc">
-                <div class="inner">
-                    <img src="images/1.jpg" alt="" class="slide0">
-                    <img src="images/1.jpg" alt="" class="slide1">
-                    <img src="images/2.jpg" alt="" class="slide2">
-                    <img src="images/3.jpg" alt="" class="slide3">
-                    <img src="images/123_kazari1.png" alt="" classs="kazari">
-                </div>
-            </aside>
-
-            <aside class="mainimg sh">
-                <div class="inner">
-                    <img src="images/1s.jpg" alt="" class="slide0">
-                    <img src="images/1s.jpg" alt="" class="slide1">
-                    <img src="images/2s.jpg" alt="" class="slide2">
-                    <img src="images/3s.jpg" alt="" class="slide3">
-                    <img src="images/123s_kazari1.png" alt="" classs="kazari">
-                </div>
-            </aside>
-            -->
         </div>
 
         <!--
