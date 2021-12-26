@@ -754,7 +754,7 @@ ol {
     }
 
     .home #contents {
-        padding-top: 60%;
+        padding-top: 25%;
     }
 
     #contents {
@@ -804,7 +804,7 @@ ol {
 
     .list h4 {
         color: #39b2ff;
-        font-size: 120%;
+        font-size: 100%;
         text-align: center;
         height: 2em;
         overflow: hidden;
