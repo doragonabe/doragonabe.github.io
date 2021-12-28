@@ -36,7 +36,6 @@ h2 {
 }
 
 header {
-    float: left;
     width: 20%;
 }
 
@@ -101,15 +100,15 @@ header #sub_title {
 }
 
 #contents {
-    clear: both;
-    overflow: hidden;
+    display: flex;
 }
 
 #main {
-    float: right;
     width: 75%;
     font-size: 18px;
     line-height: 2;
+
+    margin-left: 58px;
 }
 
 .home #main {
@@ -158,10 +157,14 @@ header #sub_title {
 }
 
 #sub {
-    float: left;
     font-size: 14px;
     line-height: 1.5;
     width: 20%;
+}
+
+.sticky {
+    position: sticky;
+    top: 20px;
 }
 
 #sub h2 {

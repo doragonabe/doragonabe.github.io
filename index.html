@@ -81,11 +81,11 @@
     <script src="js/mmenu/mmenu.js"></script>
     <script>
       document.addEventListener(
-        "DOMContentLoaded", () => {
-          new Mmenu("#menu", {
-            "extensions": [
-              "position-right"
-            ]
+        'DOMContentLoaded', () => {
+          new Mmenu('#menu', {
+            extensions: [
+              'position-right',
+            ],
           });
         }
       );
@@ -112,6 +112,7 @@
 
             <div id="contents">
                 <div id="sub">
+                    <div class="sticky" style="top: 20px;">
                     <nav id="menubar">
                         <ul class="submenu">
                             <li>
@@ -155,6 +156,7 @@
                             <button onclick="link_original_recipes()" type="button">独自レシピ</button>
                         </li>
                     </ul>
+                    </div>
                 </div>
 
                 <div id="main">
