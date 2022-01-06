@@ -12,7 +12,7 @@
 
     <meta content="noindex,nofollow,noarchive" name="robots">
 
-    <meta http-equiv="Content-Security-Policy" content="default-src *;">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src-elem *; style-src-attr *;">
     <meta name="referrer" content="noreferrer">
 
     <link href="css/reset.css" rel="stylesheet">
@@ -25,6 +25,7 @@
     <script src="js/slick/slick.min.js"></script>
 
     <link href="js/mmenu/mmenu.css" rel="stylesheet">
+    <script src="js/mmenu/mmenu.js"></script>
 
     <link href="css/style.css" rel="stylesheet">
     <link href="css/craft.css" rel="stylesheet">
@@ -78,10 +79,183 @@
                 fade: true,
             });
         });
+
+        var $test = true;
+        console.log('yyyyy')
+
+        var lastScrollTop = 0;
+        //var scrollUpFlag = false;
+        $(window).scroll(function() {
+          var st = $(this).scrollTop();
+
+          var $window = $(window);
+          var $menu = $('.sticky');
+
+          if ($menu.height() > $window.height()) {
+            console.log('aaaaa')
+
+
+            console.log('$(this).scrollTop() + 20');
+            console.log($(this).scrollTop() + 20);
+
+            console.log('$menu.offset().top');
+            console.log($menu.offset().top);
+
+            console.log('$menu.height()');
+            console.log($menu.height());
+
+            console.log('$window.height()');
+            console.log($window.height());
+
+            console.log('$(\'header\').height()');
+            console.log($('header').height());
+
+            console.log('parseInt($(\'#main\').css(\'margin-top\'), 10)');
+            console.log(parseInt($('#main').css('margin-top'), 10));
+
+
+            console.log('');
+            console.log('');
+
+
+
+
+
+            if ($(this).scrollTop() + 20 >= $menu.offset().top && $test) {
+              $test = false;
+              //scrollUpFlag = true;
+
+              console.log('bbbbb')
+
+
+              $menu.css({
+                position: 'relative',
+                top: 0,
+
+                //top: $header.height() + $menu.height() - $window.height() + 'px',
+                //top: $header.height() + 'px',
+                //top: $(this).scrollTop() + 20 + 'px',
+                //'align-self': 'flex-start',
+                //'align-self': 'flex-end',
+
+              });
+            }
+
+            /*
+            console.log('llllll')
+            console.log($menu.height())
+            console.log($window.height())
+            console.log($menu.offset().top)
+            console.log($(this).scrollTop())
+
+             */
+
+            if (lastScrollTop < st && $menu.height() - $window.height() + $menu.offset().top < $(this).scrollTop()) {
+              console.log('ppppppp')
+
+              //scrollUpFlag = true;
+
+              $menu.css({
+                position: 'sticky',
+                top: '-' + ($menu.height() + 20 - $window.height()) + 'px',
+              });
+
+            }
+
+            /*
+            if ($(this).scrollTop() + 20 > $window.height()) {
+              console.log('uuuu')
+
+              $menu.css({
+                position: 'sticky',
+                top: '-' + ($menu.height() + 20 - $window.height()) + 'px',
+
+                //top: $header.height() + $menu.height() - $window.height() + 'px',
+                //top: $header.height() + 'px',
+                //top: $(this).scrollTop() + 20 + 'px',
+                //'align-self': 'flex-start',
+                //'align-self': 'flex-end',
+              });
+            }
+             */
+
+            //if ($('#foo').css('display') === 'sticky') {
+
+
+            //if (lastScrollTop > st && scrollUpFlag === 'sticky') {
+            if (lastScrollTop > st && $menu.css('position') === 'sticky') {
+              console.log('fffffff')
+
+              //scrollUpFlag = false;
+
+              $menu.css({
+                position: 'relative',
+
+                //top: '-' + ($menu.height() + 20 - $window.height()) + 'px',
+                //top: $window.height() - $(this).scrollTop() + $menu.offset().top + 'px',
+                //top: $(this).scrollTop() - $menu.offset().top + $menu.height() - $window.height() + 'px',
+                //top: $menu.height() - $window.height() + 'px',
+                //top: $menu.height() - $window.height() + $('header').height() + 'px',
+                //top: $menu.offset().top - $(this).scrollTop() + 'px',
+                //top: $(this).scrollTop() - $menu.height() - $window.height() + 'px',
+                //top: $(this).scrollTop() + 'px',
+
+                //top: lastScrollTop - $menu.height() + 'px',
+                top: lastScrollTop - $menu.height() + parseInt($('#main').css('margin-top'), 10) + 20 + 12 + 'px',
+
+
+                //top: $header.height() + $menu.height() - $window.height() + 'px',
+
+                //top: $header.height() + 'px',
+
+                //top: $(this).scrollTop() + 20 + 'px',
+              });
+            }
+
+          }
+          lastScrollTop = st;
+        });
+
+
+        $(document).ready( function () {
+          //var $window = $(window);
+          //var $main = $('#main');
+
+          //var $header = $('header');
+
+          //var $menu = $('.sticky');
+
+          /*
+          if ($main.height() < $window.height()) {
+            $main.css({
+              top: '60px',
+              'align-self': 'flex-start'
+            });
+          }
+
+           */
+          //console.log(document.documentElement.scrollTop)
+
+
+          //console.log($header.height())
+
+          //console.log($menu.height())
+          //console.log($window.height())
+
+          //if ($menu.height() > $window.height()) {
+            //console.log('aaaaa')
+
+            //$menu.css({
+              //position: 'absolute',
+              //top: $header.height() + $menu.height() - $window.height() + 'px',
+              //top: $header.height() + 'px',
+              //'align-self': 'flex-start',
+              //'align-self': 'flex-end',
+            //});
+          //}
+        });
     </script>
 
-
-    <script src="js/mmenu/mmenu.js"></script>
     <script>
       document.addEventListener(
         'DOMContentLoaded', () => {
