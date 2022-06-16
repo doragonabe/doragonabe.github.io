@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>doragonabe site</title>
+
+    <meta content="noindex,nofollow,noarchive" name="robots">
+    <meta name="referrer" content="no-referrer">
+
+    <link href="/assets/css/reset.css" rel="stylesheet">
+
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/jquery-migrate-3.3.2.min.js"></script>
+
+    <link href="/assets/js/slick/slick.css" rel="stylesheet">
+    <link href="/assets/js/slick/slick-theme.css" rel="stylesheet">
+    <script src="/assets/js/slick/slick.min.js"></script>
+
+    <link href="/assets/js/mmenu/mmenu.css" rel="stylesheet">
+
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <link href="/assets/css/craft.css" rel="stylesheet">
+
+    <!-- 画像ちらつき抑制 -->
+    <link rel="preload" href="/assets/images/minecraft1.png" as="image">
+    <link rel="preload" href="/assets/images/123_kazari1.png" as="image">
+
+    <script>
+      $(function() {
+        $('.your-class').slick({
+          accessibility: false,
+          arrows: false,
+          autoplay: true,
+          fade: true,
+        });
+      });
+    </script>
+
+    <script src="/assets/js/mmenu/mmenu.js"></script>
+    <script>
+      document.addEventListener(
+        'DOMContentLoaded', () => {
+          window.mmenu = new Mmenu('#menu', {
+            extensions: [
+              'position-right',
+            ],
+          });
+        },
+      );
+    </script>
+</head>
+<body class="home">
+<div id="app"></div>
+
+<script type="module" src="/main.ts"></script>
+</body>
+</html>

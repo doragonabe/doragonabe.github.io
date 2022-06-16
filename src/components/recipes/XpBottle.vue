@@ -1,3 +1,4 @@
+<template>
 <span class="mc_craft_table mcui mcui-Crafting_Table pixel-image">
     <span class="mcui-input">
         <span class="mcui-row">
@@ -10,7 +11,10 @@
             <span class="invslot"></span>
             <span class="invslot">
                 <span class="invslot-item">
-                    <span class="sprite inv-sprite" style="background-image:url(../../images/InvSprite.png);background-position:-512px -3552px" title="ガラス瓶"></span>
+                    <span class="sprite inv-sprite"
+                          style="background-image:url(/assets/images/InvSprite.png); background-position:-512px -3552px;"
+                          title="ガラス瓶">
+                    </span>
                 </span>
             </span>
             <span class="invslot"></span>
@@ -24,7 +28,13 @@
     <span class="mcui-arrow"><br></span>
     <span class="mcui-output">
         <span class="invslot invslot-large">
-            <span class="invslot-item"><span class="sprite inv-sprite" style="background-image:url(../../images/InvSprite.png);background-position:-288px -3456px" title="エンチャントの瓶"></span></span>
+            <span class="invslot-item">
+              <span class="sprite inv-sprite"
+                    style="background-image:url(/assets/images/InvSprite.png); background-position:-288px -3456px;"
+                    title="エンチャントの瓶">
+              </span>
+            </span>
         </span>
     </span>
 </span>
+</template>
