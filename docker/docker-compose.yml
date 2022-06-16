@@ -5,7 +5,7 @@ services:
     ports:
       - "27080:80"
     volumes:
-      - ..:/var/www/html/
+      - ../docs:/var/www/html/
     environment:
       TZ: Asia/Tokyo
     working_dir: /var/www/html/

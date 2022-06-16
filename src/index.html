@@ -12,12 +12,12 @@
 
     <link href="/assets/css/reset.css" rel="stylesheet">
 
-    <script type="module" src="/assets/js/jquery-3.6.0.min.js"></script>
-    <script type="module" src="/assets/js/jquery-migrate-3.3.2.min.js"></script>
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/assets/js/jquery-migrate-3.3.2.min.js"></script>
 
     <link href="/assets/js/slick/slick.css" rel="stylesheet">
     <link href="/assets/js/slick/slick-theme.css" rel="stylesheet">
-    <script type="module" src="/assets/js/slick/slick.min.js"></script>
+    <script src="/assets/js/slick/slick.min.js"></script>
 
     <link href="/assets/js/mmenu/mmenu.css" rel="stylesheet">
 
@@ -29,7 +29,7 @@
     <link rel="preload" href="/assets/images/123_kazari1.png" as="image">
 
     <script>
-      window.addEventListener('DOMContentLoaded', function(){
+      $(function() {
         $('.your-class').slick({
           accessibility: false,
           arrows: false,
@@ -39,10 +39,9 @@
       });
     </script>
 
-    <script type="module" src="/assets/js/mmenu/mmenu.js"></script>
+    <script src="/assets/js/mmenu/mmenu.js"></script>
     <script>
-      document.addEventListener(
-        'DOMContentLoaded', () => {
+      $(function() {
           window.mmenu = new Mmenu('#menu', {
             extensions: [
               'position-right',
