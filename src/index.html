@@ -29,6 +29,17 @@
     <link rel="preload" href="/assets/images/123_kazari1.png" as="image">
 
     <script>
+      // GitHub Pages での SPA アドレス解決用
+      (function(){
+        const query = window.location.search;
+        if (query.startsWith('?p=')) {
+          const route = decodeURIComponent(query.substr(3));
+          window.history.replaceState(null, null, route);
+        }
+      })();
+    </script>
+
+    <script>
       $(function() {
         $('.your-class').slick({
           accessibility: false,
