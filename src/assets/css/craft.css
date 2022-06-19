@@ -72,7 +72,7 @@
 }
 
 .mcui-Crafting_Table > .mcui-arrow {
-    background: url('images/arrow.png') no-repeat;
+    background: url('../images/arrow.png') no-repeat;
     width: 32px;
     height: 26px;
     margin: 40px 4px 0;
@@ -116,4 +116,9 @@
 
 .invslot-large {
     padding: 8px;
+}
+
+.item-string {
+    background-image:url('../images/InvSprite.png');
+    background-position:-320px -3520px;
 }

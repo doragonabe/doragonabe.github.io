@@ -4,10 +4,7 @@
         <span class="mcui-row">
             <span class="invslot">
                 <span class="invslot-item">
-                    <span class="sprite inv-sprite"
-                          style="background-image:url(/assets/images/InvSprite.png); background-position:-320px -3520px;"
-                          title="糸">
-                    </span>
+                    <span class="sprite inv-sprite item-string" title="糸"></span>
                 </span>
             </span>
             <span class="invslot">
@@ -20,9 +17,7 @@
             </span>
             <span class="invslot">
                 <span class="invslot-item" data-minetip-title="糸">
-                    <span class="sprite inv-sprite"
-                          style="background-image:url(/assets/images/InvSprite.png); background-position:-320px -3520px;">
-                    </span>
+                    <span class="sprite inv-sprite item-string"></span>
                 </span>
             </span>
         </span>
