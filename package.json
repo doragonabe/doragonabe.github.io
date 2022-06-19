@@ -21,7 +21,7 @@
     "vite": "^2.9.9",
     "vite-plugin-static-copy": "^0.5.1",
     "vue-router": "^4.0.16",
-    "vue-tsc": "^0.34.7",
+    "vue-tsc": "^0.38.1",
     "vuex": "^4.0.2"
   }
 }

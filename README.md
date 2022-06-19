@@ -17,3 +17,11 @@ yarn dev
 ```
 yarn build
 ```
+#### ライブラリ更新
+```
+yarn upgrade
+```
+#### ライブラリ更新(最新版に強制)
+```
+yarn upgrade --latest
+```
