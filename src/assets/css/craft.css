@@ -119,6 +119,26 @@
 }
 
 .item-string {
-    background-image:url('../images/InvSprite.png');
-    background-position:-320px -3520px;
+    background-image: url('../images/InvSprite.png');
+    background-position: -320px -3520px;
+}
+
+.item-rabbit_hide {
+    background-image: url('../images/InvSprite.png');
+    background-position: -192px -3520px;
+}
+
+.item-bundle {
+    background-image: url('../images/InvSprite.png');
+    background-position: -960px -416px;
+}
+
+.item-glass_bottle {
+    background-image: url('../images/InvSprite.png');
+    background-position:-512px -3552px;
+}
+
+.item-experience_bottle {
+    background-image: url('../images/InvSprite.png');
+    background-position:-288px -3456px;
 }

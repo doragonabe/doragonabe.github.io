@@ -11,9 +11,7 @@
             <span class="invslot"></span>
             <span class="invslot">
                 <span class="invslot-item">
-                    <span class="sprite inv-sprite"
-                          style="background-image:url(/assets/images/InvSprite.png); background-position:-512px -3552px;"
-                          title="ガラス瓶">
+                    <span class="sprite inv-sprite item-glass_bottle" title="ガラス瓶">
                     </span>
                 </span>
             </span>
@@ -29,10 +27,7 @@
     <span class="mcui-output">
         <span class="invslot invslot-large">
             <span class="invslot-item">
-              <span class="sprite inv-sprite"
-                    style="background-image:url(/assets/images/InvSprite.png); background-position:-288px -3456px;"
-                    title="エンチャントの瓶">
-              </span>
+              <span class="sprite inv-sprite item-experience_bottle" title="エンチャントの瓶"></span>
             </span>
         </span>
     </span>

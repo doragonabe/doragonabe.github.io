@@ -14,59 +14,57 @@
           </h1>
         </header>
         <div id="contents">
-          <div id="sub">
-            <div class="sticky">
-              <nav id="menubar">
-                <ul class="submenu">
-                  <li>
-                    <router-link to="/">
-                      <span>トップ</span>
-                      <span class="subtitle">Top</span>
-                    </router-link>
-                  </li>
-                  <li>
-                    <router-link to="/server_rules">
-                      <span>サーバールール</span>
-                      <span class="subtitle">Server Rules</span>
-                    </router-link>
-                  </li>
-                  <li>
-                    <router-link to="/server_introduction">
-                      <span>サーバー紹介</span>
-                      <span class="subtitle">Server Introduction</span>
-                    </router-link>
-                  </li>
-                  <li>
-                    <router-link to="/server_specifications">
-                      <span>サーバー仕様</span>
-                      <span class="subtitle">Server Specifications</span>
-                    </router-link>
-                  </li>
-                  <li>
-                    <router-link to="/q_and_a">
-                      <span>Q & A</span>
-                      <span class="subtitle">Q & A</span>
-                    </router-link>
-                  </li>
-                </ul>
+          <div id="sub" class="sticky_top">
+            <nav id="menubar">
+              <ul class="submenu">
+                <li>
+                  <router-link to="/">
+                    <span>トップ</span>
+                    <span class="subtitle">Top</span>
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/server_rules">
+                    <span>サーバールール</span>
+                    <span class="subtitle">Server Rules</span>
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/server_introduction">
+                    <span>サーバー紹介</span>
+                    <span class="subtitle">Server Introduction</span>
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/server_specifications">
+                    <span>サーバー仕様</span>
+                    <span class="subtitle">Server Specifications</span>
+                  </router-link>
+                </li>
+                <li>
+                  <router-link to="/q_and_a">
+                    <span>Q & A</span>
+                    <span class="subtitle">Q & A</span>
+                  </router-link>
+                </li>
+              </ul>
 
 
-                <ul class="submenu">
-                  <li>
-                    <a href="http://takaty921.mydns.jp:8123/" target="_blank" rel="noopener noreferrer">
-                      <span>dynmap</span><br>
-                      <span>※外部リンク</span>
-                    </a>
-                  </li>
-                  <li>
-                    <router-link to="/unique_function">独自機能</router-link>
-                  </li>
-                  <li>
-                    <router-link to="/original_recipes">独自レシピ</router-link>
-                  </li>
-                </ul>
-              </nav>
-            </div>
+              <ul class="submenu">
+                <li>
+                  <a href="http://takaty921.mydns.jp:8123/" target="_blank" rel="noopener noreferrer">
+                    <span>dynmap</span><br>
+                    <span>※外部リンク</span>
+                  </a>
+                </li>
+                <li>
+                  <router-link to="/unique_function">独自機能</router-link>
+                </li>
+                <li>
+                  <router-link to="/original_recipes">独自レシピ</router-link>
+                </li>
+              </ul>
+            </nav>
           </div>
 
           <div id="main">

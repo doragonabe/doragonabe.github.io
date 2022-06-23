@@ -201,9 +201,16 @@ header #sub_title a {
     width: 20%;
 }
 
-.sticky {
+.sticky_top {
     position: sticky;
     top: 20px;
+    align-self: start;
+}
+
+.sticky_bottom {
+    position: sticky;
+    bottom: 20px;
+    align-self: end;
 }
 
 #sub h2 {
