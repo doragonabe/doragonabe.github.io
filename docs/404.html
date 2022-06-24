@@ -18,7 +18,8 @@
       const segments = path.split('/');  //=> [repo-name, book, 123]
       const repo = segments.slice(0, SEGMENT_COUNT).join('/');  //=> repo-name
       const param = segments.slice(SEGMENT_COUNT).join('/');  //=> book/123
-      const url = origin + '/' + repo + '?p=' + encodeURIComponent(param);
+      const page_position = '?p=' + encodeURIComponent(param);
+      const url = origin + '/' + repo + page_position;
       loc.replace(url);
     </script>
 </head>
