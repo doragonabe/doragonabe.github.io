@@ -14,7 +14,7 @@
           </h1>
         </header>
         <div id="contents">
-          <div id="sub" class="sticky_top">
+          <div id="sub">
             <nav id="menubar">
               <ul class="submenu">
                 <li>
@@ -49,7 +49,6 @@
                 </li>
               </ul>
 
-
               <ul class="submenu">
                 <li>
                   <a href="http://takaty921.mydns.jp:8123/" target="_blank" rel="noopener noreferrer">
@@ -73,11 +72,15 @@
         </div>
 
         <div class="mainimg">
-          <div class="your-class">
-            <div><img alt="" src="/assets/images/minecraft1.png"></div>
-            <div><img alt="" src="/assets/images/minecraft2.png"></div>
-            <div><img alt="" src="/assets/images/minecraft3.png"></div>
-          </div>
+          <swiper :loop="true"
+                  :speed="1000"
+                  :autoplay="{delay: 3000, disableOnInteraction: false}"
+                  :effect="'fade'"
+                  :fadeEffect="{crossFade: true}">
+            <swiper-slide><img alt="" src="/assets/images/minecraft1.png"></swiper-slide>
+            <swiper-slide><img alt="" src="/assets/images/minecraft2.png"></swiper-slide>
+            <swiper-slide><img alt="" src="/assets/images/minecraft3.png"></swiper-slide>
+          </swiper>
           <div class="mask"><img alt="" src="/assets/images/123_kazari1.png"></div>
         </div>
       </div>
@@ -97,7 +100,13 @@
 </template>
 
 <script lang="ts">
+import {defineComponent, ref} from 'vue';
 import router from './router';
+import {Swiper, SwiperSlide} from 'swiper/vue';
+import SwiperCore, {Autoplay, EffectFade} from 'swiper';
+import 'swiper/css/bundle';
+
+SwiperCore.use([Autoplay, EffectFade]);
 
 declare global {
   interface Window {
@@ -105,12 +114,22 @@ declare global {
   }
 }
 
-export default {
+export default defineComponent({
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    return {
+      Autoplay,
+      EffectFade,
+    };
+  },
   methods: {
     menu_close(url: string) {
       window.mmenu.API.close();
       router.push(url);
     },
   },
-};
+});
 </script>

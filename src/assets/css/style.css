@@ -197,6 +197,7 @@ header #sub_title a {
     font-size: 14px;
     line-height: 1.5;
     width: 20%;
+    height: fit-content;
 }
 
 .sticky_top {
