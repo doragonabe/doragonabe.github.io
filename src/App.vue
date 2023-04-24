@@ -90,11 +90,11 @@
   <!-- モバイル用 -->
   <nav id="menu">
     <ul>
-      <li><a href="#" @click="menu_close('/')">トップ</a></li>
-      <li><a href="#" @click="menu_close('/server_rules')">サーバールール</a></li>
-      <li><a href="#" @click="menu_close('/server_introduction')">サーバー紹介</a></li>
-      <li><a href="#" @click="menu_close('/server_specifications')">サーバー仕様</a></li>
-      <li><a href="#" @click="menu_close('/q_and_a')">Q & A</a></li>
+      <li><a href="#" @click="MenuClose('/')">トップ</a></li>
+      <li><a href="#" @click="MenuClose('/server_rules')">サーバールール</a></li>
+      <li><a href="#" @click="MenuClose('/server_introduction')">サーバー紹介</a></li>
+      <li><a href="#" @click="MenuClose('/server_specifications')">サーバー仕様</a></li>
+      <li><a href="#" @click="MenuClose('/q_and_a')">Q & A</a></li>
     </ul>
   </nav>
 </template>
@@ -127,17 +127,24 @@ export default defineComponent({
     SwiperSlide,
   },
   setup() {
+    // window縦サイズ
+    const window_height = ref(0);
+    // ヘッダー縦サイズ
+    const header_height = ref(0);
+    // サイドメニュー縦サイズ
+    const sub_height = ref(0);
     onMounted(() => {
-      // window縦サイズ
-      const window_height = window.innerHeight
+      window_height.value = window.innerHeight;
+      header_height.value = header.value?.getBoundingClientRect().height ?? 0;
+      sub_height.value = sub.value?.getBoundingClientRect().height ?? 0;
 
-      // ヘッダー縦サイズ
-      const header_height = header.value?.getBoundingClientRect().height ?? 0;
+      window.addEventListener('resize', function(){
+        window_height.value =  window.innerHeight;
+        header_height.value = header.value?.getBoundingClientRect().height ?? 0;
+        sub_height.value = sub.value?.getBoundingClientRect().height ?? 0;
+      });
 
-      // サイドメニュー縦サイズ
-      const sub_height = sub.value?.getBoundingClientRect().height ?? 0;
-
-      if (window_height > sub_height + 40) { // windowサイズがメニューより大きい
+      if (window_height.value > sub_height.value + 40) { // windowサイズがメニューより大きい
         sub.value?.classList.add('sticky_top');
         sub.value?.classList.remove('sticky_bottom');
       } else { // windowサイズがメニューより小さい
@@ -148,19 +155,19 @@ export default defineComponent({
       let scroll: number = 0;
       window.addEventListener('scroll', function() {
         const scroll_top = window.scrollY;
-        const scroll_bottom = scroll_top + window_height;
+        const scroll_bottom = scroll_top + window_height.value;
 
         // サブメニューtopの位置
         const sub_top: number = (sub.value?.getBoundingClientRect().top ?? 0) + scroll_top;
 
         // サブメニューbottomの位置
-        const sub_bottom = sub_top + sub_height;
+        const sub_bottom = sub_top + sub_height.value;
 
         // サブメニュー初期位置と現在topの差
-        let sub_top_diff = sub_top - header_height - 50;
+        let sub_top_diff = sub_top - header_height.value - 50;
 
         if (scroll_top < scroll) { //上スクロールの時の処理
-          if (window_height < sub_height + 40) { // windowサイズがメニューより小さい
+          if (window_height.value < sub_height.value + 40) { // windowサイズがメニューより小さい
             if(sub_top >= scroll_top + 20) {
               if (!sub.value?.classList.contains('sticky_top')) {
                 sub.value?.classList.add('sticky_top');
@@ -175,7 +182,7 @@ export default defineComponent({
           }
         } else {
           //下スクロールの時の処理
-          if (window_height < sub_height + 40) { // windowサイズがメニューより小さい
+          if (window_height.value < sub_height.value + 40) { // windowサイズがメニューより小さい
             if(sub_top >= scroll_top + 20) {
               if (sub.value?.classList.contains('sticky_top')) {
                 sub.value?.classList.remove('sticky_top');
@@ -193,13 +200,9 @@ export default defineComponent({
         }
         scroll = scroll_top;
       });
-
-      window.addEventListener('resize', function(){
-
-      });
     });
 
-    const menu_close = (url: string) => {
+    const MenuClose = (url: string) => {
       window.mmenu.API.close();
       router.push(url);
     }
@@ -210,8 +213,10 @@ export default defineComponent({
 
       header,
       sub,
+      window_height,
+      header_height,
 
-      menu_close,
+      MenuClose,
     };
   },
 });
