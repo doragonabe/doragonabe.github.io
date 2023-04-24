@@ -10,6 +10,15 @@
     <meta content="noindex,nofollow,noarchive" name="robots">
     <meta name="referrer" content="no-referrer">
 
+    <script>
+      // GitHub Pages での SPA アドレス解決用
+      const query = new URLSearchParams(window.location.search);
+      if (query.has('p')) {
+        const route = decodeURIComponent(query.get('p') ?? '');
+        window.history.replaceState(null, '', route);
+      }
+    </script>
+
     <link href="/assets/css/reset.css" rel="stylesheet">
 
     <script src="/assets/js/jquery-3.6.0.min.js"></script>
@@ -39,11 +48,11 @@
     <script src="/assets/js/mmenu/mmenu.js"></script>
     <script>
       $(function() {
-          window.mmenu = new Mmenu('#menu', {
-            extensions: [
-              'position-right',
-            ],
-          });
+        window.mmenu = new Mmenu('#menu', {
+          extensions: [
+            'position-right',
+          ],
+        });
       });
     </script>
 </head>

@@ -6,7 +6,7 @@
 
     <div class="content">
       <div id="container">
-        <header>
+        <header ref="header">
           <h1 id="sub_title">
             <router-link to="/">
               <img alt="top" src="/assets/images/logo.png">
@@ -14,7 +14,7 @@
           </h1>
         </header>
         <div id="contents">
-          <div id="sub">
+          <div id="sub" ref="sub">
             <nav id="menubar">
               <ul class="submenu">
                 <li>
@@ -119,6 +119,8 @@ declare global {
   }
 }
 
+const header = ref<HTMLDivElement | null>(null);
+const sub = ref<HTMLDivElement | null>(null);
 export default defineComponent({
   components: {
     Swiper,
@@ -131,6 +133,9 @@ export default defineComponent({
     return {
       Autoplay,
       EffectFade,
+
+      header,
+      sub,
     };
   },
   methods: {
@@ -140,24 +145,21 @@ export default defineComponent({
     },
   },
   mounted() {
-    const sub = $('#sub');
-
     // window縦サイズ
     const window_height = window.innerHeight
 
-    // サイドメニューサイズ
-    const sub_height = (sub?.height() ?? 0) + 40;
+    // ヘッダー縦サイズ
+    const header_height = header.value?.getBoundingClientRect().height ?? 0;
 
-    const header_height = $('header')?.height() ?? 0;
+    // サイドメニュー縦サイズ
+    const sub_height = sub.value?.getBoundingClientRect().height ?? 0;
 
-    if (window_height < sub_height) {
-      // windowサイズがメニューより小さい
-      sub.removeClass('sticky_top');
-      sub.removeClass('sticky_bottom');
-    } else {
-      // windowサイズがメニューより大きい
-      sub.addClass('sticky_top');
-      sub.removeClass('sticky_bottom');
+    if (window_height > sub_height + 40) { // windowサイズがメニューより大きい
+      sub.value?.classList.add('sticky_top');
+      sub.value?.classList.remove('sticky_bottom');
+    } else { // windowサイズがメニューより小さい
+      sub.value?.classList.remove('sticky_top');
+      sub.value?.classList.remove('sticky_bottom');
     }
 
     let scroll: number = 0;
@@ -166,44 +168,42 @@ export default defineComponent({
       const scroll_bottom = scroll_top + window_height;
 
       // サブメニューtopの位置
-      const sub_top = sub?.offset()?.top ?? 0;
+      const sub_top: number = (sub.value?.getBoundingClientRect().top ?? 0) + scroll_top;
 
       // サブメニューbottomの位置
-      const sub_bottom = sub_top + (sub?.height() ?? 0);
+      const sub_bottom = sub_top + sub_height;
 
       // サブメニュー初期位置と現在topの差
       let sub_top_diff = sub_top - header_height - 50;
 
-      if (scroll_top < scroll) {
-        //上スクロールの時の処理
-        if (window_height < sub_height) {
+      if (scroll_top < scroll) { //上スクロールの時の処理
+        if (window_height < sub_height + 40) { // windowサイズがメニューより小さい
           if(sub_top >= scroll_top + 20) {
-            if (!sub.hasClass('sticky_top')) {
-              sub.addClass('sticky_top');
-              sub.css('margin-top', '');
+            if (!sub.value?.classList.contains('sticky_top')) {
+              sub.value?.classList.add('sticky_top');
+              sub.value?.style.removeProperty('margin-top');
             }
           } else {
-            if (sub.hasClass('sticky_bottom')) {
-              sub.css('margin-top', sub_top_diff)
-              sub.removeClass('sticky_bottom');
+            if (sub.value?.classList.contains('sticky_bottom')) {
+              sub.value?.style.setProperty('margin-top', String(sub_top_diff) + 'px');
+              sub.value?.classList.remove('sticky_bottom');
             }
           }
         }
       } else {
         //下スクロールの時の処理
-        if (window_height < sub_height) {
+        if (window_height < sub_height + 40) { // windowサイズがメニューより小さい
           if(sub_top >= scroll_top + 20) {
-            // scroll時、windowサイズがメニューより大きい
-            if (sub.hasClass('sticky_top')) {
-              sub.removeClass('sticky_top');
-              sub.css('margin-top', sub_top_diff)
+            if (sub.value?.classList.contains('sticky_top')) {
+              sub.value?.classList.remove('sticky_top');
+              sub.value?.style.setProperty('margin-top', String(sub_top_diff) + 'px');
+              sub.value?.style.setProperty('margin-top', String(sub_top_diff) + 'px');
             }
           } else {
-            // scroll時、windowサイズがメニューより小さい
-            if (sub_bottom < scroll_bottom && !sub.hasClass('sticky_bottom')) {
+            if (sub_bottom + 20 <= scroll_bottom && !sub.value?.classList.contains('sticky_bottom')) { // scrollがサインドメニューのbottomを超えた場合
               // scrollがサインドメニューのbottomを超えた場合
-              sub.removeClass('sticky_top');
-              sub.addClass('sticky_bottom');
+              sub.value?.classList.remove('sticky_top');
+              sub.value?.classList.add('sticky_bottom');
             }
           }
         }
