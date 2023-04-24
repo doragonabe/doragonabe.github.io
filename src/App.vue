@@ -128,7 +128,81 @@ export default defineComponent({
   },
   setup() {
     onMounted(() => {
+      // window縦サイズ
+      const window_height = window.innerHeight
+
+      // ヘッダー縦サイズ
+      const header_height = header.value?.getBoundingClientRect().height ?? 0;
+
+      // サイドメニュー縦サイズ
+      const sub_height = sub.value?.getBoundingClientRect().height ?? 0;
+
+      if (window_height > sub_height + 40) { // windowサイズがメニューより大きい
+        sub.value?.classList.add('sticky_top');
+        sub.value?.classList.remove('sticky_bottom');
+      } else { // windowサイズがメニューより小さい
+        sub.value?.classList.remove('sticky_top');
+        sub.value?.classList.remove('sticky_bottom');
+      }
+
+      let scroll: number = 0;
+      window.addEventListener('scroll', function() {
+        const scroll_top = window.scrollY;
+        const scroll_bottom = scroll_top + window_height;
+
+        // サブメニューtopの位置
+        const sub_top: number = (sub.value?.getBoundingClientRect().top ?? 0) + scroll_top;
+
+        // サブメニューbottomの位置
+        const sub_bottom = sub_top + sub_height;
+
+        // サブメニュー初期位置と現在topの差
+        let sub_top_diff = sub_top - header_height - 50;
+
+        if (scroll_top < scroll) { //上スクロールの時の処理
+          if (window_height < sub_height + 40) { // windowサイズがメニューより小さい
+            if(sub_top >= scroll_top + 20) {
+              if (!sub.value?.classList.contains('sticky_top')) {
+                sub.value?.classList.add('sticky_top');
+                sub.value?.style.removeProperty('margin-top');
+              }
+            } else {
+              if (sub.value?.classList.contains('sticky_bottom')) {
+                sub.value?.style.setProperty('margin-top', String(sub_top_diff) + 'px');
+                sub.value?.classList.remove('sticky_bottom');
+              }
+            }
+          }
+        } else {
+          //下スクロールの時の処理
+          if (window_height < sub_height + 40) { // windowサイズがメニューより小さい
+            if(sub_top >= scroll_top + 20) {
+              if (sub.value?.classList.contains('sticky_top')) {
+                sub.value?.classList.remove('sticky_top');
+                sub.value?.style.setProperty('margin-top', String(sub_top_diff) + 'px');
+                sub.value?.style.setProperty('margin-top', String(sub_top_diff) + 'px');
+              }
+            } else {
+              if (sub_bottom + 20 <= scroll_bottom && !sub.value?.classList.contains('sticky_bottom')) { // scrollがサインドメニューのbottomを超えた場合
+                // scrollがサインドメニューのbottomを超えた場合
+                sub.value?.classList.remove('sticky_top');
+                sub.value?.classList.add('sticky_bottom');
+              }
+            }
+          }
+        }
+        scroll = scroll_top;
+      });
+
+      window.addEventListener('resize', function(){
+
+      });
     });
+
+    const menu_close = (url: string) => {
+      window.mmenu.API.close();
+      router.push(url);
+    }
 
     return {
       Autoplay,
@@ -136,80 +210,9 @@ export default defineComponent({
 
       header,
       sub,
+
+      menu_close,
     };
   },
-  methods: {
-    menu_close(url: string) {
-      window.mmenu.API.close();
-      router.push(url);
-    },
-  },
-  mounted() {
-    // window縦サイズ
-    const window_height = window.innerHeight
-
-    // ヘッダー縦サイズ
-    const header_height = header.value?.getBoundingClientRect().height ?? 0;
-
-    // サイドメニュー縦サイズ
-    const sub_height = sub.value?.getBoundingClientRect().height ?? 0;
-
-    if (window_height > sub_height + 40) { // windowサイズがメニューより大きい
-      sub.value?.classList.add('sticky_top');
-      sub.value?.classList.remove('sticky_bottom');
-    } else { // windowサイズがメニューより小さい
-      sub.value?.classList.remove('sticky_top');
-      sub.value?.classList.remove('sticky_bottom');
-    }
-
-    let scroll: number = 0;
-    $(window).on('scroll', function() {
-      const scroll_top = window.scrollY;
-      const scroll_bottom = scroll_top + window_height;
-
-      // サブメニューtopの位置
-      const sub_top: number = (sub.value?.getBoundingClientRect().top ?? 0) + scroll_top;
-
-      // サブメニューbottomの位置
-      const sub_bottom = sub_top + sub_height;
-
-      // サブメニュー初期位置と現在topの差
-      let sub_top_diff = sub_top - header_height - 50;
-
-      if (scroll_top < scroll) { //上スクロールの時の処理
-        if (window_height < sub_height + 40) { // windowサイズがメニューより小さい
-          if(sub_top >= scroll_top + 20) {
-            if (!sub.value?.classList.contains('sticky_top')) {
-              sub.value?.classList.add('sticky_top');
-              sub.value?.style.removeProperty('margin-top');
-            }
-          } else {
-            if (sub.value?.classList.contains('sticky_bottom')) {
-              sub.value?.style.setProperty('margin-top', String(sub_top_diff) + 'px');
-              sub.value?.classList.remove('sticky_bottom');
-            }
-          }
-        }
-      } else {
-        //下スクロールの時の処理
-        if (window_height < sub_height + 40) { // windowサイズがメニューより小さい
-          if(sub_top >= scroll_top + 20) {
-            if (sub.value?.classList.contains('sticky_top')) {
-              sub.value?.classList.remove('sticky_top');
-              sub.value?.style.setProperty('margin-top', String(sub_top_diff) + 'px');
-              sub.value?.style.setProperty('margin-top', String(sub_top_diff) + 'px');
-            }
-          } else {
-            if (sub_bottom + 20 <= scroll_bottom && !sub.value?.classList.contains('sticky_bottom')) { // scrollがサインドメニューのbottomを超えた場合
-              // scrollがサインドメニューのbottomを超えた場合
-              sub.value?.classList.remove('sticky_top');
-              sub.value?.classList.add('sticky_bottom');
-            }
-          }
-        }
-      }
-      scroll = scroll_top;
-    });
-  }
 });
 </script>
