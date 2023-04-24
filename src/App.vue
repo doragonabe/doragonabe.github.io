@@ -100,13 +100,18 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref} from 'vue';
+import {defineComponent, onMounted, ref, toRefs} from 'vue';
 import router from './router';
+
 import {Swiper, SwiperSlide} from 'swiper/vue';
 import SwiperCore, {Autoplay, EffectFade} from 'swiper';
 import 'swiper/css/bundle';
 
 SwiperCore.use([Autoplay, EffectFade]);
+
+import $ from 'jquery';
+
+import { add, subtract } from 'mathjs'
 
 declare global {
   interface Window {
@@ -120,6 +125,9 @@ export default defineComponent({
     SwiperSlide,
   },
   setup() {
+    onMounted(() => {
+    });
+
     return {
       Autoplay,
       EffectFade,
@@ -131,5 +139,77 @@ export default defineComponent({
       router.push(url);
     },
   },
+  mounted() {
+    const sub = $('#sub');
+
+    // window縦サイズ
+    const window_height = window.innerHeight
+
+    // サイドメニューサイズ
+    const sub_height = (sub?.height() ?? 0) + 40;
+
+    const header_height = $('header')?.height() ?? 0;
+
+    if (window_height < sub_height) {
+      // windowサイズがメニューより小さい
+      sub.removeClass('sticky_top');
+      sub.removeClass('sticky_bottom');
+    } else {
+      // windowサイズがメニューより大きい
+      sub.addClass('sticky_top');
+      sub.removeClass('sticky_bottom');
+    }
+
+    let scroll: number = 0;
+    $(window).on('scroll', function() {
+      const scroll_top = window.scrollY;
+      const scroll_bottom = scroll_top + window_height;
+
+      // サブメニューtopの位置
+      const sub_top = sub?.offset()?.top ?? 0;
+
+      // サブメニューbottomの位置
+      const sub_bottom = sub_top + (sub?.height() ?? 0);
+
+      // サブメニュー初期位置と現在topの差
+      let sub_top_diff = sub_top - header_height - 50;
+
+      if (scroll_top < scroll) {
+        //上スクロールの時の処理
+        if (window_height < sub_height) {
+          if(sub_top >= scroll_top + 20) {
+            if (!sub.hasClass('sticky_top')) {
+              sub.addClass('sticky_top');
+              sub.css('margin-top', '');
+            }
+          } else {
+            if (sub.hasClass('sticky_bottom')) {
+              sub.css('margin-top', sub_top_diff)
+              sub.removeClass('sticky_bottom');
+            }
+          }
+        }
+      } else {
+        //下スクロールの時の処理
+        if (window_height < sub_height) {
+          if(sub_top >= scroll_top + 20) {
+            // scroll時、windowサイズがメニューより大きい
+            if (sub.hasClass('sticky_top')) {
+              sub.removeClass('sticky_top');
+              sub.css('margin-top', sub_top_diff)
+            }
+          } else {
+            // scroll時、windowサイズがメニューより小さい
+            if (sub_bottom < scroll_bottom && !sub.hasClass('sticky_bottom')) {
+              // scrollがサインドメニューのbottomを超えた場合
+              sub.removeClass('sticky_top');
+              sub.addClass('sticky_bottom');
+            }
+          }
+        }
+      }
+      scroll = scroll_top;
+    });
+  }
 });
 </script>
