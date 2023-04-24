@@ -5,7 +5,7 @@ import App from './App.vue';
 // GitHub Pages での SPA アドレス解決用
 const query = new URLSearchParams(window.location.search);
 if (query.has('p')) {
-    const route = decodeURIComponent(query.get('p'));
+    const route = decodeURIComponent(query.get('p') ?? '');
     window.history.replaceState(null, '', route);
 }
 
