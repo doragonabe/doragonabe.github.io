@@ -105,11 +105,11 @@
 
 <script lang="ts">
 import EyeCatchMenu from '../components/EyeCatchMenu.vue';
+import {defineComponent} from 'vue';
 
-export default {
-  name: 'eye_catch_menu',
+export default defineComponent({
   components: {
     EyeCatchMenu,
   },
-};
+});
 </script>

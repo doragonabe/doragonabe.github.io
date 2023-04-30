@@ -307,7 +307,7 @@ footer .pr {
     overflow: hidden;
     margin: -2%;
     padding: 2%;
-    background: #fff url(../images/arrow1.png) no-repeat right bottom / 40px;
+    background: #fff url('../images/arrow1.png') no-repeat right bottom / 40px;
 }
 
 .list a:hover {
@@ -352,7 +352,7 @@ footer .pr {
     color: #39b2ff;
     font-weight: bold;
     padding-left: 30px;
-    background: url(../images/faq_q.png) no-repeat left top / 30px;
+    background: url('../images/faq_q.png') no-repeat left top / 30px;
 }
 
 .faq dd {
@@ -360,7 +360,7 @@ footer .pr {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: 1px solid #ccc;
-    background: url(../images/faq_a.png) no-repeat left top / 30px;
+    background: url('../images/faq_a.png') no-repeat left top / 30px;
 }
 
 .ta1 caption {
@@ -513,7 +513,7 @@ body.is-fixed-pagetop .nav-fix-pos-pagetop a:hover {
 
 a[href$=".pdf"] {
     display: inline-block;
-    background: url(../images/PDF_32.png) no-repeat right center;
+    background: url('../images/PDF_32.png') no-repeat right center;
     padding: 5px 40px 5px 0;
 }
 
@@ -762,11 +762,11 @@ ol {
     }
 
     #menubar_hdr.close {
-        background: #39b2ff url(../images/icon_menu.png) no-repeat center top/50px;
+        background: #39b2ff url('../images/icon_menu.png') no-repeat center top/50px;
     }
 
     #menubar_hdr.open {
-        background: #39b2ff url(../images/icon_menu.png) no-repeat center bottom/50px;
+        background: #39b2ff url('../images/icon_menu.png') no-repeat center bottom/50px;
     }
 
     header, #main, #sub {
@@ -853,7 +853,7 @@ ol {
         overflow: hidden;
         margin: -2%;
         padding: 2%;
-        background: url(../images/arrow1.png) no-repeat right bottom / 40px;
+        background: url('../images/arrow1.png') no-repeat right bottom / 40px;
     }
 
     .list a:hover {

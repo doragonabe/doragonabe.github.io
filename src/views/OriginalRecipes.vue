@@ -38,13 +38,13 @@
 import EyeCatchMenu from '../components/EyeCatchMenu.vue';
 import Bundle from '../components/recipes/Bundle.vue';
 import XpBottle from '../components/recipes/XpBottle.vue';
+import {defineComponent} from 'vue';
 
-export default {
-  name: 'test',
+export default defineComponent({
   components: {
     EyeCatchMenu,
     Bundle,
     XpBottle,
   },
-};
+});
 </script>
