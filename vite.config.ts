@@ -11,6 +11,7 @@ export default defineConfig({
     emptyOutDir: true,
     outDir: '../docs',
     assetsDir: 'assets',
+    minify: true,
   },
   plugins: [
     vue(),

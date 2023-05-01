@@ -1,143 +1,143 @@
 .mainimg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
 
-    z-index: -1;
+  z-index: -1;
 
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .mask {
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    z-index: 2;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  z-index: 2;
 }
 
 
 .mc_craft_table {
-    display: inline-block;
-    position: relative;
-    background-color: #C6C6C6;
-    border: 2px solid;
-    border-color: #DBDBDB #5B5B5B #5B5B5B #DBDBDB;
-    padding: 6px;
-    text-align: left;
-    white-space: nowrap;
-    vertical-align: bottom;
+  display: inline-block;
+  position: relative;
+  background-color: #C6C6C6;
+  border: 2px solid;
+  border-color: #DBDBDB #5B5B5B #5B5B5B #DBDBDB;
+  padding: 6px;
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: bottom;
 }
 
 .inv-sprite, .slot-sprite {
-    width: 32px;
-    height: 32px;
-    vertical-align: middle;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
 }
 
 .sprite {
-    display: inline-block;
-    vertical-align: text-top;
-    /*
-    height: 16px;
-    width: 16px;
-    */
-    width: 32px;
-    height: 32px;
-    background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: text-top;
+  /*
+  height: 16px;
+  width: 16px;
+  */
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
 }
 
 .invslot-item, .invslot-item > a:first-child {
-    position: relative;
-    display: block;
-    margin: -2px;
-    padding: 2px;
-    width: 32px;
-    height: 32px;
+  position: relative;
+  display: block;
+  margin: -2px;
+  padding: 2px;
+  width: 32px;
+  height: 32px;
 }
 
 .mcui-row {
-    font-size: 0;
+  font-size: 0;
 }
 
 .mcui-Crafting_Table .mcui-row {
-    display: block;
+  display: block;
 }
 
 .mcui-Crafting_Table > *, .mcui-Furnace > * {
-    display: inline-block;
-    vertical-align: top;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .mcui-Crafting_Table > .mcui-arrow {
-    background: url('../images/arrow.png') no-repeat;
-    width: 32px;
-    height: 26px;
-    margin: 40px 4px 0;
+  background: url('../images/arrow.png') no-repeat;
+  width: 32px;
+  height: 26px;
+  margin: 40px 4px 0;
 }
 
 .mcui-Crafting_Table > .mcui-output {
-    margin-top: 28px;
+  margin-top: 28px;
 }
 
 #content .invslot {
-    box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 .invslot {
-    position: relative;
-    display: inline-block;
-    background: #8B8B8B no-repeat center center / 32px 32px;
-    border: 2px solid;
-    border-color: #373737 #FFF #FFF #373737;
-    width: 32px;
-    height: 32px;
-    font-size: 16px;
-    line-height: 1;
-    text-align: left;
-    vertical-align: bottom;
+  position: relative;
+  display: inline-block;
+  background: #8B8B8B no-repeat center center / 32px 32px;
+  border: 2px solid;
+  border-color: #373737 #FFF #FFF #373737;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  line-height: 1;
+  text-align: left;
+  vertical-align: bottom;
 }
 
 .invslot::before {
-    bottom: -2px;
-    left: -2px;
+  bottom: -2px;
+  left: -2px;
 }
 
 .invslot::before, .invslot::after {
-    content: "";
-    position: absolute;
-    background-color: #8B8B8B;
-    height: 2px;
-    width: 2px;
-    pointer-events: none;
+  content: "";
+  position: absolute;
+  background-color: #8B8B8B;
+  height: 2px;
+  width: 2px;
+  pointer-events: none;
 }
 
 .invslot-large {
-    padding: 8px;
+  padding: 8px;
 }
 
 .item-string {
-    background-image: url('../images/InvSprite.png');
-    background-position: -320px -3520px;
+  background-image: url('../images/InvSprite.png');
+  background-position: -320px -3520px;
 }
 
 .item-rabbit_hide {
-    background-image: url('../images/InvSprite.png');
-    background-position: -192px -3520px;
+  background-image: url('../images/InvSprite.png');
+  background-position: -192px -3520px;
 }
 
 .item-bundle {
-    background-image: url('../images/InvSprite.png');
-    background-position: -960px -416px;
+  background-image: url('../images/InvSprite.png');
+  background-position: -960px -416px;
 }
 
 .item-glass_bottle {
-    background-image: url('../images/InvSprite.png');
-    background-position:-512px -3552px;
+  background-image: url('../images/InvSprite.png');
+  background-position: -512px -3552px;
 }
 
 .item-experience_bottle {
-    background-image: url('../images/InvSprite.png');
-    background-position:-288px -3456px;
+  background-image: url('../images/InvSprite.png');
+  background-position: -288px -3456px;
 }

@@ -10,3 +10,7 @@ yarn add swiper
 
 yarn add -D vite-plugin-checker
 ```
+
+### 開発メモ
+vite-env.d.ts に`*.vue`を追加することで、TypeScriptのエラーを回避できる。
+
