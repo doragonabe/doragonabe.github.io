@@ -154,7 +154,7 @@ header #sub_title a {
   font-size: 24px;
   padding: 20px 20px 20px 60px;
   color: #fff;
-  background: #39b2ff url(../images/arrow2.png) no-repeat 20px center / 25px;
+  background: #39b2ff url('../images/arrow2.png') no-repeat 20px center / 25px;
   border-radius: 10px;
 }
 
