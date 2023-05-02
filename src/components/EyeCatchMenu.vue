@@ -1,7 +1,7 @@
 <template>
     <div class="h2_contents">
         <div class="list">
-            <a href="//takaty921.mydns.jp:8123/" target="_blank" rel="noopener noreferrer">
+            <a href="http://giepi921.mydns.jp:8123/" target="_blank" rel="noopener noreferrer">
                 <figure><img src="/assets/images/sample1.jpg" alt=""></figure>
                 <h4>dynmap</h4>
                 <p>※外部リンク</p>
