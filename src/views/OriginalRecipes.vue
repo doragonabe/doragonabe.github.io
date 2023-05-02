@@ -1,13 +1,10 @@
 <template>
     <section>
         <h2>独自レシピ</h2>
-
         <EyeCatchMenu></EyeCatchMenu>
     </section>
-
     <section>
         <h2>レシピ一覧</h2>
-
         <div class="h2_contents">
             <h3>バンドル</h3>
             <div class="h3_contents">
@@ -17,7 +14,6 @@
                 </p>
                 <Bundle></Bundle>
             </div>
-
             <h3>エンチャントの瓶</h3>
             <div class="h3_contents">
                 <p>
@@ -25,7 +21,6 @@
                 </p>
                 <XpBottle></XpBottle>
             </div>
-
             <h3>牛肉</h3>
             <div class="h3_contents">
                 <p>ゾンビ肉を焼くと、40%の確率で牛肉になります。</p>
@@ -34,17 +29,8 @@
     </section>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import EyeCatchMenu from '../components/EyeCatchMenu.vue';
 import Bundle from '../components/recipes/Bundle.vue';
 import XpBottle from '../components/recipes/XpBottle.vue';
-import {defineComponent} from 'vue';
-
-export default defineComponent({
-  components: {
-    EyeCatchMenu,
-    Bundle,
-    XpBottle,
-  },
-});
 </script>

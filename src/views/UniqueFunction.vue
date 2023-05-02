@@ -1,13 +1,10 @@
 <template>
     <section>
         <h2>独自機能</h2>
-
         <EyeCatchMenu></EyeCatchMenu>
     </section>
-
     <section>
         <h2>使用プラグイン</h2>
-
         <div class="h2_contents">
             <h3>MyPet</h3>
             <div class="h3_contents">
@@ -16,15 +13,12 @@
                     <span>仲間にならないMOBもいるよ</span>
                 </p>
             </div>
-
             <h3>Skript</h3>
             <div class="h3_contents">
                 <p>
                     <span>javaのコードを書かなくてもプラグインが作れる</span><br>
                     <span>スクリプト言語なので作れるものに限界はあるが、使いこなせればかなり自由に機能を拡張できる。</span>
                 </p>
-
-
                 <div class="text">
                     <h4>作った機能</h4>
                     <ul style="list-style: none;">
@@ -84,7 +78,6 @@
                     </ul>
                 </div>
             </div>
-
             <h3>RecipeManager</h3>
             <div class="h3_contents">
                 <p>
@@ -92,7 +85,6 @@
                     <span>のページにてレシピ一覧参照</span>
                 </p>
             </div>
-
             <h3>TreeAssist</h3>
             <div class="h3_contents">
                 <p>
@@ -103,13 +95,6 @@
     </section>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import EyeCatchMenu from '../components/EyeCatchMenu.vue';
-import {defineComponent} from 'vue';
-
-export default defineComponent({
-  components: {
-    EyeCatchMenu,
-  },
-});
 </script>

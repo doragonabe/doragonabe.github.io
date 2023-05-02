@@ -6,7 +6,6 @@
             <span class="invslot"></span>
             <span class="invslot"></span>
         </span>
-
         <span class="mcui-row">
             <span class="invslot"></span>
             <span class="invslot">

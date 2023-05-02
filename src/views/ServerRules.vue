@@ -1,7 +1,6 @@
 <template>
     <section>
         <h2>サーバールール</h2>
-
         <div class="h2_contents">
             <p>
                 <span>特に無し</span><br>

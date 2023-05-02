@@ -1,7 +1,7 @@
 <template>
     <div id="page">
         <div id="header">
-            <a href="#menu" class="close" id="menubar_hdr"></a>
+            <a href="#menu" class="close" id="menubar_hdr" aria-label="menu"></a>
         </div>
 
         <div class="content">
