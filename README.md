@@ -6,22 +6,31 @@ https://doragonabe.github.io
 - node.jsがインストールされていること
 ### 開発用コマンド
 #### ライブラリインストール(初回のみ)
+```bash
+pnpm install
 ```
-yarn
-```
+
 #### ローカルサーバー立ち上げ(リアルタイム更新)
+```bash
+pnpm dev
 ```
-yarn dev
+
+#### プレビュー用サーバー立ち上げ
+```bash
+pnpm run preview
 ```
+
 #### 公開用ファイルのビルド
+```bash
+pnpm build
 ```
-yarn build
-```
+
 #### ライブラリ更新
+```bash
+pnpm upgrade
 ```
-yarn upgrade
-```
+
 #### ライブラリ更新(最新版に強制)
 ```
-yarn upgrade --latest
+pnpm upgrade --latest
 ```
