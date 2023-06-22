@@ -82,6 +82,10 @@
     <Mmenu />
 </template>
 <script lang="ts">
+import 'assets/css/reset.css';
+import 'assets/css/style.css';
+import 'assets/css/craft.css';
+
 const header = ref<HTMLDivElement | null>(null);
 const sub = ref<HTMLDivElement | null>(null);
 

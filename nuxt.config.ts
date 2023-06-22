@@ -3,18 +3,24 @@
 export default defineNuxtConfig({
   ssr: false,
   app: {
-    //baseURL: '/doragonabe.github.io/',
     head: {
-      title: 'Nuxt 3 basic',
+      title: 'doragonabe site',
+      link: [
+        {rel: 'icon', href: '/favicon.ico'},
+      ],
+      meta: [
+        {charset: 'utf-8'},
+        {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+        {name: 'robots', content: 'noindex,nofollow,noarchive'},
+        {name: 'referrer', content: 'no-referrer'},
+        //{name: 'description', content: 'Nuxt 3 for beginners'},
+      ],
+      noscript: [
+        'JavaScriptを有効にしてください。',
+      ],
       htmlAttrs: {
         lang: 'ja',
       },
-      meta: [
-        {name: 'description', content: 'Nuxt 3 for beginners'},
-      ],
-      link: [
-        {rel: 'icon', href: '/icon.png'},
-      ],
     },
   },
 
@@ -22,9 +28,9 @@ export default defineNuxtConfig({
    * https://go.nuxtjs.dev/config-css
    */
   css: [
-    '/assets/css/reset.css',
-    '/assets/css/style.css',
-    '/assets/css/craft.css',
+    //'/assets/css/reset.css',
+    //'/assets/css/style.css',
+    //'/assets/css/craft.css',
   ],
 
   modules: ['nuxt-swiper'],
