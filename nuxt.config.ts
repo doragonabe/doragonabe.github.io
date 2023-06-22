@@ -3,7 +3,7 @@
 export default defineNuxtConfig({
   ssr: false,
   app: {
-    baseURL: '/doragonabe.github.io/',
+    //baseURL: '/doragonabe.github.io/',
     head: {
       title: 'Nuxt 3 basic',
       htmlAttrs: {
