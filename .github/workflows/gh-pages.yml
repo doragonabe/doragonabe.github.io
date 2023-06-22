@@ -33,13 +33,13 @@ jobs:
         id: pages
         uses: actions/configure-pages@v1
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
       - name: Build
-        run: pnpm run build
+        run: pnpm run generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./dist
+          path: .output/public
 
   deploy:
     permissions:
