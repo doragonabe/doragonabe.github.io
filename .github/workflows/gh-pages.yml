@@ -2,7 +2,7 @@ name: Deployment
 
 on:
   push:
-    branches: ["nuxt"]
+    branches: [ "nuxt" ]
   workflow_dispatch:
 
 permissions:

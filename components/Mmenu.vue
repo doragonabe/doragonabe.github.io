@@ -30,9 +30,9 @@ export default {
     methods: {
         initializeMenu(Mmenu) {
             this.menu = new Mmenu('#menu', {
-                extensions: [
-                    'position-right',
-                ],
+                "offCanvas": {
+                    "position": "right",
+                },
             });
         },
         destroyMenu() {

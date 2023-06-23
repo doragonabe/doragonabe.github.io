@@ -28,12 +28,19 @@ export default defineNuxtConfig({
    * https://go.nuxtjs.dev/config-css
    */
   css: [
-    //'/assets/css/reset.css',
-    //'/assets/css/style.css',
-    //'/assets/css/craft.css',
+    //'/assets/css/reset2.css',
+    //'/assets/css/ress.min.css',
+    //'sanitize.css',
   ],
 
-  modules: ['nuxt-swiper'],
+  modules: [
+    'nuxt-swiper',
+    'nuxt-vue3-google-signin',
+  ],
 
   devtools: {enabled: true},
+
+  googleSignIn: {
+    clientId: '626189963259-ht7thhmgvj94lmhn1ffastf53grv4lee.apps.googleusercontent.com',
+  },
 });

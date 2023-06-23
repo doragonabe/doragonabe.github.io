@@ -2,7 +2,7 @@
     <div>
         <section>
             <h2>トップ</h2>
-            <EyeCatchMenu></EyeCatchMenu>
+            <EyeCatchMenu/>
         </section>
         <section id="new">
             <h2>更新情報・お知らせ</h2>
@@ -47,5 +47,5 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: 'app',
-})
+});
 </script>

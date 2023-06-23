@@ -81,8 +81,27 @@
     <!-- モバイル用 -->
     <Mmenu />
 </template>
+<style scoped>
+header h1 {
+  margin: 0;
+}
+
+ul.submenu {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+</style>
 <script lang="ts">
+//import 'sanitize.css';
+//import 'sanitize.css/assets.css';
+//import 'sanitize.css/forms.css';
+//import 'sanitize.css/typography.css';
+//import 'sanitize.css/system-ui.css';
+//import 'sanitize.css/reduce-motion.css';
+
 import 'assets/css/reset.css';
+
 import 'assets/css/style.css';
 import 'assets/css/craft.css';
 
