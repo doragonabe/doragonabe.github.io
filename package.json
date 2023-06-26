@@ -23,6 +23,7 @@
     "@types/node": "^18.16.18",
     "gh-pages": "^5.0.0",
     "next-auth": "4.22.0",
-    "nuxt": "^3.6.0"
+    "nuxt": "^3.6.0",
+    "typescript": "^5.1.3"
   }
 }

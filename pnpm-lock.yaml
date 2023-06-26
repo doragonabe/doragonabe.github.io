@@ -27,7 +27,7 @@ dependencies:
 devDependencies:
   '@nuxt/devtools':
     specifier: latest
-    version: 0.6.3(nuxt@3.6.0)(vite@4.3.9)
+    version: 0.6.4(nuxt@3.6.0)(vite@4.3.9)
   '@sidebase/nuxt-auth':
     specifier: 0.6.0-beta.2
     version: 0.6.0-beta.2(next-auth@4.22.0)(vue@3.3.4)
@@ -43,6 +43,9 @@ devDependencies:
   nuxt:
     specifier: ^3.6.0
     version: 3.6.0(@types/node@18.16.18)(typescript@5.1.3)
+  typescript:
+    specifier: ^5.1.3
+    version: 5.1.3
 
 packages:
 
@@ -1026,8 +1029,8 @@ packages:
     resolution: {integrity: sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA==}
     dev: true
 
-  /@nuxt/devtools-kit@0.6.3(nuxt@3.6.0)(vite@4.3.9):
-    resolution: {integrity: sha512-YRGyM7Kz3LH4SyaCFU1KtwN8d3vxUovJ/pWWXxJp9BCAHg/6kWtAllsLgyPAkt03lU249FJTJ23RBDOkqzmegA==}
+  /@nuxt/devtools-kit@0.6.4(nuxt@3.6.0)(vite@4.3.9):
+    resolution: {integrity: sha512-+NSTULmKIECVBzAmk2/LnzJnUv1hIzkRmtBSPwNTyaHe6KEU45eq32/4OdjlM/Nw4ucc2w7CSbATptcR7lnWVw==}
     peerDependencies:
       nuxt: ^3.5.1
       vite: '*'
@@ -1042,8 +1045,8 @@ packages:
       - supports-color
     dev: true
 
-  /@nuxt/devtools-wizard@0.6.3:
-    resolution: {integrity: sha512-oZbv0HZizfKlD0f+AX6WgWgSqDnQfTXVReF+9oSaZ2Gi2jUe8dGLv3EyMfJRTa3vvu0cvuRKoDvl5FjbAnpMhQ==}
+  /@nuxt/devtools-wizard@0.6.4:
+    resolution: {integrity: sha512-bWRs64ThCAPvBpKUi5adIiW1caBMQRL+A142P0cPYf1B4x9ie44VuydGlfdELrshdMiOT8xse+G6Uwoy8Yt03Q==}
     hasBin: true
     dependencies:
       consola: 3.1.0
@@ -1059,15 +1062,15 @@ packages:
       semver: 7.5.3
     dev: true
 
-  /@nuxt/devtools@0.6.3(nuxt@3.6.0)(vite@4.3.9):
-    resolution: {integrity: sha512-ToQLbVtNtbr7Px/HDyKDDmZl373LkYQsRnKMzpgk/dTfEwZIpgneUHqIL/1Whxo7ST8ayVJ9Z35PmiOsm1mjgQ==}
+  /@nuxt/devtools@0.6.4(nuxt@3.6.0)(vite@4.3.9):
+    resolution: {integrity: sha512-Sn+yUMylI0ccpk0v2qfNCVmYMdduHrzLy6GyDZRDN/e0gxzAZqeHZfFD433KuND6cyvcvJ7GFVjlBz+6gYERWA==}
     hasBin: true
     peerDependencies:
       nuxt: ^3.5.1
       vite: '*'
     dependencies:
-      '@nuxt/devtools-kit': 0.6.3(nuxt@3.6.0)(vite@4.3.9)
-      '@nuxt/devtools-wizard': 0.6.3
+      '@nuxt/devtools-kit': 0.6.4(nuxt@3.6.0)(vite@4.3.9)
+      '@nuxt/devtools-wizard': 0.6.4
       '@nuxt/kit': 3.6.0
       birpc: 0.2.12
       boxen: 7.1.0
