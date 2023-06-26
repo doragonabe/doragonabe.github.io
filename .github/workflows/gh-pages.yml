@@ -34,10 +34,10 @@ jobs:
         uses: actions/configure-pages@v1
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
-      - name: Build
-        run: pnpm run generate
         env:
           GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      - name: Build
+        run: pnpm run generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
