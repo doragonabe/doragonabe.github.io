@@ -26,7 +26,7 @@ dependencies:
 
 devDependencies:
   '@nuxt/devtools':
-    specifier: ^0.6.3
+    specifier: latest
     version: 0.6.3(nuxt@3.6.0)(vite@4.3.9)
   '@sidebase/nuxt-auth':
     specifier: 0.6.0-beta.2
