@@ -10,16 +10,18 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@vueuse/core": "^10.1.2",
+    "@vueuse/core": "^10.2.0",
     "mmenu-js": "^9.3.0",
-    "nuxt-swiper": "^1.1.0",
+    "nuxt-swiper": "^1.1.1",
     "nuxt-vue3-google-signin": "^0.0.8",
     "sanitize.css": "^13.0.0"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@types/node": "^18",
+    "@nuxt/devtools": "^0.6.3",
+    "@sidebase/nuxt-auth": "0.6.0-beta.2",
+    "@types/node": "^18.16.18",
     "gh-pages": "^5.0.0",
-    "nuxt": "^3.5.2"
+    "next-auth": "4.22.0",
+    "nuxt": "^3.6.0"
   }
 }

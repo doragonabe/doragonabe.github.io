@@ -2,7 +2,7 @@
     <div>
         <section>
             <h2>独自機能</h2>
-            <EyeCatchMenu></EyeCatchMenu>
+            <EyeCatchMenu/>
         </section>
         <section>
             <h2>使用プラグイン</h2>
@@ -147,5 +147,5 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: 'app',
-})
+});
 </script>

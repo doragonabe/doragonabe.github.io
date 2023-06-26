@@ -2,7 +2,7 @@
     <div>
         <section>
             <h2>独自レシピ</h2>
-            <EyeCatchMenu></EyeCatchMenu>
+            <EyeCatchMenu/>
         </section>
         <section>
             <h2>レシピ一覧</h2>
@@ -33,5 +33,5 @@
 <script lang="ts" setup>
 definePageMeta({
   layout: 'app',
-})
+});
 </script>

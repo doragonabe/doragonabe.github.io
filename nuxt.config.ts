@@ -12,8 +12,8 @@ export default defineNuxtConfig({
         {charset: 'utf-8'},
         {name: 'viewport', content: 'width=device-width, initial-scale=1'},
         {name: 'robots', content: 'noindex,nofollow,noarchive'},
-        {name: 'referrer', content: 'no-referrer'},
-        //{name: 'description', content: 'Nuxt 3 for beginners'},
+        // {name: 'referrer', content: 'no-referrer'},
+        // {name: 'description', content: 'Nuxt 3 for beginners'},
       ],
       noscript: [
         'JavaScriptを有効にしてください。',
@@ -36,11 +36,18 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-swiper',
     'nuxt-vue3-google-signin',
+    // '@sidebase/nuxt-auth',
   ],
 
-  devtools: {enabled: true},
+  router: {
+    trailingSlash: false,
+  },
 
   googleSignIn: {
-    clientId: '626189963259-ht7thhmgvj94lmhn1ffastf53grv4lee.apps.googleusercontent.com',
+    clientId: process.env.GOOGLE_CLIENT_ID,
+  },
+
+  devtools: {
+    enabled: true,
   },
 });
