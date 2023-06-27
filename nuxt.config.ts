@@ -39,9 +39,11 @@ export default defineNuxtConfig({
     // '@sidebase/nuxt-auth',
   ],
 
+  /*
   router: {
     trailingSlash: false,
   },
+  */
 
   spaLoadingTemplate: false,
 
@@ -52,5 +54,11 @@ export default defineNuxtConfig({
 
   devtools: {
     enabled: true,
+  },
+
+  runtimeConfig: {
+    public: {
+      trailingSlash: true,
+    },
   },
 });
