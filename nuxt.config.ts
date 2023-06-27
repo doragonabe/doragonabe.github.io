@@ -39,11 +39,11 @@ export default defineNuxtConfig({
     // '@sidebase/nuxt-auth',
   ],
 
-  /*
   router: {
     trailingSlash: false,
   },
-  */
+
+  spaLoadingTemplate: false,
 
   googleSignIn: {
     //clientId: process.env.GOOGLE_CLIENT_ID,
