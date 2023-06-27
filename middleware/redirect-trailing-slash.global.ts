@@ -1,5 +1,8 @@
 import {RouteLocationNormalized} from 'vue-router';
 
+/**
+ * リロード時に末尾のスラッシュを削除する
+ */
 export default defineNuxtRouteMiddleware((to: RouteLocationNormalized, from: RouteLocationNormalized) => {
     if (to.path !== '/' && to.path.endsWith('/')) {
         const { path, query, hash } = to;
