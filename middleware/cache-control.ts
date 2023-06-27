@@ -1,3 +1,5 @@
+// GitHub Pages非対応...残念！
+/*
 import {IncomingMessage, ServerResponse} from 'http';
 
 export default defineEventHandler(event => {
@@ -10,3 +12,4 @@ export default defineEventHandler(event => {
     }
   }
 });
+*/
