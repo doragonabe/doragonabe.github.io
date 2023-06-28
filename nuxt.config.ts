@@ -39,29 +39,15 @@ export default defineNuxtConfig({
     // '@sidebase/nuxt-auth',
   ],
 
-  /*
-  router: {
-    trailingSlash: false,
-  },
-  */
-
   spaLoadingTemplate: false,
 
   googleSignIn: {
     //clientId: process.env.GOOGLE_CLIENT_ID,
-    clientId: '626189963259-ht7thhmgvj94lmhn1ffastf53grv4lee.apps.googleusercontent.com',
+    clientId: import.meta.env.VITE_GOOGLE_CLIENT_ID,
+    //clientId: '626189963259-ht7thhmgvj94lmhn1ffastf53grv4lee.apps.googleusercontent.com',
   },
 
   devtools: {
     enabled: true,
   },
-
-  /*
-  runtimeConfig: {
-    public: {
-      trailingSlash: true,
-    },
-  },
-
-   */
 });
