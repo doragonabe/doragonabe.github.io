@@ -19,9 +19,11 @@ package.jsonに追加（間違ってnpmやyarnでインストールされない�
 app.vueを以下に修正
 ```html
 <template>
-  <div>
-    <NuxtPage />
-  </div>
+    <div>
+        <NuxtLayout>
+            <NuxtPage/>
+        </NuxtLayout>
+    </div>
 </template>
 ```
 

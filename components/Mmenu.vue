@@ -2,19 +2,19 @@
     <nav id="menu">
         <ul>
             <li>
-                <NuxtLink to="/" class="mm-listitem__text" @click="menuClose">トップ</NuxtLink>
+                <NuxtLink class="mm-listitem__text" to="/" @click="menuClose">トップ</NuxtLink>
             </li>
             <li>
-                <NuxtLink to="/server_rules" class="mm-listitem__text" @click="menuClose">サーバールール</NuxtLink>
+                <NuxtLink class="mm-listitem__text" to="/server_rules" @click="menuClose">サーバールール</NuxtLink>
             </li>
             <li>
-                <NuxtLink to="/server_introduction" class="mm-listitem__text" @click="menuClose">サーバー紹介</NuxtLink>
+                <NuxtLink class="mm-listitem__text" to="/server_introduction" @click="menuClose">サーバー紹介</NuxtLink>
             </li>
             <li>
-                <NuxtLink to="/server_specifications" class="mm-listitem__text" @click="menuClose">サーバー仕様</NuxtLink>
+                <NuxtLink class="mm-listitem__text" to="/server_specifications" @click="menuClose">サーバー仕様</NuxtLink>
             </li>
             <li>
-                <NuxtLink to="/q_and_a" class="mm-listitem__text" @click="menuClose">Q & A</NuxtLink>
+                <NuxtLink class="mm-listitem__text" to="/q_and_a" @click="menuClose">Q & A</NuxtLink>
             </li>
         </ul>
     </nav>

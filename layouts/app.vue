@@ -1,7 +1,7 @@
 <template>
     <div id="page" class="home">
         <div id="header">
-            <a href="#menu" id="menubar_hdr" class="close" aria-label="menu"></a>
+            <a id="menubar_hdr" aria-label="menu" class="close" href="#menu"></a>
         </div>
 
         <div class="content">
@@ -51,7 +51,8 @@
 
                             <ul class="submenu">
                                 <li>
-                                    <a href="http://giepi921.mydns.jp:8123/" target="_blank" rel="noopener noreferrer">
+                                    <a href="http://soarerserver.mydns.jp:8123/" rel="noopener noreferrer"
+                                       target="_blank">
                                         <span>dynmap</span><br>
                                         <span>※外部リンク</span>
                                     </a>
@@ -81,17 +82,6 @@
     <!-- モバイル用 -->
     <Mmenu/>
 </template>
-<style scoped>
-header h1 {
-  margin: 0;
-}
-
-ul.submenu {
-  list-style: none;
-  padding-inline-start: 0;
-}
-
-</style>
 <script lang="ts" setup>
 //import 'sanitize.css';
 //import 'sanitize.css/assets.css';
@@ -104,6 +94,7 @@ import 'assets/css/reset.css';
 
 import 'assets/css/style.css';
 import 'assets/css/craft.css';
+//import 'bulma';
 
 const header = ref<HTMLDivElement | null>(null);
 const sub = ref<HTMLDivElement | null>(null);
@@ -189,4 +180,13 @@ onUnmounted(() => {
   window.removeEventListener('scroll', scrollHandler);
 });
 </script>
+<style scoped>
+header h1 {
+  margin: 0;
+}
 
+ul.submenu {
+  list-style: none;
+  padding-inline-start: 0;
+}
+</style>

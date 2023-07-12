@@ -1,14 +1,12 @@
 <template>
-    <a class="twitter-timeline"
-       :href="'https://twitter.com/' + url"
+    <a :data-chrome="chrome"
+       :data-dnt="doNotTrack ? 'true' : 'false'"
        :data-height="height"
-       :data-width="width"
        :data-lang="lang"
        :data-theme="theme"
-       :data-chrome="chrome"
-       :data-dnt="doNotTrack ? 'true' : 'false'"
-    >
-        {{ description }}
+       :data-width="width"
+       :href="'https://twitter.com/' + url"
+       class="twitter-timeline">{{ description }}
     </a>
 </template>
 

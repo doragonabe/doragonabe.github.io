@@ -37,6 +37,7 @@ export default defineNuxtConfig({
     'nuxt-swiper',
     'nuxt-vue3-google-signin',
     // '@sidebase/nuxt-auth',
+    'nuxt-vitest',
   ],
 
   spaLoadingTemplate: false,
