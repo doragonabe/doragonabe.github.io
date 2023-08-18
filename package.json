@@ -29,7 +29,6 @@
     "msw": "^1.2.2",
     "next-auth": "4.22.0",
     "nuxt": "^3.6.1",
-    "nuxt-security": "^0.14.4",
     "nuxt-vitest": "^0.8.6",
     "typescript": "^5.1.0",
     "unplugin-auto-import": "^0.16.4",
