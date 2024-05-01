@@ -1,54 +1,53 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-
 export default defineNuxtConfig({
   ssr: false,
+
+  /**
+   * https://nuxt.com/docs/getting-started/seo-meta
+   */
   app: {
     head: {
-      title: 'doragonabe site',
-      link: [
-        {rel: 'icon', href: '/favicon.ico'},
-      ],
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
+      title: "doragonabe site",
       meta: [
-        {charset: 'utf-8'},
-        {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-        {name: 'robots', content: 'noindex,nofollow,noarchive'},
-        // {name: 'referrer', content: 'no-referrer'},
-        // {name: 'description', content: 'Nuxt 3 for beginners'},
+        { name: "robots", content: "noindex,nofollow,noarchive" },
+        { "http-equiv": "cache-control", content: "no-store" },
       ],
-      noscript: [
-        'JavaScriptを有効にしてください。',
-      ],
-      htmlAttrs: {
-        lang: 'ja',
-      },
+      link: [{ rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
+      noscript: ["JavaScriptを有効にしてください。"],
+      htmlAttrs: { lang: "ja" },
     },
   },
 
   /**
-   * https://go.nuxtjs.dev/config-css
+   * https://nuxt.com/docs/getting-started/styling#the-css-property
    */
-  css: [
-    //'/assets/css/reset2.css',
-    //'/assets/css/ress.min.css',
-    //'sanitize.css',
-  ],
+  css: ["assets/css/style.scss", "assets/css/craft.scss"],
 
-  modules: [
-    'nuxt-swiper',
-    'nuxt-vue3-google-signin',
-    // '@sidebase/nuxt-auth',
-    'nuxt-vitest',
-  ],
+  modules: ["@vueuse/nuxt", "nuxt-swiper", "nuxt-lodash", "@nuxt/ui"],
 
-  spaLoadingTemplate: false,
-
-  googleSignIn: {
-    //clientId: process.env.GOOGLE_CLIENT_ID,
-    //clientId: import.meta.env.VITE_GOOGLE_CLIENT_ID,
-    clientId: '626189963259-ht7thhmgvj94lmhn1ffastf53grv4lee.apps.googleusercontent.com',
-  },
-
+  /**
+   * https://devtools.nuxt.com/guide/getting-started#auto-install
+   */
   devtools: {
     enabled: true,
+
+    timeline: {
+      enabled: true,
+    },
+  },
+
+  /**
+   * 実験的なVue機能の有効化
+   * https://nuxt.com/docs/getting-started/configuration#enabling-experimental-vue-features
+   */
+  vue: {
+    propsDestructure: true,
+  },
+
+  typescript: {
+    typeCheck: true,
+    strict: true,
   },
 });

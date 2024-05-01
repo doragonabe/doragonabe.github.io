@@ -1,192 +1,268 @@
 <template>
-    <div id="page" class="home">
-        <div id="header">
-            <a id="menubar_hdr" aria-label="menu" class="close" href="#menu"></a>
-        </div>
+  <div
+    id="container"
+    class="home min-w-[340px] grid"
+  >
+    <header class="grid">
+      <h1
+        id="sub_title"
+        class="pb-8"
+      >
+        <NuxtLink
+          :to="{ name: 'index' }"
+          @click="useScrollTo('#main')"
+        >
+          <img
+            alt="top"
+            src="~/assets/images/logo.webp"
+          />
+        </NuxtLink>
+      </h1>
 
-        <div class="content">
-            <div id="container">
-                <header ref="header">
-                    <h1 id="sub_title">
-                        <NuxtLink to="/">
-                            <img alt="top" src="@/assets/images/logo.webp">
-                        </NuxtLink>
-                    </h1>
-                </header>
-                <div id="contents">
-                    <div id="sub" ref="sub">
-                        <nav id="menubar">
-                            <ul class="submenu">
-                                <li>
-                                    <NuxtLink to="/">
-                                        <span>トップ</span>
-                                        <span class="subtitle">Top</span>
-                                    </NuxtLink>
-                                </li>
-                                <li>
-                                    <NuxtLink to="/server_rules">
-                                        <span>サーバールール</span>
-                                        <span class="subtitle">Server Rules</span>
-                                    </NuxtLink>
-                                </li>
-                                <li>
-                                    <NuxtLink to="/server_introduction">
-                                        <span>サーバー紹介</span>
-                                        <span class="subtitle">Server Introduction</span>
-                                    </NuxtLink>
-                                </li>
-                                <li>
-                                    <NuxtLink to="/server_specifications">
-                                        <span>サーバー仕様</span>
-                                        <span class="subtitle">Server Specifications</span>
-                                    </NuxtLink>
-                                </li>
-                                <li>
-                                    <NuxtLink to="/q_and_a">
-                                        <span>Q & A</span>
-                                        <span class="subtitle">Q & A</span>
-                                    </NuxtLink>
-                                </li>
-                            </ul>
+      <div class="main-slide -z-10">
+        <MainSlide />
+      </div>
+    </header>
+    <aside
+      class="hidden lg:grid"
+      ref="contentsRef"
+    >
+      <nav
+        id="sub"
+        class="pt-5 pb-5 h-fit w-full"
+        ref="subRef"
+      >
+        <ul class="submenu">
+          <li>
+            <NuxtLink
+              :to="{ name: 'index' }"
+              @click="useScrollTo('#main')"
+              class="py-3 px-1"
+            >
+              <span>トップ</span>
+              <span class="subtitle">Top</span>
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink
+              :to="{ name: 'server_rules' }"
+              @click="useScrollTo('#main')"
+              class="py-3 px-1"
+            >
+              <span>サーバールール</span>
+              <span class="subtitle">Server Rules</span>
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink
+              :to="{ name: 'server_introduction' }"
+              @click="useScrollTo('#main')"
+              class="py-3 px-1"
+            >
+              <span>サーバー紹介</span>
+              <span class="subtitle">Server Introduction</span>
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink
+              :to="{ name: 'server_specifications' }"
+              @click="useScrollTo('#main')"
+              class="py-3 px-1"
+            >
+              <span>サーバー仕様</span>
+              <span class="subtitle">Server Specifications</span>
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink
+              :to="{ name: 'q_and_a' }"
+              @click="useScrollTo('#main')"
+              class="py-3 px-1"
+            >
+              <span>Q & A</span>
+              <span class="subtitle">Q & A</span>
+            </NuxtLink>
+          </li>
+        </ul>
 
-                            <ul class="submenu">
-                                <li>
-                                    <a href="http://soarerserver.mydns.jp:8123/" rel="noopener noreferrer"
-                                       target="_blank">
-                                        <span>dynmap</span><br>
-                                        <span>※外部リンク</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <NuxtLink to="/unique_function">独自機能</NuxtLink>
-                                </li>
-                                <li>
-                                    <NuxtLink to="/original_recipes">独自レシピ</NuxtLink>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-
-                    <div id="main">
-                        <slot/>
-                    </div>
-                </div>
-
-                <div class="mainimg">
-                    <MainSlide/>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- モバイル用 -->
-    <Mmenu/>
+        <ul class="submenu mt-5">
+          <li>
+            <a
+              href="http://soarerserver.mydns.jp:8123/"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="py-3 px-1"
+            >
+              <span>dynmap</span><br />
+              <span>※外部リンク</span>
+            </a>
+          </li>
+          <li>
+            <NuxtLink
+              :to="{ name: 'unique_function' }"
+              @click="useScrollTo('#main')"
+              class="py-3 px-1"
+              >独自機能</NuxtLink
+            >
+          </li>
+          <li>
+            <NuxtLink
+              :to="{ name: 'original_recipes' }"
+              @click="useScrollTo('#main')"
+              class="py-3 px-1"
+              >独自レシピ</NuxtLink
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main
+      id="main"
+      class="pt-5 pb-20 min-h-[750px] text-lg"
+    >
+      <slot />
+    </main>
+  </div>
 </template>
-<script lang="ts" setup>
-//import 'sanitize.css';
-//import 'sanitize.css/assets.css';
-//import 'sanitize.css/forms.css';
-//import 'sanitize.css/typography.css';
-//import 'sanitize.css/system-ui.css';
-//import 'sanitize.css/reduce-motion.css';
+<style scoped>
+#container {
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto auto 1fr;
+  gap: 0 0;
+  grid-auto-flow: row;
+}
 
-import 'assets/css/reset.css';
+header {
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: subgrid;
+  grid-area: 1 / 1 / 3 / 3;
+}
 
-import 'assets/css/style.css';
-import 'assets/css/craft.css';
-//import 'bulma';
+h1 {
+  grid-area: 1 / 1 / 1 / 1;
+  padding-left: 16%;
+}
 
-const header = ref<HTMLDivElement | null>(null);
-const sub = ref<HTMLDivElement | null>(null);
+.main-slide {
+  grid-area: 1 / 1 / 3 / 3;
+}
 
-// window縦サイズ
-const window_height = ref<number>(0);
-// ヘッダー縦サイズ
-const header_height = ref<number>(0);
-// サイドメニュー縦サイズ
-const sub_height = ref<number>(0);
+main {
+  grid-area: 3 / 1 / 3 / 3;
+  padding-left: 3%;
+  padding-right: 3%;
+}
 
-const resizeHandler = () => {
-  window_height.value = window.innerHeight;
-  header_height.value = header.value?.getBoundingClientRect().height ?? 0;
-  sub_height.value = sub.value?.getBoundingClientRect().height ?? 0;
-
-  if (window_height.value > sub_height.value + 40) { // windowサイズがメニューより大きい
-    sub.value?.classList.add('sticky_top');
-    sub.value?.classList.remove('sticky_bottom');
-  } else { // windowサイズがメニューより小さい
-    sub.value?.classList.remove('sticky_top');
-    sub.value?.classList.remove('sticky_bottom');
+@media screen and (min-width: 1024px) {
+  #container {
+    grid-template-columns: 1fr 4fr;
   }
-};
 
-let scroll: number = 0;
-const scrollHandler = () => {
-  const scroll_top: number = window.scrollY;
-  const scroll_bottom: number = scroll_top + window_height.value;
+  header {
+    padding-left: 0;
+    grid-template-columns: 1fr 4fr;
+  }
 
-  // サブメニューtopの位置
-  const sub_top: number = (sub.value?.getBoundingClientRect().top ?? 0) + scroll_top;
+  aside {
+    grid-area: 2 / 1 / 4 / 1;
+    padding-left: 16%;
+  }
 
-  // サブメニューbottomの位置
-  const sub_bottom: number = sub_top + sub_height.value;
+  main {
+    grid-area: 3 / 2 / 3 / 2;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
 
-  // サブメニュー初期位置と現在topの差
-  let sub_top_diff: number = sub_top - header_height.value - 50;
+@media screen and (min-width: 1280px) {
+  h1 {
+    padding-left: 39%;
+  }
 
-  if (scroll_top < scroll) { //上スクロールの時の処理
-    if (window_height.value < sub_height.value + 40) { // windowサイズがメニューより小さい
-      if (sub_top >= scroll_top + 20) {
-        if (!sub.value?.classList.contains('sticky_top')) {
-          sub.value?.classList.add('sticky_top');
-          sub.value?.style.removeProperty('margin-top');
-        }
-      } else {
-        if (sub.value?.classList.contains('sticky_bottom')) {
-          sub.value?.style.setProperty('margin-top', String(sub_top_diff) + 'px');
-          sub.value?.classList.remove('sticky_bottom');
-        }
+  aside {
+    padding-left: 39%;
+  }
+
+  main {
+    padding-left: 6%;
+    padding-right: 13%;
+  }
+}
+</style>
+<script lang="ts" setup>
+const contentsRef = ref<HTMLDivElement | null>(null);
+const subRef = ref<HTMLDivElement | null>(null);
+
+const { height } = useWindowSize();
+watch(height, (windowHeightValue) => {
+  if (!subRef.value) {
+    return;
+  }
+
+  const subHeight: number = subRef.value.getBoundingClientRect().height;
+
+  if (windowHeightValue >= subHeight) {
+    subRef.value.classList.add("sticky_top");
+    subRef.value.classList.remove("sticky_bottom");
+    subRef.value.style.removeProperty("margin-top");
+  }
+});
+
+const { y } = useWindowScroll();
+watch(y, (newScrollValue, oldScrollValue) => {
+  if (!subRef.value || !contentsRef.value) {
+    return;
+  }
+
+  const subTop: number = subRef.value.getBoundingClientRect().top;
+  const subHeight: number = subRef.value.getBoundingClientRect().height;
+  const subBottom: number = subRef.value.getBoundingClientRect().bottom;
+
+  const scrollDiff = subRef.value.offsetTop - contentsRef.value.offsetTop;
+
+  if (newScrollValue < oldScrollValue) {
+    // 上スクロール
+    if (window.innerHeight < subHeight) {
+      if (window.innerHeight === subBottom) {
+        subRef.value.style.setProperty("margin-top", `${scrollDiff}px`);
+        subRef.value.classList.remove("sticky_top");
+        subRef.value.classList.remove("sticky_bottom");
+      }
+
+      if (subTop >= 0) {
+        subRef.value.classList.add("sticky_top");
+        subRef.value.classList.remove("sticky_bottom");
+        subRef.value.style.removeProperty("margin-top");
       }
     }
   } else {
-    //下スクロールの時の処理
-    if (window_height.value < sub_height.value + 40) { // windowサイズがメニューより小さい
-      if (sub_top >= scroll_top + 20) {
-        if (sub.value?.classList.contains('sticky_top')) {
-          sub.value?.classList.remove('sticky_top');
-          sub.value?.style.setProperty('margin-top', String(sub_top_diff) + 'px');
-          sub.value?.style.setProperty('margin-top', String(sub_top_diff) + 'px');
-        }
-      } else {
-        if (sub_bottom + 20 <= scroll_bottom && !sub.value?.classList.contains('sticky_bottom')) { // scrollがサインドメニューのbottomを超えた場合
-          // scrollがサインドメニューのbottomを超えた場合
-          sub.value?.classList.remove('sticky_top');
-          sub.value?.classList.add('sticky_bottom');
-        }
+    // 下スクロール
+    if (window.innerHeight >= subHeight) {
+      // windowの縦サイズがサイドメニューの縦サイズより大きい
+
+      subRef.value.classList.add("sticky_top");
+      subRef.value.classList.remove("sticky_bottom");
+      subRef.value.style.removeProperty("margin-top");
+    } else {
+      if (subBottom < window.innerHeight) {
+        subRef.value.classList.add("sticky_bottom");
+        subRef.value.classList.remove("sticky_top");
+        subRef.value.style.removeProperty("margin-top");
+      }
+
+      if (subRef.value.offsetTop === contentsRef.value.offsetTop) {
+        subRef.value.classList.remove("sticky_top");
+        subRef.value.classList.remove("sticky_bottom");
+        subRef.value.style.removeProperty("margin-top");
+      }
+
+      if (subHeight === subBottom) {
+        subRef.value.style.setProperty("margin-top", `${scrollDiff}px`);
+        subRef.value.classList.remove("sticky_top");
+        subRef.value.classList.remove("sticky_bottom");
       }
     }
   }
-  scroll = scroll_top;
-};
-
-onMounted(() => {
-  resizeHandler();
-  window.addEventListener('resize', resizeHandler);
-  window.addEventListener('scroll', scrollHandler);
-});
-
-onUnmounted(() => {
-  window.removeEventListener('resize', resizeHandler);
-  window.removeEventListener('scroll', scrollHandler);
 });
 </script>
-<style scoped>
-header h1 {
-  margin: 0;
-}
-
-ul.submenu {
-  list-style: none;
-  padding-inline-start: 0;
-}
-</style>

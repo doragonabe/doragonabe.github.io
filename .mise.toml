@@ -1,0 +1,3 @@
+[tools]
+# mise ls-remote bun
+bun = '1.1.4'

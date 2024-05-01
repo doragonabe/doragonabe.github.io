@@ -1,46 +1,57 @@
 name: Deployment
 
 on:
+  # トリガーブランチ
   push:
-    branches: [ 'nuxt' ]
+    branches: ["main"]
+
+  # ワークフローを手動実行可能にする設定
   workflow_dispatch:
 
 permissions:
+  # リポジトリのアクセス権限
   contents: read
+
+  # GitHub Pagesのアクセス権限
   pages: write
+
+  # IDトークンを発行
   id-token: write
 
+# 同じpagesグループのジョブは同時に実行させない
+# 同時デプロイによる競合やリソースの無駄遣いを防ぐために、既存のジョブをキャンセルする
 concurrency:
-  group: 'pages'
+  group: "pages"
   cancel-in-progress: true
-
-env:
-  VITE_GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # https://github.com/actions/checkout
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+        uses: actions/checkout@v4
+
+      # https://github.com/oven-sh/setup-bun
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          version: 7
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.node-version'
-          cache: 'pnpm'
+          bun-version: latest
+
+      # https://github.com/actions/configure-pages
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v1
+        uses: actions/configure-pages@v5
+
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: bun install
+
       - name: Build
-        run: pnpm run generate
+        run: bun run generate
+
+      # https://github.com/actions/upload-pages-artifact
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public
 
@@ -54,6 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      # https://github.com/actions/deploy-pages
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
