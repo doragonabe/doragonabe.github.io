@@ -34,8 +34,7 @@ a:hover {
     h2 {
       font-size: rem(24);
       color: #fff;
-      background: #39b2ff url("assets/images/arrow2.png") no-repeat rem(20)
-        center / rem(25);
+      background: #39b2ff;
       border-radius: rem(10);
     }
 
@@ -48,6 +47,16 @@ a:hover {
       border-radius: rem(10);
       background: #fff;
     }
+  }
+
+  .circle-icon::before {
+    content: "";
+    display: inline-flex;
+    width: rem(25);
+    height: rem(25);
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin-right: 10px;
   }
 
   .h2_contents {

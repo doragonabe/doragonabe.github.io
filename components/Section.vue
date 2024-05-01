@@ -1,6 +1,6 @@
 <template>
   <section>
-    <h2 class="p-7 pl-14 mb-5">{{ h2 }}</h2>
+    <h2 class="p-7 mb-5 circle-icon">{{ h2 }}</h2>
     <slot />
   </section>
 </template>
