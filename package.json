@@ -46,6 +46,6 @@
     "sanitize-html": "^2.13.0",
     "sass": "^1.72.0",
     "typescript": "^5.4.5",
-    "vue-tsc": "^2.0.16"
+    "vue-tsc": "^1.8.22"
   }
 }
