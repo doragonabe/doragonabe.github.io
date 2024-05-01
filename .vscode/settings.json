@@ -1,0 +1,67 @@
+// .vscode内のjsonはjsonc形式として扱われる
+{
+  // https://prettier.io/
+  "[html][vue][css][scss][markdown][yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // https://biomejs.dev/ja/internals/language-support/
+  "[javascript][typescript][json][jsonc]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "cSpell.words": [
+    "anchorscroll",
+    "autodocs",
+    "bada",
+    "bignumber",
+    "biomejs",
+    "bowser",
+    "bunx",
+    "doragonabe",
+    "dynmap",
+    "Falkon",
+    "Kaku",
+    "minecraftjapan",
+    "mmenu",
+    "negai",
+    "noarchive",
+    "noborders",
+    "nofollow",
+    "noheader",
+    "nuxi",
+    "nuxt",
+    "nuxtjs",
+    "preinstall",
+    "qupzilla",
+    "Skript",
+    "swiper",
+    "tailwindcss",
+    "tizen",
+    "typecheck",
+    "unocss",
+    "vueuse",
+    "webp"
+  ],
+  "editor.detectIndentation": false, // 必須：falseにしないとtabSizeとinsertSpacesの設定が効かない
+  "editor.tabSize": 2, // 必須
+  "editor.insertSpaces": true, // 必須
+  "editor.formatOnSave": true, // 必須
+  "editor.formatOnSaveMode": "file", // 必須
+  "editor.formatOnPaste": true, // 必須
+  "editor.formatOnType": false, // 必須：リアルタイムのフォーマットは作業の邪魔になるので無し
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  "editor.renderWhitespace": "boundary", // 必須
+  "editor.linkedEditing": true,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "files.autoSave": "afterDelay", // 必須
+  "files.trimTrailingWhitespace": true, // 必須
+  "files.eol": "\n", // 必須
+  "files.insertFinalNewline": true, // 必須
+  "debug.javascript.codelens.npmScripts": "all", // 非必須：package.jsonから実行できるようになる
+  "diffEditor.ignoreTrimWhitespace": false, // 必須
+  "workbench.iconTheme": "vscode-icons", // 非必須：ファイルアイコン表示
+  "npm.packageManager": "bun" // 必須
+}

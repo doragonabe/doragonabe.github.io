@@ -1,0 +1,27 @@
+{
+  "recommendations": [
+    "alefragnani.project-manager", // Project Manager - プロジェクト管理
+    "vscode-icons-team.vscode-icons", // vscode-icons - ファイルアイコン
+    "streetsidesoftware.code-spell-checker", // Code Spell Checker - スペルチェック
+    "ms-vsliveshare.vsliveshare", // Live Share - リアルタイム共同編集
+    "lostintangent.vsls-whiteboard", // Live Share Whiteboard - ホワイトボード
+    "eamodio.gitlens", // GitLens - Gitの情報を表示
+    "donjayamanne.githistory", // Git History - Gitのギットのコミット履歴を表示
+    "mhutchie.git-graph", // Git Graph - コミット履歴をツリー表示
+    "GitHub.vscode-github-actions", // GitHub Actions
+    "EditorConfig.EditorConfig", // EditorConfig - コードフォーマット
+    "esbenp.prettier-vscode", // Prettier - コードフォーマット
+    "biomejs.biome", // Biome - コードフォーマット
+    "DavidAnson.vscode-markdownlint", // markdownlint - Markdown構文チェック
+    "mechatroner.rainbow-csv", // Rainbow CSV - CSVファイルの色分け
+    "jebbs.plantuml", // PlantUML - PlantUMLのプレビュー
+    "allanoricil.nuxt-vscode-extension",
+    "ms-vscode.vscode-typescript-next",
+    "formulahendry.auto-rename-tag", // Auto Rename Tag - HTMLの開始タグを修正時に、一緒に終了タグも修正
+    "ecmel.vscode-html-css", // HTML CSS Support - 外部ファイルCSS補完
+    "pranaygp.vscode-css-peek", // CSS Peek - 適応されているCSSの定義箇所を表示
+    "bradlc.vscode-tailwindcss", // Tailwind CSS IntelliSense - Tailwind CSS補完
+    "shd101wyy.markdown-preview-enhanced",
+    "jock.svg"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.2.2/schema.json",
+  "extends": [],
+  "files": {
+    "ignoreUnknown": true
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "formatter": {
+    "indentStyle": "space"
+  }
+}
