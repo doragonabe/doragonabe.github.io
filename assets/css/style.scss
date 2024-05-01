@@ -26,7 +26,7 @@ a {
 }
 
 a:hover {
-  color: #39b2ff;
+  color: #0099fa;
 }
 
 .home {
@@ -34,12 +34,12 @@ a:hover {
     h2 {
       font-size: rem(24);
       color: #fff;
-      background: #39b2ff;
+      background: #0099fa;
       border-radius: rem(10);
     }
 
     h3::first-letter {
-      border-left: rem(3) solid #39b2ff;
+      border-left: rem(3) solid #0099fa;
     }
 
     h3 {
@@ -88,7 +88,7 @@ a:hover {
       }
 
       h4 {
-        color: #39b2ff;
+        color: #0099fa;
         font-size: clamp(rem(16), 3vw, rem(22));
         text-align: center;
         font-weight: normal;
@@ -108,7 +108,7 @@ a:hover {
 
   .submenu {
     border-radius: rem(10);
-    border: rem(5) solid #39b2ff;
+    border: rem(5) solid #0099fa;
 
     li {
       text-align: center;
@@ -129,7 +129,7 @@ a:hover {
         font-size: rem(11);
         font-weight: normal;
         letter-spacing: 0.2em;
-        color: #39b2ff;
+        color: #0099fa;
       }
     }
 
@@ -185,12 +185,12 @@ a:hover {
   }
 
   #menubar_hdr.close {
-    background: #39b2ff url("assets/images/icon_menu.png") no-repeat center
+    background: #0099fa url("assets/images/icon_menu.png") no-repeat center
       top/rem(50);
   }
 
   #menubar_hdr.open {
-    background: #39b2ff url("assets/images/icon_menu.png") no-repeat center
+    background: #0099fa url("assets/images/icon_menu.png") no-repeat center
       bottom/rem(50);
   }
 }
