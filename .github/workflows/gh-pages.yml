@@ -45,10 +45,10 @@ jobs:
           version: 9.15.2
 
       # https://github.com/actions/cache
-      - name: Cache dependencies
+      - name: Cache pnpm store
         uses: actions/cache@v4
         with:
-          path: ~/.pnpm-store
+          path: ~/.local/share/pnpm/store
           key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-
