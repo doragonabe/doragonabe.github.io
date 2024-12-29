@@ -42,7 +42,7 @@ jobs:
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
         with:
-          version: 9
+          version: 9.15.2
 
       # https://github.com/actions/cache
       - name: Cache dependencies
