@@ -62,7 +62,7 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm run generate
+        run: pnpm run generate:github
 
       # https://github.com/actions/upload-pages-artifact
       - name: Upload artifact
