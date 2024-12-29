@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
   ssr: false,
 
+  compatibilityDate: "2024-04-03",
+
   /**
    * https://nuxt.com/docs/getting-started/seo-meta
    */
@@ -9,7 +11,6 @@ export default defineNuxtConfig({
     head: {
       charset: "utf-8",
       viewport: "width=device-width, initial-scale=1",
-      title: "doragonabe site",
       meta: [
         { name: "robots", content: "noindex,nofollow,noarchive" },
         { "http-equiv": "cache-control", content: "no-store" },
@@ -20,12 +21,38 @@ export default defineNuxtConfig({
     },
   },
 
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: "modern-compiler",
+        },
+      },
+    },
+  },
+
   /**
    * https://nuxt.com/docs/getting-started/styling#the-css-property
    */
-  css: ["assets/css/style.scss", "assets/css/craft.scss"],
+  css: [
+    "assets/css/style.scss",
+    "assets/css/menu.scss",
+    "assets/css/craft.scss",
+  ],
 
-  modules: ["@vueuse/nuxt", "nuxt-swiper", "nuxt-lodash", "@nuxt/ui"],
+  /**
+   * https://nuxt.com/docs/api/nuxt-config#modules-1
+   */
+  modules: [
+    "@vueuse/nuxt",
+    "nuxt-lodash",
+    "dayjs-nuxt",
+    "nuxt-typed-router",
+    "@nuxt/ui",
+    "nuxt-swiper",
+    "nuxt-security",
+    "@nuxt/test-utils/module",
+  ],
 
   /**
    * https://devtools.nuxt.com/guide/getting-started#auto-install
@@ -39,15 +66,69 @@ export default defineNuxtConfig({
   },
 
   /**
-   * 実験的なVue機能の有効化
-   * https://nuxt.com/docs/getting-started/configuration#enabling-experimental-vue-features
+   * https://nuxt.com/docs/api/nuxt-config#runtimeconfig-1
    */
-  vue: {
-    propsDestructure: true,
+  runtimeConfig: {
+    public: {
+      appEnv: "local",
+    },
   },
 
-  typescript: {
-    typeCheck: true,
-    strict: true,
+  future: {
+    /**
+     * https://nuxt.com/docs/api/nuxt-config#compatibilityversion
+     */
+    compatibilityVersion: 4,
+  },
+
+  /**
+   * https://nuxt.com/docs/guide/going-further/experimental-features#typedpages
+   */
+  experimental: {
+    typedPages: true,
+  },
+
+  /**
+   * https://nuxt-security.vercel.app/getting-started/setup
+   */
+  /*
+  security: {
+    headers: {
+      contentSecurityPolicy: {
+        "default-src": ["'self'"],
+        "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        "script-src-elem": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        "script-src-attr": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        "style-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        "style-src-elem": [
+          "'self'",
+          "'unsafe-inline'",
+          "'unsafe-eval'",
+          "https://fonts.googleapis.com",
+        ],
+        "style-src-attr": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        "connect-src": ["'self'", "http://localhost:*", "ws://localhost:*"],
+        "object-src": ["'none'"],
+        "base-uri": ["'none'"],
+        "form-action": ["'none'"],
+        "frame-ancestors": ["'none'"],
+      },
+      permissionsPolicy: {
+        camera: ["()"],
+        "display-capture": ["()"],
+        fullscreen: ["()"],
+        geolocation: ["()"],
+        microphone: ["()"],
+      },
+
+      // nuxt-securityをdevtoolsで使うための設定
+      crossOriginEmbedderPolicy:
+        process.env.NODE_ENV === "development" ? "unsafe-none" : "require-corp",
+    },
+  },
+  */
+
+  colorMode: {
+    preference: "light",
   },
 });

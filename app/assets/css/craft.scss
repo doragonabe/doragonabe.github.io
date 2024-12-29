@@ -1,0 +1,139 @@
+.mc_craft_table {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #c6c6c6;
+  border: 2px solid;
+  border-color: #dbdbdb #5b5b5b #5b5b5b #dbdbdb;
+  padding: 6px;
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+
+.inv-sprite,
+.slot-sprite {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+}
+
+.sprite {
+  display: inline-block;
+  vertical-align: text-top;
+  /*
+  height: 16px;
+  width: 16px;
+  */
+  /*
+  width: 32px;
+  height: 32px;
+  */
+  background-repeat: no-repeat;
+}
+
+.inv-slot-item,
+.inv-slot-item > a:first-child {
+  position: relative;
+  display: block;
+  /*
+  margin: -2px;
+  padding: 2px;
+  */
+  width: 32px;
+  height: 32px;
+}
+
+.mc-ui-row {
+  font-size: 0;
+}
+
+.mc-ui-Crafting_Table .mc-ui-row {
+  display: block;
+}
+
+.mc-ui-Crafting_Table > *,
+.mc-ui-Furnace > * {
+  display: block;
+  /*
+  vertical-align: top;
+  */
+}
+
+.mc-ui-Crafting_Table > .mc-ui-arrow {
+  background: url("@/assets/images/arrow.png") no-repeat;
+  width: 32px;
+  height: 26px;
+  margin: 0 4px;
+}
+
+/*
+.mc-ui-Crafting_Table > .mc-ui-output {
+  margin-top: 28px;
+}
+*/
+
+#content .inv-slot {
+  box-sizing: content-box;
+}
+
+.inv-slot {
+  position: relative;
+  display: inline-block;
+  background: #8b8b8b no-repeat center center / 32px 32px;
+  border: 2px solid;
+  border-color: #373737 #fff #fff #373737;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+  line-height: 1;
+  text-align: left;
+  vertical-align: bottom;
+}
+
+.inv-slot::before {
+  bottom: -2px;
+  left: -2px;
+}
+
+.inv-slot::before,
+.inv-slot::after {
+  content: "";
+  position: absolute;
+  background-color: #8b8b8b;
+  height: 2px;
+  width: 2px;
+  pointer-events: none;
+}
+
+/*
+.inv-slot-large {
+  padding: 8px;
+}
+*/
+
+.item-string {
+  background-image: url("@/assets/images/InvSprite.webp");
+  background-position: -320px -3520px;
+}
+
+.item-rabbit_hide {
+  background-image: url("@/assets/images/InvSprite.webp");
+  background-position: -192px -3520px;
+}
+
+.item-bundle {
+  background-image: url("@/assets/images/InvSprite.webp");
+  background-position: -960px -416px;
+}
+
+.item-glass_bottle {
+  background-image: url("@/assets/images/InvSprite.webp");
+  background-position: -512px -3552px;
+}
+
+.item-experience_bottle {
+  background-image: url("@/assets/images/InvSprite.webp");
+  background-position: -288px -3456px;
+}

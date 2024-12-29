@@ -1,0 +1,68 @@
+<template>
+  <Title>トップ</Title>
+  <section class="mb-8">
+    <H2 class="mb-5">トップ</H2>
+    <EyeCatchMenu />
+  </section>
+  <section class="mb-8">
+    <H2 class="mb-5"> 更新情報・お知らせ </H2>
+    <div class="px-5 new">
+      <dl class="sm:flex">
+        <dt class="pr-12">2022/06/18</dt>
+        <dd>
+          <span>ページ構成をNuxt3に変更</span>
+          <span class="m-1 py-0.5 px-1 text-white bg-red-500 new-icon"
+            >NEW</span
+          >
+        </dd>
+      </dl>
+      <dl class="sm:flex">
+        <dt class="pr-12">2022/06/18</dt>
+        <dd>
+          <span>ページ構成をVue.jsに変更</span>
+          <NuxtLink
+            href="https://github.com/doragonabe/doragonabe.github.io/compare/5fde8318920d0dd67297f684704ac0a45730bb23%E2%80%A6b52b4158ddc941e75da9cf02ff9ac3bbafb88f47"
+            target="_blank"
+            external
+            class="underline"
+            >github差分</NuxtLink
+          >
+        </dd>
+      </dl>
+      <dl class="sm:flex mt-5">
+        <dt class="pr-12">2022/01/01</dt>
+        <dd>
+          <span>Q&Aページ更新</span>
+          <NuxtLink
+            to="https://github.com/doragonabe/doragonabe.github.io/compare/e425fb2614fee376f09b32289e02ad84ab2b13a3%E2%80%A62e6500ea1762ece0cc360e56e6411ca07dd4819f"
+            target="_blank"
+            external
+            class="underline"
+            >github差分</NuxtLink
+          >
+        </dd>
+      </dl>
+      <dl class="sm:flex mt-5">
+        <dt class="pr-12">2022/01/01</dt>
+        <dd>
+          <span>negaiサーバー紹介サイト限定URL公開</span>
+        </dd>
+      </dl>
+    </div>
+  </section>
+  <section>
+    <H2 class="mb-5">X</H2>
+    <TwitterTimeline
+      v-if="useIncludes(['local', 'github'], useRuntimeConfig().public.appEnv)"
+      url="x"
+      dataLang="ja"
+      :dataChrome="['noheader', 'nofooter', 'noborders', 'transparent']"
+      :dataTweetLimit="4"
+    />
+  </section>
+</template>
+<script lang="ts" setup>
+definePageMeta({
+  layout: "app",
+});
+</script>

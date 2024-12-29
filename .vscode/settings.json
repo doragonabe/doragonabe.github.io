@@ -1,5 +1,7 @@
 // .vscode内のjsonはjsonc形式として扱われる
 {
+  "tailwindCSS.experimental.configFile": "tailwind.config.ts",
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass", "ui"],
   // https://prettier.io/
   "[html][vue][css][scss][markdown][yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -7,6 +9,12 @@
   // https://biomejs.dev/ja/internals/language-support/
   "[javascript][typescript][json][jsonc]": {
     "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
   "cSpell.words": [
     "anchorscroll",
@@ -16,20 +24,30 @@
     "biomejs",
     "bowser",
     "bunx",
+    "composables",
+    "domcontentloaded",
     "doragonabe",
     "dynmap",
     "Falkon",
+    "headlessui",
+    "heroicons",
     "Kaku",
     "minecraftjapan",
     "mmenu",
+    "msedge",
     "negai",
+    "networkidle",
     "noarchive",
     "noborders",
     "nofollow",
+    "nofooter",
     "noheader",
+    "noscrollbar",
     "nuxi",
     "nuxt",
     "nuxtjs",
+    "pinia",
+    "pnpx",
     "preinstall",
     "qupzilla",
     "Skript",
@@ -38,8 +56,21 @@
     "tizen",
     "typecheck",
     "unocss",
+    "unplugin",
+    "vite",
+    "vuelidate",
     "vueuse",
     "webp"
+  ],
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/{info,lfs,logs,refs,objects}/**",
+    ".git/{index,*refs,*HEAD}",
+    ".vscode",
+    ".vscode-insiders",
+    ".nuxt"
   ],
   "editor.detectIndentation": false, // 必須：falseにしないとtabSizeとinsertSpacesの設定が効かない
   "editor.tabSize": 2, // 必須
@@ -63,5 +94,6 @@
   "debug.javascript.codelens.npmScripts": "all", // 非必須：package.jsonから実行できるようになる
   "diffEditor.ignoreTrimWhitespace": false, // 必須
   "workbench.iconTheme": "vscode-icons", // 非必須：ファイルアイコン表示
-  "npm.packageManager": "bun" // 必須
+  "npm.packageManager": "pnpm", // 必須
+  "svg.preview.background": "editor"
 }

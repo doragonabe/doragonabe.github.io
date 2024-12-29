@@ -1,0 +1,65 @@
+@function rem($px) {
+  @return calc($px / 16) * 1rem;
+}
+
+.nav {
+  top: 3%;
+}
+
+/* ここから下がハンバーガーメニューに関するCSS */
+
+/* チェックボックスを非表示にする */
+.drawer_hidden {
+  display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer_open {
+  display: flex;
+  height: rem(50);
+  width: rem(50);
+  justify-content: center;
+  align-items: center;
+  background: rgb(59 130 246);
+  border-radius: 50%;
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer_open div,
+.drawer_open div:before,
+.drawer_open div:after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 30px;
+  border-radius: 3px;
+  background: #fff;
+  transition: 0.5s;
+  position: absolute;
+}
+
+/* 三本線の一番上の棒の位置調整 */
+.drawer_open div:before {
+  bottom: 10px;
+}
+
+/* 三本線の一番下の棒の位置調整 */
+.drawer_open div:after {
+  top: 10px;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+.test div {
+  background: rgba(255, 255, 255, 0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+.test div::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+.test div::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
