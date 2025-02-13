@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content">
+  <div class="main-content overflow-y-scroll">
     <div class="overlay z-40" @click="toggleMenu()" ref="overlay"></div>
     <div id="container" class="home min-w-[340px] grid">
       <header class="grid">
@@ -100,11 +100,6 @@
     </div>
   </div>
 </template>
-<style>
-body.menu-active {
-  overflow-y: hidden;
-}
-</style>
 <style scoped>
 .nav {
   grid-area: 2 / 4;
