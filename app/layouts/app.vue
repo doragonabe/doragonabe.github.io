@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content overflow-y-scroll">
+  <div class="main-content">
     <div class="overlay z-40" @click="toggleMenu()" ref="overlay"></div>
     <div id="container" class="home min-w-[340px] grid">
       <header class="grid">
@@ -72,23 +72,28 @@
         <nav id="h_nav" class="sidebar fixed h-full bg-[#faf9f1]">
           <ul class="p-1 h-full">
             <li class="py-1 border-b">
-              <NuxtLink :to="{ name: 'index' }" @click="menuClose()" class="mm-listitem__text text-[#333]">トップ
+              <NuxtLink :to="{ name: 'index' }" @click="menuClose()"
+                class="mm-listitem__text text-[#333] inline-block w-full">
+                トップ
               </NuxtLink>
             </li>
             <li class="py-1 border-b">
-              <NuxtLink :to="{ name: 'server_rules' }" @click="menuClose()" class="mm-listitem__text text-[#333]">
+              <NuxtLink :to="{ name: 'server_rules' }" @click="menuClose()"
+                class="mm-listitem__text text-[#333] inline-block w-full">
                 サーバールール</NuxtLink>
             </li>
             <li class="py-1 border-b">
               <NuxtLink :to="{ name: 'server_introduction' }" @click="menuClose()"
-                class="mm-listitem__text text-[#333]">サーバー紹介</NuxtLink>
+                class="mm-listitem__text text-[#333] inline-block w-full">サーバー紹介</NuxtLink>
             </li>
             <li class="py-1 border-b">
-              <NuxtLink :to="{ name: 'server_specifications' }" @click="menuClose()" class="mm-listitem__text">サーバー仕様
+              <NuxtLink :to="{ name: 'server_specifications' }" @click="menuClose()"
+                class="mm-listitem__text text-[#333] inline-block w-full">サーバー仕様
               </NuxtLink>
             </li>
             <li class="py-1 border-b">
-              <NuxtLink :to="{ name: 'q_and_a' }" @click="menuClose()" class="mm-listitem__text text-[#333]">Q & A
+              <NuxtLink :to="{ name: 'q_and_a' }" @click="menuClose()"
+                class="mm-listitem__text text-[#333] inline-block w-full">Q & A
               </NuxtLink>
             </li>
           </ul>
