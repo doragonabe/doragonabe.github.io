@@ -1,100 +1,50 @@
 <template>
   <div class="main-content">
-    <div
-      class="overlay z-40"
-      @click="toggleMenu()"
-      ref="overlay"
-    ></div>
-    <div
-      id="container"
-      class="home min-w-[340px] grid"
-    >
+    <div class="overlay z-40" @click="toggleMenu()" ref="overlay"></div>
+    <div id="container" class="home min-w-[340px] grid">
       <header class="grid">
-        <h1
-          id="sub_title"
-          class="z-10"
-        >
-          <NuxtLink
-            :to="{ name: 'index' }"
-            @click="useScrollTo('#main')"
-          >
-            <img
-              class="w-full"
-              alt="top"
-              src="~/assets/images/logo.webp"
-            />
+        <h1 id="sub_title" class="z-10">
+          <NuxtLink :to="{ name: 'index' }" @click="useScrollTo('#main')">
+            <img class="w-full" alt="top" src="~/assets/images/logo.webp" />
           </NuxtLink>
         </h1>
         <div class="main-slide aspect-[2000/900]">
-          <MainSlide
-            v-if="
-              useIncludes(['local', 'github'], useRuntimeConfig().public.appEnv)
-            "
-          />
+          <MainSlide v-if="
+            useIncludes(['local', 'github'], useRuntimeConfig().public.appEnv)
+          " />
         </div>
 
-        <HamburgerMenu
-          class="nav sticky z-50"
-          v-model="isActive"
-          @click="toggleMenu()"
-        />
+        <HamburgerMenu class="nav sticky z-50" v-model="isActive" @click="toggleMenu()" />
       </header>
-      <aside
-        ref="contentsRef"
-        class="z-10"
-      >
-        <nav
-          id="sub"
-          class="hidden lg:grid pt-5 pb-5 w-full"
-          ref="subRef"
-        >
+      <aside ref="contentsRef" class="z-10">
+        <nav id="sub" class="hidden lg:grid pt-5 pb-5 w-full" ref="subRef">
           <ul class="submenu">
             <li class="text-center">
-              <NuxtLink
-                :to="{ name: 'index' }"
-                @click="useScrollTo('#main')"
-                class="py-3 px-1"
-              >
+              <NuxtLink :to="{ name: 'index' }" @click="useScrollTo('#main')" class="py-3 px-1">
                 <span class="text-[#333]">トップ</span>
                 <span class="subtitle">Top</span>
               </NuxtLink>
             </li>
             <li class="text-center">
-              <NuxtLink
-                :to="{ name: 'server_rules' }"
-                @click="useScrollTo('#main')"
-                class="py-3 px-1"
-              >
+              <NuxtLink :to="{ name: 'server_rules' }" @click="useScrollTo('#main')" class="py-3 px-1">
                 <span class="text-[#333]">サーバールール</span>
                 <span class="subtitle">Server Rules</span>
               </NuxtLink>
             </li>
             <li class="text-center">
-              <NuxtLink
-                :to="{ name: 'server_introduction' }"
-                @click="useScrollTo('#main')"
-                class="py-3 px-1"
-              >
+              <NuxtLink :to="{ name: 'server_introduction' }" @click="useScrollTo('#main')" class="py-3 px-1">
                 <span class="text-[#333]">サーバー紹介</span>
                 <span class="subtitle">Server Introduction</span>
               </NuxtLink>
             </li>
             <li class="text-center">
-              <NuxtLink
-                :to="{ name: 'server_specifications' }"
-                @click="useScrollTo('#main')"
-                class="py-3 px-1"
-              >
+              <NuxtLink :to="{ name: 'server_specifications' }" @click="useScrollTo('#main')" class="py-3 px-1">
                 <span class="text-[#333]">サーバー仕様</span>
                 <span class="subtitle">Server Specifications</span>
               </NuxtLink>
             </li>
             <li class="text-center">
-              <NuxtLink
-                :to="{ name: 'q_and_a' }"
-                @click="useScrollTo('#main')"
-                class="py-3 px-1"
-              >
+              <NuxtLink :to="{ name: 'q_and_a' }" @click="useScrollTo('#main')" class="py-3 px-1">
                 <span class="text-[#333]">Q & A</span>
                 <span class="subtitle">Q & A</span>
               </NuxtLink>
@@ -103,87 +53,48 @@
 
           <ul class="submenu mt-5">
             <li class="text-center">
-              <NuxtLink
-                to="http://soarerserver.mydns.jp:8123/"
-                target="_blank"
-                external
-                class="py-3 px-1"
-              >
+              <NuxtLink to="http://soarerserver.mydns.jp:8123/" target="_blank" external class="py-3 px-1">
                 <span class="text-[#333]">dynmap</span><br />
                 <span class="text-[#333]">※外部リンク</span>
               </NuxtLink>
             </li>
             <li class="text-center">
-              <NuxtLink
-                :to="{ name: 'unique_function' }"
-                @click="useScrollTo('#main')"
-                class="py-3 px-1 text-[#333]"
-                >独自機能</NuxtLink
-              >
+              <NuxtLink :to="{ name: 'unique_function' }" @click="useScrollTo('#main')" class="py-3 px-1 text-[#333]">
+                独自機能</NuxtLink>
             </li>
             <li class="text-center">
-              <NuxtLink
-                :to="{ name: 'original_recipes' }"
-                @click="useScrollTo('#main')"
-                class="py-3 px-1 text-[#333]"
-                >独自レシピ</NuxtLink
-              >
+              <NuxtLink :to="{ name: 'original_recipes' }" @click="useScrollTo('#main')" class="py-3 px-1 text-[#333]">
+                独自レシピ</NuxtLink>
             </li>
           </ul>
         </nav>
 
-        <nav
-          id="h_nav"
-          class="sidebar fixed h-full bg-[#faf9f1]"
-        >
+        <nav id="h_nav" class="sidebar fixed h-full bg-[#faf9f1]">
           <ul class="p-1 h-full">
             <li class="py-1 border-b">
-              <NuxtLink
-                class="mm-listitem__text text-[#333]"
-                :to="{ name: 'index' }"
-                @click="menuClose()"
-                >トップ</NuxtLink
-              >
+              <NuxtLink :to="{ name: 'index' }" @click="menuClose()" class="mm-listitem__text text-[#333]">トップ
+              </NuxtLink>
             </li>
             <li class="py-1 border-b">
-              <NuxtLink
-                class="mm-listitem__text text-[#333]"
-                :to="{ name: 'server_rules' }"
-                @click="menuClose()"
-                >サーバールール</NuxtLink
-              >
+              <NuxtLink :to="{ name: 'server_rules' }" @click="menuClose()" class="mm-listitem__text text-[#333]">
+                サーバールール</NuxtLink>
             </li>
             <li class="py-1 border-b">
-              <NuxtLink
-                class="mm-listitem__text text-[#333]"
-                :to="{ name: 'server_introduction' }"
-                @click="menuClose()"
-                >サーバー紹介</NuxtLink
-              >
+              <NuxtLink :to="{ name: 'server_introduction' }" @click="menuClose()"
+                class="mm-listitem__text text-[#333]">サーバー紹介</NuxtLink>
             </li>
             <li class="py-1 border-b">
-              <NuxtLink
-                class="mm-listitem__text"
-                :to="{ name: 'server_specifications' }"
-                @click="menuClose()"
-                >サーバー仕様</NuxtLink
-              >
+              <NuxtLink :to="{ name: 'server_specifications' }" @click="menuClose()" class="mm-listitem__text">サーバー仕様
+              </NuxtLink>
             </li>
             <li class="py-1 border-b">
-              <NuxtLink
-                class="mm-listitem__text text-[#333]"
-                :to="{ name: 'q_and_a' }"
-                @click="menuClose()"
-                >Q & A</NuxtLink
-              >
+              <NuxtLink :to="{ name: 'q_and_a' }" @click="menuClose()" class="mm-listitem__text text-[#333]">Q & A
+              </NuxtLink>
             </li>
           </ul>
         </nav>
       </aside>
-      <main
-        id="main"
-        class="pt-5 pb-20 min-h-[750px] text-lg"
-      >
+      <main id="main" class="pt-5 pb-20 min-h-[750px] text-lg">
         <slot />
       </main>
     </div>
@@ -276,16 +187,19 @@ main {
 .main-content {
   position: relative;
   right: 0;
-  transition: right 0.4s; /* スライドアニメーションの設定 */
+  /* スライドアニメーションの設定 */
+  transition: right 0.4s;
   min-height: 150vh;
 }
 
 .menu-active .sidebar {
-  right: 0; /* メニューを表示 */
+  /* メニューを表示 */
+  right: 0;
 }
 
 .menu-active .main-content {
-  right: 250px; /* メインコンテンツを右にずらす */
+  /* メインコンテンツを右にずらす */
+  right: 250px;
 }
 
 .overlay {
@@ -295,7 +209,8 @@ main {
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* 半透明の黒色 */
+  /* 半透明の黒色 */
+  background-color: rgba(0, 0, 0, 0.4);
   transition: opacity 0.5s ease;
   transition-delay: 0.4s;
   opacity: 0;

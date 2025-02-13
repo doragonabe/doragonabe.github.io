@@ -2,8 +2,6 @@
 export default defineNuxtConfig({
   ssr: false,
 
-  compatibilityDate: "2024-04-03",
-
   /**
    * https://nuxt.com/docs/getting-started/seo-meta
    */
@@ -58,12 +56,21 @@ export default defineNuxtConfig({
    * https://devtools.nuxt.com/guide/getting-started#auto-install
    */
   devtools: {
-    enabled: true,
-
+    enabled: false,
     timeline: {
       enabled: true,
     },
   },
+
+  /**
+   * 最終チェック用
+   */
+  /*
+  typescript: {
+    typeCheck: true,
+    strict: true,
+  },
+  */
 
   /**
    * https://nuxt.com/docs/api/nuxt-config#runtimeconfig-1
@@ -128,7 +135,5 @@ export default defineNuxtConfig({
   },
   */
 
-  colorMode: {
-    preference: "light",
-  },
+  compatibilityDate: "2025-02-13",
 });

@@ -39,7 +39,13 @@ pnpm run preview
 
 #### ライブラリ更新
 
-pnpm 更新
+#### Nuxt更新
+
+```bash
+pnpx nuxi@latest upgrade --force
+```
+
+#### pnpm 更新
 
 ```bash
 pnpm upgrade

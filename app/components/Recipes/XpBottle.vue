@@ -10,10 +10,7 @@
         <span class="inv-slot"></span>
         <span class="inv-slot">
           <span class="inv-slot-item">
-            <span
-              class="sprite inv-sprite item-glass_bottle"
-              title="ガラス瓶"
-            >
+            <span class="sprite inv-sprite item-glass_bottle" title="ガラス瓶">
             </span>
           </span>
         </span>
@@ -29,10 +26,7 @@
     <div class="mc-ui-output">
       <span class="inv-slot inv-slot-large">
         <span class="inv-slot-item">
-          <span
-            class="sprite inv-sprite item-experience_bottle"
-            title="エンチャントの瓶"
-          ></span>
+          <span class="sprite inv-sprite item-experience_bottle" title="エンチャントの瓶"></span>
         </span>
       </span>
     </div>

@@ -3,7 +3,7 @@
   "tailwindCSS.experimental.configFile": "tailwind.config.ts",
   "tailwindCSS.classAttributes": ["class", "className", "ngClass", "ui"],
   // https://prettier.io/
-  "[html][vue][css][scss][markdown][yaml]": {
+  "[html][vue][css][scss][markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // https://biomejs.dev/ja/internals/language-support/
@@ -15,6 +15,9 @@
   },
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "[yml][yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "cSpell.words": [
     "anchorscroll",
@@ -95,5 +98,6 @@
   "diffEditor.ignoreTrimWhitespace": false, // 必須
   "workbench.iconTheme": "vscode-icons", // 非必須：ファイルアイコン表示
   "npm.packageManager": "pnpm", // 必須
+  "workbench.editor.enablePreview": false, // 新しいタブでファイルを開くようにする
   "svg.preview.background": "editor"
 }

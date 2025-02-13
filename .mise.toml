@@ -2,4 +2,4 @@
 # mise ls-remote node
 # mise ls-remote pnpm
 node = '23.5.0'
-pnpm = '9.15.2'
+pnpm = '10.3.0'

@@ -9,8 +9,7 @@
     <H3 class="mb-2">バンドル</H3>
     <div class="pb-5 px-5">
       <p>
-        <span>1.19のバージョン時点では、アイテムID自体は存在するものの、</span
-        ><br />
+        <span>1.19のバージョン時点では、アイテムID自体は存在するものの、</span><br />
         <span>レシピが実装されていないため作りました。</span>
       </p>
       <RecipesBundle />
