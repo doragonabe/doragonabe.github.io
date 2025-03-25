@@ -5,11 +5,13 @@
       <header class="grid">
         <h1 id="sub_title" class="z-10">
           <NuxtLink :to="{ name: 'index' }" @click="useScrollTo('#main')">
-            <img class="w-full" alt="top" src="~/assets/images/logo.webp" />
+            <figure class="aspect-[1/1]">
+              <img class="w-full" alt="top" src="~/assets/images/logo.webp" loading="lazy" />
+            </figure>
           </NuxtLink>
         </h1>
         <div class="main-slide aspect-[2000/900]">
-          <MainSlide v-if="
+          <MainSlide2 v-if="
             useIncludes(['local', 'github'], useRuntimeConfig().public.appEnv)
           " />
         </div>

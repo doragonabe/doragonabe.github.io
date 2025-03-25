@@ -73,8 +73,10 @@ a:hover {
 
       a {
         display: block;
+        /*
         background: #fff url("assets/images/arrow1.png") no-repeat right
           bottom / rem(40);
+        */
       }
 
       a:hover {
@@ -162,36 +164,5 @@ a:hover {
     line-height: 1.5;
     border-radius: rem(2);
     vertical-align: text-top;
-  }
-
-  #menubar_hdr {
-    position: fixed;
-    top: 0;
-    right: 15%;
-  }
-
-  #menubar_hdr.close,
-  #menubar_hdr.open {
-    width: rem(50);
-    height: rem(50);
-    border-radius: 50%;
-  }
-
-  #menubar_hdr.close {
-    background: rgb(59 130 246) url("assets/images/icon_menu.png") no-repeat
-      center top/rem(50);
-  }
-
-  #menubar_hdr.open {
-    background: rgb(59 130 246) url("assets/images/icon_menu.png") no-repeat
-      center bottom/rem(50);
-  }
-}
-
-@media (min-width: 1024px) {
-  .home {
-    #menubar_hdr {
-      display: none;
-    }
   }
 }
