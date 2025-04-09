@@ -1,17 +1,23 @@
 // .vscode内のjsonはjsonc形式として扱われる
 {
-  "tailwindCSS.experimental.configFile": "tailwind.config.ts",
-  "tailwindCSS.classAttributes": ["class", "className", "ngClass", "ui"],
+  // https://ui.nuxt.com/getting-started/installation/nuxt
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.classAttributes": ["class", "ui"],
+  "tailwindCSS.experimental.classRegex": [
+    ["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
   // https://prettier.io/
-  "[html][vue][css][scss][markdown]": {
+  "[html][vue][css][scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // https://biomejs.dev/ja/internals/language-support/
   "[javascript][typescript][json][jsonc]": {
     "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
   },
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
@@ -49,6 +55,7 @@
     "nuxi",
     "nuxt",
     "nuxtjs",
+    "persistedstate",
     "pinia",
     "pnpx",
     "preinstall",

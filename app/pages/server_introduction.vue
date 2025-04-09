@@ -2,7 +2,7 @@
   <Title>サーバー紹介</Title>
   <section>
     <H2 class="mb-5">サーバー紹介</H2>
-    <p class="pb-5 px-5">
+    <p class="px-5 pb-5">
       <span>とてもつよいnegaiサーバーだよ</span><br />
       <span>1.19に更新</span>
     </p>

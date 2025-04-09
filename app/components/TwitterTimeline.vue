@@ -1,7 +1,16 @@
 <template>
-  <a :data-chrome="dataChrome.join('')" :data-dnt="doNotTrack" :data-width="dataWidth" :data-height="dataHeight"
-    :data-lang="dataLang" :data-theme="dataTheme" :data-tweet-limit="dataTweetLimit" :data-aria-polite="dataAriaPolite"
-    :href="'https://twitter.com/' + url" class="twitter-timeline">
+  <a
+    :data-chrome="dataChrome.join('')"
+    :data-dnt="dataDnt"
+    :data-width="dataWidth"
+    :data-height="dataHeight"
+    :data-lang="dataLang"
+    :data-theme="dataTheme"
+    :data-tweet-limit="dataTweetLimit"
+    :data-aria-polite="dataAriaPolite"
+    :href="'https://twitter.com/' + url"
+    class="twitter-timeline"
+  >
     <slot />
   </a>
 </template>
@@ -15,10 +24,10 @@ type Range<
 > = C["length"] extends N
   ? Range<N, M, Result | C["length"], [...C, never], true>
   : Flag extends true
-  ? C["length"] extends M
-  ? Result | C["length"]
-  : Range<N, M, Result | C["length"], [...C, never], Flag>
-  : Range<N, M, Result, [...C, never], Flag>;
+    ? C["length"] extends M
+      ? Result | C["length"]
+      : Range<N, M, Result | C["length"], [...C, never], Flag>
+    : Range<N, M, Result, [...C, never], Flag>;
 
 type DataChromeOptions =
   | "noheader"
@@ -27,8 +36,13 @@ type DataChromeOptions =
   | "noscrollbar"
   | "transparent";
 
-const { dataChrome = [], doNotTrack = true } = defineProps<{
+const {
+  dataLang = "ja",
+  dataChrome = ["noheader", "nofooter", "noborders", "transparent"],
+  dataDnt = true,
+} = defineProps<{
   url: string;
+  description?: string;
   dataHeight?: string;
   dataWidth?: string;
   dataLang?: "ja" | "en";
@@ -36,7 +50,7 @@ const { dataChrome = [], doNotTrack = true } = defineProps<{
   dataTheme?: "light" | "dark";
   dataTweetLimit?: Range<1, 20>;
   dataAriaPolite?: "polite" | "assertive";
-  doNotTrack?: boolean;
+  dataDnt?: boolean;
 }>();
 
 useScriptTag("https://platform.x.com/widgets.js");

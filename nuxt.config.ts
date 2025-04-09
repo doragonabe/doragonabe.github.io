@@ -12,31 +12,18 @@ export default defineNuxtConfig({
       meta: [
         { name: "robots", content: "noindex,nofollow,noarchive" },
         { "http-equiv": "cache-control", content: "no-store" },
+        { name: "twitter:widgets:csp", content: "on" },
       ],
       link: [{ rel: "icon", href: "/favicon.svg", type: "image/svg+xml" }],
-      noscript: ["JavaScriptを有効にしてください。"],
+      noscript: [{ textContent: "JavaScriptを有効にしてください。" }],
       htmlAttrs: { lang: "ja" },
-    },
-  },
-
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          api: "modern-compiler",
-        },
-      },
     },
   },
 
   /**
    * https://nuxt.com/docs/getting-started/styling#the-css-property
    */
-  css: [
-    "assets/css/style.scss",
-    "assets/css/menu.scss",
-    "assets/css/craft.scss",
-  ],
+  css: ["assets/css/style.scss", "assets/css/craft.scss"],
 
   /**
    * https://nuxt.com/docs/api/nuxt-config#modules-1
@@ -50,6 +37,8 @@ export default defineNuxtConfig({
     "nuxt-swiper",
     "nuxt-security",
     "@nuxt/test-utils/module",
+    "@pinia/nuxt",
+    "pinia-plugin-persistedstate/nuxt",
   ],
 
   /**
@@ -71,6 +60,15 @@ export default defineNuxtConfig({
     strict: true,
   },
   */
+
+  typescript: {
+    tsConfig: {
+      compilerOptions: {
+        jsx: "preserve",
+        types: ["vite/client"],
+      },
+    },
+  },
 
   /**
    * https://nuxt.com/docs/api/nuxt-config#runtimeconfig-1
@@ -96,15 +94,27 @@ export default defineNuxtConfig({
   },
 
   /**
-   * https://nuxt-security.vercel.app/getting-started/setup
+   * https://nuxt-security.vercel.app/getting-started/installation
    */
-  /*
   security: {
     headers: {
       contentSecurityPolicy: {
         "default-src": ["'self'"],
+        "frame-src": [
+          "'self'",
+          "https://platform.twitter.com",
+          "https://syndication.twitter.com",
+        ],
+        "img-src": ["'self'"],
         "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
-        "script-src-elem": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        "script-src-elem": [
+          "'self'",
+          "'unsafe-inline'",
+          "'unsafe-eval'",
+          "https://platform.twitter.com/widgets.js",
+          "https://platform.x.com/widgets.js",
+          "https://platform.twitter.com/js/timeline.e108540dddc96e4b707f5cf259a582d7.js",
+        ],
         "script-src-attr": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
         "style-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
         "style-src-elem": [
@@ -121,11 +131,7 @@ export default defineNuxtConfig({
         "frame-ancestors": ["'none'"],
       },
       permissionsPolicy: {
-        camera: ["()"],
-        "display-capture": ["()"],
-        fullscreen: ["()"],
-        geolocation: ["()"],
-        microphone: ["()"],
+        microphone: ["self"],
       },
 
       // nuxt-securityをdevtoolsで使うための設定
@@ -133,7 +139,6 @@ export default defineNuxtConfig({
         process.env.NODE_ENV === "development" ? "unsafe-none" : "require-corp",
     },
   },
-  */
 
-  compatibilityDate: "2025-02-13",
+  compatibilityDate: "2025-04-01",
 });

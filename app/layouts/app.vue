@@ -1,107 +1,212 @@
 <template>
   <div class="main-content">
-    <div class="overlay z-40" @click="toggleMenu()" ref="overlay"></div>
-    <div id="container" class="home min-w-[340px] grid">
+    <div
+      class="overlay z-40"
+      @click="toggleMenu()"
+      ref="overlay"
+    ></div>
+    <div
+      id="container"
+      class="home grid min-w-[340px]"
+    >
       <header class="grid">
-        <h1 id="sub_title" class="z-10">
-          <NuxtLink :to="{ name: 'index' }" @click="useScrollTo('#main')">
+        <h1
+          id="sub_title"
+          class="z-10"
+        >
+          <NuxtLink
+            :to="{ name: 'index' }"
+            @click="useScrollTo('#main')"
+          >
             <figure class="aspect-[1/1]">
-              <img class="w-full" alt="top" src="~/assets/images/logo.webp" loading="lazy" />
+              <img
+                class="w-full rounded-b"
+                alt="top"
+                src="~/assets/images/logo.webp"
+                loading="lazy"
+              />
             </figure>
           </NuxtLink>
         </h1>
         <div class="main-slide aspect-[2000/900]">
-          <MainSlide2 v-if="
-            useIncludes(['local', 'github'], useRuntimeConfig().public.appEnv)
-          " />
+          <MainSlide
+            v-if="useIncludes(['github'], useRuntimeConfig().public.appEnv)"
+          />
         </div>
 
-        <HamburgerMenu class="nav sticky z-50" v-model="isActive" @click="toggleMenu()" />
+        <HamburgerMenu
+          class="nav sticky z-50"
+          v-model="isActive"
+          @click="toggleMenu()"
+        />
       </header>
-      <aside ref="contentsRef" class="z-10">
-        <nav id="sub" class="hidden lg:grid pt-5 pb-5 w-full" ref="subRef">
-          <ul class="submenu">
+      <aside
+        ref="contentsRef"
+        class="z-10 flex items-start text-lg"
+      >
+        <nav
+          id="sub"
+          class="hidden w-full pb-5 pt-5 lg:grid"
+          ref="subRef"
+        >
+          <ul class="submenu rounded-xl border-4 border-blue-500">
             <li class="text-center">
-              <NuxtLink :to="{ name: 'index' }" @click="useScrollTo('#main')" class="py-3 px-1">
+              <NuxtLink
+                :to="{ name: 'index' }"
+                @click="useScrollTo('#main')"
+                class="block rounded-t-xl bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+              >
                 <span class="text-[#333]">トップ</span>
-                <span class="subtitle">Top</span>
+                <span
+                  class="subtitle block text-xs tracking-widest text-blue-500"
+                  >Top</span
+                >
               </NuxtLink>
             </li>
-            <li class="text-center">
-              <NuxtLink :to="{ name: 'server_rules' }" @click="useScrollTo('#main')" class="py-3 px-1">
+            <li class="border-t border-[#ccc] text-center">
+              <NuxtLink
+                :to="{ name: 'server_rules' }"
+                @click="useScrollTo('#main')"
+                class="block bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+              >
                 <span class="text-[#333]">サーバールール</span>
-                <span class="subtitle">Server Rules</span>
+                <span
+                  class="subtitle block text-xs tracking-widest text-blue-500"
+                  >Server Rules</span
+                >
               </NuxtLink>
             </li>
-            <li class="text-center">
-              <NuxtLink :to="{ name: 'server_introduction' }" @click="useScrollTo('#main')" class="py-3 px-1">
+            <li class="border-t border-[#ccc] text-center">
+              <NuxtLink
+                :to="{ name: 'server_introduction' }"
+                @click="useScrollTo('#main')"
+                class="block bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+              >
                 <span class="text-[#333]">サーバー紹介</span>
-                <span class="subtitle">Server Introduction</span>
+                <span
+                  class="subtitle block text-xs tracking-widest text-blue-500"
+                  >Server Introduction</span
+                >
               </NuxtLink>
             </li>
-            <li class="text-center">
-              <NuxtLink :to="{ name: 'server_specifications' }" @click="useScrollTo('#main')" class="py-3 px-1">
+            <li class="border-t border-[#ccc] text-center">
+              <NuxtLink
+                :to="{ name: 'server_specifications' }"
+                @click="useScrollTo('#main')"
+                class="block bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+              >
                 <span class="text-[#333]">サーバー仕様</span>
-                <span class="subtitle">Server Specifications</span>
+                <span
+                  class="subtitle block text-xs tracking-widest text-blue-500"
+                  >Server Specifications</span
+                >
               </NuxtLink>
             </li>
-            <li class="text-center">
-              <NuxtLink :to="{ name: 'q_and_a' }" @click="useScrollTo('#main')" class="py-3 px-1">
+            <li class="border-t border-[#ccc] text-center">
+              <NuxtLink
+                :to="{ name: 'q_and_a' }"
+                @click="useScrollTo('#main')"
+                class="block rounded-b-xl bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+              >
                 <span class="text-[#333]">Q & A</span>
-                <span class="subtitle">Q & A</span>
+                <span
+                  class="subtitle block text-xs tracking-widest text-blue-500"
+                  >Q & A</span
+                >
               </NuxtLink>
             </li>
           </ul>
 
-          <ul class="submenu mt-5">
+          <ul class="submenu mt-5 rounded-xl border-4 border-blue-500">
             <li class="text-center">
-              <NuxtLink to="http://soarerserver.mydns.jp:8123/" target="_blank" external class="py-3 px-1">
-                <span class="text-[#333]">dynmap</span><br />
-                <span class="text-[#333]">※外部リンク</span>
+              <NuxtLink
+                to="http://soarerserver.mydns.jp:8123/"
+                target="_blank"
+                external
+                class="block rounded-t-xl bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+              >
+                <span class="text-[#333]">dynmap</span>
+                <span class="block text-[#333]">※外部リンク</span>
               </NuxtLink>
             </li>
-            <li class="text-center">
-              <NuxtLink :to="{ name: 'unique_function' }" @click="useScrollTo('#main')" class="py-3 px-1 text-[#333]">
-                独自機能</NuxtLink>
+            <li class="border-t border-[#ccc] text-center">
+              <NuxtLink
+                :to="{ name: 'unique_function' }"
+                @click="useScrollTo('#main')"
+                class="block bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+              >
+                <span class="text-[#333]">独自機能</span>
+              </NuxtLink>
             </li>
-            <li class="text-center">
-              <NuxtLink :to="{ name: 'original_recipes' }" @click="useScrollTo('#main')" class="py-3 px-1 text-[#333]">
-                独自レシピ</NuxtLink>
+            <li class="border-t border-[#ccc] text-center">
+              <NuxtLink
+                :to="{ name: 'original_recipes' }"
+                @click="useScrollTo('#main')"
+                class="block rounded-b-xl bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+              >
+                <span class="text-[#333]">独自レシピ</span>
+              </NuxtLink>
             </li>
           </ul>
         </nav>
 
-        <nav id="h_nav" class="sidebar fixed h-full bg-[#faf9f1]">
-          <ul class="p-1 h-full">
-            <li class="py-1 border-b">
-              <NuxtLink :to="{ name: 'index' }" @click="menuClose()"
-                class="mm-listitem__text text-[#333] inline-block w-full">
-                トップ
+        <nav
+          id="h_nav"
+          class="sidebar fixed h-full bg-[#faf9f1]"
+        >
+          <ul class="h-full p-1">
+            <li class="border-b py-1">
+              <NuxtLink
+                :to="{ name: 'index' }"
+                @click="menuClose()"
+                class="inline-block w-full transition duration-500"
+              >
+                <span class="text-[#333]">トップ</span>
               </NuxtLink>
             </li>
-            <li class="py-1 border-b">
-              <NuxtLink :to="{ name: 'server_rules' }" @click="menuClose()"
-                class="mm-listitem__text text-[#333] inline-block w-full">
-                サーバールール</NuxtLink>
-            </li>
-            <li class="py-1 border-b">
-              <NuxtLink :to="{ name: 'server_introduction' }" @click="menuClose()"
-                class="mm-listitem__text text-[#333] inline-block w-full">サーバー紹介</NuxtLink>
-            </li>
-            <li class="py-1 border-b">
-              <NuxtLink :to="{ name: 'server_specifications' }" @click="menuClose()"
-                class="mm-listitem__text text-[#333] inline-block w-full">サーバー仕様
+            <li class="border-b py-1">
+              <NuxtLink
+                :to="{ name: 'server_rules' }"
+                @click="menuClose()"
+                class="inline-block w-full transition duration-500"
+              >
+                <span class="text-[#333]">サーバールール</span>
               </NuxtLink>
             </li>
-            <li class="py-1 border-b">
-              <NuxtLink :to="{ name: 'q_and_a' }" @click="menuClose()"
-                class="mm-listitem__text text-[#333] inline-block w-full">Q & A
+            <li class="border-b py-1">
+              <NuxtLink
+                :to="{ name: 'server_introduction' }"
+                @click="menuClose()"
+                class="inline-block w-full transition duration-500"
+              >
+                <span class="text-[#333]">サーバー紹介</span>
+              </NuxtLink>
+            </li>
+            <li class="border-b py-1">
+              <NuxtLink
+                :to="{ name: 'server_specifications' }"
+                @click="menuClose()"
+                class="inline-block w-full transition duration-500"
+              >
+                <span class="text-[#333]">サーバー仕様</span>
+              </NuxtLink>
+            </li>
+            <li class="border-b py-1">
+              <NuxtLink
+                :to="{ name: 'q_and_a' }"
+                @click="menuClose()"
+                class="inline-block w-full transition duration-500"
+              >
+                <span class="text-[#333]">Q & A</span>
               </NuxtLink>
             </li>
           </ul>
         </nav>
       </aside>
-      <main id="main" class="pt-5 pb-20 min-h-[750px] text-lg">
+      <main
+        id="main"
+        class="min-h-[750px] pb-20 pt-5 text-lg"
+      >
         <slot />
       </main>
     </div>
@@ -111,7 +216,7 @@
 .nav {
   grid-area: 2 / 4;
 
-  top: calc(0.25rem + 34px);
+  top: 1.25rem;
 }
 
 #container {
@@ -223,6 +328,18 @@ main {
   opacity: 1;
   cursor: pointer;
 }
+
+.sticky_top {
+  position: sticky;
+  top: 0;
+  align-self: start;
+}
+
+.sticky_bottom {
+  position: sticky;
+  bottom: 0;
+  align-self: end;
+}
 </style>
 <script lang="ts" setup>
 const mainTitle = "doragonabe site";
@@ -317,6 +434,8 @@ watch(y, (newScrollValue, oldScrollValue) => {
         subRef.value.classList.add("sticky_bottom");
         subRef.value.classList.remove("sticky_top");
         subRef.value.style.removeProperty("margin-top");
+
+        return;
       }
 
       if (subRef.value.offsetTop === contentsRef.value.offsetTop) {

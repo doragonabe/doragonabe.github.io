@@ -23,7 +23,7 @@ package.json に追加（間違って npm や yarn でインストールされ�
 ```json
 {
   "scripts": {
-    "preinstall": "pnpx only-allow pnpm"
+    "preinstall": "pnpm dlx only-allow pnpm"
   }
 }
 ```
@@ -198,7 +198,8 @@ export default defineNuxtConfig({
 ```bash
 pnpm add -D @nuxt/test-utils @playwright/test
 pnpm add -D tailwindcss @tailwindcss/forms @tailwindcss/aspect-ratio @tailwindcss/typography @tailwindcss/container-queries @headlessui/tailwindcss
-pnpx playwright install
+
+pnpm exec playwright install
 ```
 
 nuxt.config.tsに追加
