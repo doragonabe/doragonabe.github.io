@@ -32,20 +32,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # https://github.com/actions/setup-node
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 23
+      # https://github.com/jdx/mise-action
+      - name: Setup Mise
+        uses: jdx/mise-action@v2
 
-      # https://github.com/pnpm/action-setup
-      - name: Setup PNPM
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10.6.5
+      # バージョン確認
+      - name: Verify Versions
+        run: |
+          echo "node: $(node -v)"
+          echo "pnpm: $(pnpm -v)"
 
       # https://github.com/actions/cache
       - name: Cache pnpm store
+        id: deps-cache
         uses: actions/cache@v4
         with:
           path: ~/.local/share/pnpm/store
@@ -59,6 +58,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
+        if: steps.deps-cache.outputs.cache-hit != 'true'
         run: pnpm install
 
       - name: Build

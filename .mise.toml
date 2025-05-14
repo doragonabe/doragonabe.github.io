@@ -1,5 +1,5 @@
 [tools]
 # mise ls-remote node
 # mise ls-remote pnpm
-node = '23.5.0'
-pnpm = '10.6.5'
+node = '23.11.0'
+pnpm = '10.9.0'

@@ -9,6 +9,10 @@ dist
 # Node dependencies
 node_modules
 
+# Pnpm
+.pnpm-store
+node-compile-cache
+
 # Logs
 logs
 *.log
