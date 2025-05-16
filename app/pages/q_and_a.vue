@@ -33,7 +33,7 @@
           to="https://github.com/doragonabe/doragonabe.github.io"
           target="_blank"
           external
-          class="underline transition duration-500 hover:text-blue-500"
+          class="break-all underline transition duration-500 hover:text-blue-500"
         >
           https://github.com/doragonabe/doragonabe.github.io</NuxtLink
         >
