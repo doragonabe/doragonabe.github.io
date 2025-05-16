@@ -44,7 +44,6 @@ jobs:
 
       # https://github.com/actions/cache
       - name: Cache pnpm store
-        id: deps-cache
         uses: actions/cache@v4
         with:
           path: ~/.local/share/pnpm/store
@@ -58,7 +57,6 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Install dependencies
-        if: steps.deps-cache.outputs.cache-hit != 'true'
         run: pnpm install
 
       - name: Build
