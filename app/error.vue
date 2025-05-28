@@ -1,5 +1,6 @@
 <template>
   <Title>doragonabe site</Title>
+
   <div>
     <div
       id="page"

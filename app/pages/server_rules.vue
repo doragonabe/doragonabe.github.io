@@ -1,5 +1,6 @@
 <template>
   <Title>サーバールール</Title>
+
   <section>
     <H2 class="mb-5">サーバールール</H2>
     <p class="px-5">

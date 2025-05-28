@@ -1,9 +1,13 @@
 <template>
   <Title>Q & A</Title>
+
   <section>
     <H2 class="mb-5">Q & A</H2>
-    <H3 class="mb-2">入ったらまず何をすればいい？</H3>
-    <div class="px-5 pb-5">
+
+    <SubSection
+      title="入ったらまず何をすればいい？"
+      class="mb-2"
+    >
       <p>
         <span>メインワールドではお好きなところに建築してOK</span><br />
         <span>採掘や敵MOBとの戦闘が行いたければ採掘ワールドへ(現在削除)</span
@@ -12,10 +16,12 @@
         ><br />
         <span>採掘ワールドでの建築やログアウトは非推奨です。</span>
       </p>
-    </div>
+    </SubSection>
 
-    <H3 class="mb-2">活動予定について</H3>
-    <div class="px-5 pb-5">
+    <SubSection
+      title="活動予定について"
+      class="mb-2"
+    >
       <p>
         <span>現在メインワールドの整地作業を行っています。</span><br />
         <span>作業員募集中。</span><br />
@@ -23,10 +29,12 @@
           >メインワールドの整地終了後はTTワールドの整地作業を行う予定です。</span
         >
       </p>
-    </div>
+    </SubSection>
 
-    <H3 class="mb-2">このサイトについて</H3>
-    <div class="px-5 pb-5">
+    <SubSection
+      title="このサイトについて"
+      class="mb-2"
+    >
       <p>
         <span>本サイトはGitHub Pagesを使用して作成されています。</span><br />
         <NuxtLink
@@ -47,10 +55,12 @@
           >デザイン崩れや、誤字などを見つけましたらいつものdiscordにてご連絡ください。</span
         >
       </p>
-    </div>
+    </SubSection>
 
-    <H3 class="mb-2">サイト仕様</H3>
-    <div class="px-5 pb-5">
+    <SubSection
+      title="サイト仕様"
+      class="mb-2"
+    >
       <ol>
         <li>
           <h4>シングルページ構造</h4>
@@ -83,7 +93,7 @@
           <span>そこから画面切り替えが行えるようになっております。</span>
         </li>
       </ol>
-    </div>
+    </SubSection>
   </section>
 </template>
 <script lang="ts" setup>

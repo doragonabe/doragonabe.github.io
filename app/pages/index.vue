@@ -1,5 +1,6 @@
 <template>
   <Title>トップ</Title>
+
   <section class="mb-8">
     <H2 class="mb-5">トップ</H2>
     <EyeCatchMenu />

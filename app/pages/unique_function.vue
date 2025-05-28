@@ -1,22 +1,29 @@
 <template>
   <Title>独自機能</Title>
-  <section class="mb-8">
-    <H2 class="mb-5">独自機能</H2>
-    <EyeCatchMenu />
-  </section>
+
   <section>
+    <section class="mb-8">
+      <H2 class="mb-5">独自機能</H2>
+      <EyeCatchMenu />
+    </section>
+
     <H2 class="mb-5">使用プラグイン</H2>
-    <H3 class="mb-2">MyPet</H3>
-    <div class="px-5 pb-5">
+
+    <SubSection
+      title="MyPet"
+      class="mb-2"
+    >
       <p>
         <span>リードで敵MOBや動物に止めを刺すとそのMOBが仲間になるよ</span
         ><br />
         <span>仲間にならないMOBもいるよ</span>
       </p>
-    </div>
+    </SubSection>
 
-    <H3 class="mb-2">Skript</H3>
-    <div class="px-5 pb-5">
+    <SubSection
+      title="Skript"
+      class="mb-2"
+    >
       <p>
         <span>javaのコードを書かなくてもプラグインが作れる</span><br />
         <span
@@ -174,18 +181,22 @@
           </li>
         </ul>
       </div>
-    </div>
+    </SubSection>
 
-    <H3 class="mb-2">RecipeManager/CustomCrafting</H3>
-    <div class="px-5 pb-5">
+    <SubSection
+      title="RecipeManager/CustomCrafting"
+      class="mb-2"
+    >
       <p>
         <router-link to="/original_recipes">独自レシピ</router-link>
         <span>のページにてレシピ一覧参照</span>
       </p>
-    </div>
+    </SubSection>
 
-    <H3 class="mb-2">TreeAssist</H3>
-    <div class="px-5">
+    <SubSection
+      title="TreeAssist"
+      class="mb-2"
+    >
       <p>
         <span
           >斧を持って木の最下層ブロックを破壊するだけで、自動的に木全体が伐採されます。</span
@@ -194,7 +205,7 @@
           >これにより、手作業で木を伐採する手間や時間を省くことができます。</span
         >
       </p>
-    </div>
+    </SubSection>
   </section>
 </template>
 <script lang="ts" setup>

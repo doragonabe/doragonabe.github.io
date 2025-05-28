@@ -1,14 +1,18 @@
 <template>
   <Title>サーバー紹介</Title>
+
   <section>
     <H2 class="mb-5">サーバー紹介</H2>
+
     <p class="px-5 pb-5">
       <span>とてもつよいnegaiサーバーだよ</span><br />
       <span>1.19に更新</span>
     </p>
 
-    <H3 class="mb-2">無限化施設素材一覧</H3>
-    <div class="px-5 pb-5">
+    <SubSection
+      title="無限化施設素材一覧"
+      class="mb-2"
+    >
       <p>
         <span>サトウキビ</span><br />
         <span>鉄</span>
@@ -22,10 +26,12 @@
           <span>金</span>
         -->
       </p>
-    </div>
+    </SubSection>
 
-    <H3 class="mb-2">取引可能村人一覧</H3>
-    <div class="px-5">
+    <SubSection
+      title="取引可能村人一覧"
+      class="mb-2"
+    >
       <table>
         <tbody>
           <tr>
@@ -34,7 +40,7 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </SubSection>
   </section>
 </template>
 <script lang="ts" setup>

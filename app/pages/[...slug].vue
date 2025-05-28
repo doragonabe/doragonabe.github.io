@@ -1,5 +1,6 @@
 <template>
   <Title>404</Title>
+
   <div>404</div>
 </template>
 <script lang="ts" setup>
