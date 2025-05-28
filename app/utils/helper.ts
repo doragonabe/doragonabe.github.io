@@ -1,16 +1,20 @@
-export const appEnv = (): string => {
+const envMap = {
+  local: "ローカル",
+  test: "テスト",
+  development: "開発",
+  staging: "検証",
+  production: "本番",
+} as const;
+
+type TypeEnv = keyof typeof envMap;
+type DisplayEnv = (typeof envMap)[TypeEnv];
+
+export const appEnv = (): TypeEnv => {
   return useRuntimeConfig().public.appEnv;
 };
 
-export const appEnvView = (): string => {
-  const envMap: { [key: string]: string } = {
-    local: "ローカル",
-    development: "開発",
-    staging: "検証",
-    production: "本番",
-  };
-
-  return envMap[useRuntimeConfig().public.appEnv] ?? "";
+export const appEnvView = (): DisplayEnv => {
+  return envMap[useRuntimeConfig().public.appEnv];
 };
 
 /**
@@ -167,6 +171,7 @@ export const range = (start: number, end: number, step = 1): number[] => {
   return output;
 };
 
-export const isRealNumber = (value: any): boolean => {
-  return typeof value === "number" && !isNaN(value);
+export const isRealNumber = (value: unknown): value is number => {
+  // typeof で number 確認 → NaN／Infinity を除外
+  return typeof value === "number" && Number.isFinite(value);
 };

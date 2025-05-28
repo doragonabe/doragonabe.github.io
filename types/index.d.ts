@@ -1,3 +1,5 @@
+import "@nuxt/schema";
+
 export type Range<
   N extends number,
   M extends number,
@@ -11,3 +13,9 @@ export type Range<
       ? Result | C["length"]
       : Range<N, M, Result | C["length"], [...C, never], Flag>
     : Range<N, M, Result, [...C, never], Flag>;
+
+declare module "nuxt/schema" {
+  interface PublicRuntimeConfig {
+    appEnv: "local" | "test" | "development" | "staging" | "production";
+  }
+}
