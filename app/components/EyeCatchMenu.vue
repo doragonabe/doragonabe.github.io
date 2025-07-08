@@ -13,7 +13,6 @@
           <img
             alt="dynmap"
             src="~/assets/images/1000x665.png"
-            loading="lazy"
           />
         </figure>
         <h4 class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
@@ -26,7 +25,6 @@
           <img
             alt=""
             src="~/assets/images/arrow1.svg"
-            loading="lazy"
             class="h-10 w-10"
           />
         </figure>
@@ -44,7 +42,6 @@
           <img
             alt="独自機能"
             src="~/assets/images/1000x665.png"
-            loading="lazy"
           />
         </figure>
         <h4 class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
@@ -55,7 +52,6 @@
           <img
             alt=""
             src="~/assets/images/arrow1.svg"
-            loading="lazy"
             class="h-10 w-10"
           />
         </figure>
@@ -73,7 +69,6 @@
           <img
             alt="独自レシピ"
             src="~/assets/images/1000x665.png"
-            loading="lazy"
           />
         </figure>
         <h4 class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
@@ -84,7 +79,6 @@
           <img
             alt=""
             src="~/assets/images/arrow1.svg"
-            loading="lazy"
             class="h-10 w-10"
           />
         </figure>

@@ -23,7 +23,6 @@
                 class="w-full rounded-b"
                 alt="top"
                 src="~/assets/images/logo.webp"
-                loading="lazy"
               />
             </figure>
           </NuxtLink>
