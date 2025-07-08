@@ -24,10 +24,10 @@
         </p>
         <figure style="text-align: -webkit-right">
           <img
-            alt="arrow1"
-            src="~/assets/images/arrow1.png"
+            alt=""
+            src="~/assets/images/arrow1.svg"
             loading="lazy"
-            class="w-10"
+            class="h-10 w-10"
           />
         </figure>
       </NuxtLink>
@@ -53,10 +53,10 @@
         <p class="min-h-12 text-[clamp(0.625rem,3vw,1rem)] text-[#333]"></p>
         <figure style="text-align: -webkit-right">
           <img
-            alt="arrow1"
-            src="~/assets/images/arrow1.png"
+            alt=""
+            src="~/assets/images/arrow1.svg"
             loading="lazy"
-            class="w-10"
+            class="h-10 w-10"
           />
         </figure>
       </NuxtLink>
@@ -82,10 +82,10 @@
         <p class="min-h-12 text-[clamp(0.625rem,3vw,1rem)] text-[#333]"></p>
         <figure style="text-align: -webkit-right">
           <img
-            alt="arrow1"
-            src="~/assets/images/arrow1.png"
+            alt=""
+            src="~/assets/images/arrow1.svg"
             loading="lazy"
-            class="w-10"
+            class="h-10 w-10"
           />
         </figure>
       </NuxtLink>

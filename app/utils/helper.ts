@@ -163,7 +163,7 @@ export const byteLengthOf = (s: string): number => {
 };
 
 export const range = (start: number, end: number, step = 1): number[] => {
-  const output = [];
+  const output: number[] = [];
   for (let i = start; i <= end; i += step) {
     output.push(i);
   }

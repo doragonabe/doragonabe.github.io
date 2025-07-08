@@ -34,6 +34,7 @@
     "bowser",
     "bunx",
     "composables",
+    "demi",
     "domcontentloaded",
     "doragonabe",
     "dynmap",
@@ -105,7 +106,11 @@
   "debug.javascript.codelens.npmScripts": "all", // 非必須：package.jsonから実行できるようになる
   "diffEditor.ignoreTrimWhitespace": false, // 必須
   "workbench.iconTheme": "vscode-icons", // 非必須：ファイルアイコン表示
+  "workbench.editor.enablePreview": false, // 常に新しいタブでファイルを開くようになる
+  "workbench.activityBar.location": "top",
+  "workbench.colorTheme": "JetBrains Rider Dark Theme",
   "npm.packageManager": "pnpm", // 必須
-  "workbench.editor.enablePreview": false, // 新しいタブでファイルを開くようにする
-  "svg.preview.background": "editor"
+  "svg.preview.background": "editor",
+  "typescript.inlayHints.parameterNames.enabled": "literals",
+  "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true
 }

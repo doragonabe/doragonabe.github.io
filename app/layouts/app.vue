@@ -348,7 +348,7 @@ useHead({
     return subTitle ? `${subTitle} | ${mainTitle}` : mainTitle;
   },
   bodyAttrs: {
-    class: "bg-amber-50 dark:bg-neutral-500",
+    class: "bg-amber-50 dark:bg-neutral-500 auto-phrase",
   },
 });
 

@@ -23,7 +23,7 @@
     "bradlc.vscode-tailwindcss", // Tailwind CSS IntelliSense - Tailwind CSS補完
     "shd101wyy.markdown-preview-enhanced",
     "jock.svg",
-    "cweijan.vscode-typora",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "EdwinSulaiman.jetbrains-rider-dark-theme"
   ]
 }
