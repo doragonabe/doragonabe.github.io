@@ -105,7 +105,7 @@ export default defineNuxtConfig({
           "https://platform.twitter.com",
           "https://syndication.twitter.com",
         ],
-        "img-src": ["'self'"],
+        "img-src": ["'self'", "data:"],
         "script-src": ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
         "script-src-elem": [
           "'self'",
