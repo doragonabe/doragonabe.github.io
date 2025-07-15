@@ -132,6 +132,7 @@ export default defineNuxtConfig({
       },
       permissionsPolicy: {
         microphone: ["self"],
+        "browsing-topics": [],
       },
 
       // nuxt-securityをdevtoolsで使うための設定
