@@ -35,7 +35,7 @@
     "bowser": "^2.11.0",
     "dayjs": "^1.11.13",
     "dayjs-nuxt": "^2.1.11",
-    "mermaid": "^11.7.0",
+    "mermaid": "^11.10.0",
     "nuxt": "^3.17.6",
     "pinia-plugin-persistedstate": "^4.4.1",
     "qrcode": "^1.5.4",
