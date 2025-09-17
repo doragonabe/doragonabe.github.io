@@ -36,7 +36,7 @@
     "dayjs": "^1.11.13",
     "dayjs-nuxt": "^2.1.11",
     "mermaid": "^11.7.0",
-    "nuxt": "^3.17.6",
+    "nuxt": "^3.19.0",
     "pinia-plugin-persistedstate": "^4.4.1",
     "qrcode": "^1.5.4",
     "swiper": "^11.2.10",
