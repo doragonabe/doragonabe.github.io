@@ -1,12 +1,15 @@
 <template>
   <Title>サーバー紹介</Title>
 
-  <section class="mb-8">
+  <section
+    id="main"
+    class="mb-3 pt-5"
+  >
     <H2 class="mb-5">メニュー</H2>
     <EyeCatchMenu />
   </section>
 
-  <section>
+  <section class="mb-3 pt-5">
     <H2 class="mb-5">サーバー紹介</H2>
     <p class="px-5 pb-5">
       <span>とてもつよいnegaiサーバーだよ</span><br />

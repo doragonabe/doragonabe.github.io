@@ -1,12 +1,15 @@
 <template>
   <Title>トップ</Title>
 
-  <section class="mb-8">
+  <section
+    id="main"
+    class="mb-3 pt-5"
+  >
     <H2 class="mb-5">メニュー</H2>
     <EyeCatchMenu />
   </section>
 
-  <section class="mb-8">
+  <section class="mb-3 pt-5">
     <H2 class="mb-5"> 更新情報・お知らせ </H2>
     <div class="px-5">
       <dl class="border-b border-[#ccc] sm:flex">
@@ -54,7 +57,7 @@
     </div>
   </section>
 
-  <section>
+  <section class="mb-3 pt-5">
     <H2 class="mb-5">X</H2>
     <TwitterTimeline
       v-if="includes(['github'], appEnv())"

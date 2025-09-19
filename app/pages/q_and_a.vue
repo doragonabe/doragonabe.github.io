@@ -1,12 +1,15 @@
 <template>
   <Title>Q & A</Title>
 
-  <section class="mb-8">
+  <section class="mb-3 pt-5">
     <H2 class="mb-5">メニュー</H2>
     <EyeCatchMenu />
   </section>
 
-  <section>
+  <section
+    id="main"
+    class="mb-3 pt-5"
+  >
     <H2 class="mb-5">Q & A</H2>
     <SubSection
       title="入ったらまず何をすればいい？"

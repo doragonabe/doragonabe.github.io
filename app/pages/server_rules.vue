@@ -1,12 +1,15 @@
 <template>
   <Title>サーバールール</Title>
 
-  <section class="mb-8">
+  <section
+    id="main"
+    class="mb-3 pt-5"
+  >
     <H2 class="mb-5">メニュー</H2>
     <EyeCatchMenu />
   </section>
 
-  <section>
+  <section class="mb-3 pt-5">
     <H2 class="mb-5">サーバールール</H2>
     <p class="px-5">
       <span>特に無し</span><br />

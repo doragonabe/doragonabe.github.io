@@ -200,10 +200,7 @@
           </ul>
         </nav>
       </aside>
-      <main
-        id="main"
-        class="min-h-[750px] pt-5 pb-20 text-lg"
-      >
+      <main class="min-h-[750px] pb-20 text-lg">
         <slot />
       </main>
     </div>
