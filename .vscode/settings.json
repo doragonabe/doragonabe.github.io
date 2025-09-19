@@ -25,6 +25,10 @@
   "[yml][yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
+  // 検索除外
+  "search.exclude": {
+    "pnpm-lock.yaml": true
+  },
   "cSpell.words": [
     "anchorscroll",
     "autodocs",
@@ -34,6 +38,7 @@
     "bowser",
     "bunx",
     "composables",
+    "dedupe",
     "demi",
     "domcontentloaded",
     "doragonabe",
@@ -62,6 +67,7 @@
     "preinstall",
     "qrcode",
     "qupzilla",
+    "selemondev",
     "Skript",
     "swiper",
     "tailwindcss",
@@ -110,7 +116,7 @@
   "workbench.activityBar.location": "top",
   "workbench.colorTheme": "JetBrains Rider Dark Theme",
   "npm.packageManager": "pnpm", // 必須
-  "svg.preview.background": "editor",
+  "svg.preview.background": "dark-transparent",
   "typescript.inlayHints.parameterNames.enabled": "literals",
   "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true
 }

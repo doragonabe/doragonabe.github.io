@@ -29,7 +29,7 @@
         </h1>
         <div class="main-slide aspect-[2000/900]">
           <MainSlide
-            v-if="useIncludes(['github'], useRuntimeConfig().public.appEnv)"
+            v-if="includes(['github'], appEnv())"
           />
         </div>
 
@@ -341,6 +341,8 @@ main {
 }
 </style>
 <script lang="ts" setup>
+import { includes } from "es-toolkit/compat";
+
 const mainTitle = "doragonabe site";
 useHead({
   titleTemplate: (subTitle?: string) => {

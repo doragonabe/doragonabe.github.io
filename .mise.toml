@@ -1,5 +1,5 @@
 [tools]
 # mise ls-remote node
-# mise ls-remote pnpm
-node = '23.11.0'
-pnpm = '10.9.0'
+# mise ls-remote npm:pnpm
+'node' = '24.8.0'
+'npm:pnpm' = '10.17.0'

@@ -30,11 +30,11 @@ jobs:
     steps:
       # https://github.com/actions/checkout
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # https://github.com/jdx/mise-action
       - name: Setup Mise
-        uses: jdx/mise-action@v2
+        uses: jdx/mise-action@v3
 
       # バージョン確認
       - name: Verify Versions
@@ -64,7 +64,7 @@ jobs:
 
       # https://github.com/actions/upload-pages-artifact
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: .output/public
 

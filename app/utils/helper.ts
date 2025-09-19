@@ -4,17 +4,21 @@ const envMap = {
   development: "開発",
   staging: "検証",
   production: "本番",
+  github: "github",
 } as const;
 
 type TypeEnv = keyof typeof envMap;
 type DisplayEnv = (typeof envMap)[TypeEnv];
 
+const isTypeEnv = (v: string): v is TypeEnv => v in envMap;
+
 export const appEnv = (): TypeEnv => {
-  return useRuntimeConfig().public.appEnv;
+  const env = useRuntimeConfig().public.appEnv;
+  return isTypeEnv(env) ? env : "local";
 };
 
 export const appEnvView = (): DisplayEnv => {
-  return envMap[useRuntimeConfig().public.appEnv];
+  return envMap[appEnv()];
 };
 
 /**
@@ -175,3 +179,6 @@ export const isRealNumber = (value: unknown): value is number => {
   // typeof で number 確認 → NaN／Infinity を除外
   return typeof value === "number" && Number.isFinite(value);
 };
+
+export const SLEEP = (m_sec: number) =>
+  new Promise((resolve) => setTimeout(resolve, m_sec * 1000));

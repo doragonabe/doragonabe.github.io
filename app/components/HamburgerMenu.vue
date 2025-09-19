@@ -1,7 +1,7 @@
 <template>
   <button
     type="button"
-    class="drawer_open flex h-12 w-12 items-center justify-center rounded-[50%] bg-blue-500"
+    class="drawer_open flex h-12 w-12 cursor-pointer items-center justify-center rounded-[50%] bg-blue-500"
     :class="{ is_open: isActive }"
     aria-controls="h_nav"
     :aria-expanded="isActive"

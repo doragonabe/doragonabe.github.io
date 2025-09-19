@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: false,
+  telemetry: false,
 
   /**
    * https://nuxt.com/docs/getting-started/seo-meta
@@ -23,14 +24,17 @@ export default defineNuxtConfig({
   /**
    * https://nuxt.com/docs/getting-started/styling#the-css-property
    */
-  css: ["assets/css/style.scss", "assets/css/craft.scss"],
+  css: [
+    "assets/css/main.css",
+    "assets/css/style.scss",
+    "assets/css/craft.scss",
+  ],
 
   /**
    * https://nuxt.com/docs/api/nuxt-config#modules-1
    */
   modules: [
     "@vueuse/nuxt",
-    "nuxt-lodash",
     "dayjs-nuxt",
     "nuxt-typed-router",
     "@nuxt/ui",
@@ -142,4 +146,8 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: "2025-04-01",
+
+  colorMode: {
+    preference: "light",
+  },
 });

@@ -55,7 +55,7 @@
   <section>
     <H2 class="mb-5">X</H2>
     <TwitterTimeline
-      v-if="useIncludes(['github'], useRuntimeConfig().public.appEnv)"
+      v-if="includes(['github'], appEnv())"
       url="minecraftjapan"
       :dataChrome="['noheader', 'nofooter', 'noborders', 'transparent']"
       :dataTweetLimit="4"
@@ -63,6 +63,8 @@
   </section>
 </template>
 <script lang="ts" setup>
+import { includes } from "es-toolkit/compat";
+
 definePageMeta({
   layout: "app",
 });
