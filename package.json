@@ -78,11 +78,6 @@
     "not dead",
     "not ie 11"
   ],
-  "engines": {
-    "node": "^23.0.0",
-    "pnpm": "^10.0.0"
-  },
-  "packageManager": "pnpm@10.15.1",
   "pnpm": {
     "ignoredBuiltDependencies": [
       "esbuild"
