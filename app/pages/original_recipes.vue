@@ -1,14 +1,13 @@
 <template>
   <Title>独自レシピ</Title>
 
+  <section class="mb-8">
+    <H2 class="mb-5">メニュー</H2>
+    <EyeCatchMenu />
+  </section>
+
   <section>
-    <section class="mb-8">
-      <H2 class="mb-5">独自レシピ</H2>
-      <EyeCatchMenu />
-    </section>
-
     <H2 class="mb-5">レシピ一覧</H2>
-
     <SubSection
       title="バンドル"
       class="mb-2"

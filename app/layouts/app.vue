@@ -28,9 +28,7 @@
           </NuxtLink>
         </h1>
         <div class="main-slide aspect-[2000/900]">
-          <MainSlide
-            v-if="includes(['github'], appEnv())"
-          />
+          <MainSlide v-if="includes(['github'], appEnv())" />
         </div>
 
         <HamburgerMenu
@@ -45,7 +43,7 @@
       >
         <nav
           id="sub"
-          class="hidden w-full pb-5 pt-5 lg:grid"
+          class="hidden w-full pt-5 pb-5 lg:grid"
           ref="subRef"
         >
           <ul class="submenu rounded-xl border-4 border-blue-500">
@@ -204,7 +202,7 @@
       </aside>
       <main
         id="main"
-        class="min-h-[750px] pb-20 pt-5 text-lg"
+        class="min-h-[750px] pt-5 pb-20 text-lg"
       >
         <slot />
       </main>

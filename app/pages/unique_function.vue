@@ -1,14 +1,13 @@
 <template>
   <Title>独自機能</Title>
 
+  <section class="mb-8">
+    <H2 class="mb-5">メニュー</H2>
+    <EyeCatchMenu />
+  </section>
+
   <section>
-    <section class="mb-8">
-      <H2 class="mb-5">独自機能</H2>
-      <EyeCatchMenu />
-    </section>
-
-    <H2 class="mb-5">使用プラグイン</H2>
-
+    <H2 class="mb-5">独自機能</H2>
     <SubSection
       title="MyPet"
       class="mb-2"

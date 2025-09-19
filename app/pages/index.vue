@@ -2,9 +2,10 @@
   <Title>トップ</Title>
 
   <section class="mb-8">
-    <H2 class="mb-5">トップ</H2>
+    <H2 class="mb-5">メニュー</H2>
     <EyeCatchMenu />
   </section>
+
   <section class="mb-8">
     <H2 class="mb-5"> 更新情報・お知らせ </H2>
     <div class="px-5">
@@ -52,6 +53,7 @@
       </dl>
     </div>
   </section>
+
   <section>
     <H2 class="mb-5">X</H2>
     <TwitterTimeline

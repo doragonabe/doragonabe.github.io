@@ -1,6 +1,11 @@
 <template>
   <Title>サーバールール</Title>
 
+  <section class="mb-8">
+    <H2 class="mb-5">メニュー</H2>
+    <EyeCatchMenu />
+  </section>
+
   <section>
     <H2 class="mb-5">サーバールール</H2>
     <p class="px-5">
