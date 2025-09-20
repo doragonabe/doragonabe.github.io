@@ -197,6 +197,24 @@
                 <span class="text-[#333]">Q & A</span>
               </NuxtLink>
             </li>
+            <li class="border-b py-1">
+              <NuxtLink
+                :to="{ name: 'unique_function' }"
+                @click="menuClose()"
+                class="inline-block w-full transition duration-500"
+              >
+                <span class="text-[#333]">独自機能</span>
+              </NuxtLink>
+            </li>
+            <li class="border-b py-1">
+              <NuxtLink
+                :to="{ name: 'original_recipes' }"
+                @click="menuClose()"
+                class="inline-block w-full transition duration-500"
+              >
+                <span class="text-[#333]">独自レシピ</span>
+              </NuxtLink>
+            </li>
           </ul>
         </nav>
       </aside>
