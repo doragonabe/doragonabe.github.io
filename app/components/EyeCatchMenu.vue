@@ -1,7 +1,7 @@
 <template>
   <div class="h2_contents grid grid-cols-3 gap-x-4 gap-y-4 px-4">
     <div
-      class="list h-full w-full rounded-sm border border-[#ccc] bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
+      class="list h-full w-full rounded-sm border border-stone-400/55 bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
     >
       <NuxtLink
         :to="{ name: 'index' }"
@@ -18,7 +18,7 @@
           トップ
         </h4>
         <p
-          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-[#333]"
+          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-black/80"
         >
           <img
             alt=""
@@ -30,7 +30,7 @@
     </div>
 
     <div
-      class="list h-full w-full rounded-sm border border-[#ccc] bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
+      class="list h-full w-full rounded-sm border border-stone-400/55 bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
     >
       <NuxtLink
         :to="{ name: 'server_rules' }"
@@ -47,7 +47,7 @@
           サーバールール
         </h4>
         <p
-          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-[#333]"
+          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-black/80"
         >
           <img
             alt=""
@@ -59,7 +59,7 @@
     </div>
 
     <div
-      class="list h-full w-full rounded-sm border border-[#ccc] bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
+      class="list h-full w-full rounded-sm border border-stone-400/55 bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
     >
       <NuxtLink
         :to="{ name: 'server_introduction' }"
@@ -76,7 +76,7 @@
           サーバー紹介
         </h4>
         <p
-          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-[#333]"
+          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-black/80"
         >
           <img
             alt=""
@@ -88,7 +88,7 @@
     </div>
 
     <div
-      class="list h-full w-full rounded-sm border border-[#ccc] bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
+      class="list h-full w-full rounded-sm border border-stone-400/55 bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
     >
       <NuxtLink
         :to="{ name: 'server_specifications' }"
@@ -105,7 +105,7 @@
           サーバー仕様
         </h4>
         <p
-          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-[#333]"
+          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-black/80"
         >
           <img
             alt=""
@@ -117,7 +117,7 @@
     </div>
 
     <div
-      class="list h-full w-full rounded-sm border border-[#ccc] bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
+      class="list h-full w-full rounded-sm border border-stone-400/55 bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
     >
       <NuxtLink
         :to="{ name: 'q_and_a' }"
@@ -134,7 +134,7 @@
           Q & A
         </h4>
         <p
-          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-[#333]"
+          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-black/80"
         >
           <img
             alt=""
@@ -146,7 +146,7 @@
     </div>
 
     <div
-      class="list h-full w-full rounded-sm border border-[#ccc] bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
+      class="list h-full w-full rounded-sm border border-stone-400/55 bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
     >
       <NuxtLink
         to="http://soarerserver.mydns.jp:8123/"
@@ -164,7 +164,7 @@
           dynmap
         </h4>
         <p
-          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-[#333]"
+          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-black/80"
         >
           ※外部リンク
           <img
@@ -177,7 +177,7 @@
     </div>
 
     <div
-      class="list h-full w-full rounded-sm border border-[#ccc] bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
+      class="list h-full w-full rounded-sm border border-stone-400/55 bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
     >
       <NuxtLink
         :to="{ name: 'unique_function' }"
@@ -194,7 +194,7 @@
           独自機能
         </h4>
         <p
-          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-[#333]"
+          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-black/80"
         >
           <img
             alt=""
@@ -206,7 +206,7 @@
     </div>
 
     <div
-      class="list h-full w-full rounded-sm border border-[#ccc] bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
+      class="list h-full w-full rounded-sm border border-stone-400/55 bg-white p-[6%] shadow-[0.1875rem_0.25rem_0.125rem_rgba(0,0,0,0.1)]"
     >
       <NuxtLink
         :to="{ name: 'original_recipes' }"
@@ -223,7 +223,7 @@
           独自レシピ
         </h4>
         <p
-          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-[#333]"
+          class="relative min-h-15 text-[clamp(0.625rem,3vw,1rem)] break-all text-black/80"
         >
           <img
             alt=""

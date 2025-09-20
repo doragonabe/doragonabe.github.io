@@ -12,7 +12,7 @@
   <section class="mb-3 pt-5">
     <H2 class="mb-5"> 更新情報・お知らせ </H2>
     <div class="px-5">
-      <dl class="border-b border-[#ccc] sm:flex">
+      <dl class="border-b border-stone-400/55 sm:flex">
         <dt class="pr-12 tracking-[0.1em]">2022/06/18</dt>
         <dd class="[overflow-wrap:anywhere]">
           <span>ページ構成をNuxt3に変更</span>
@@ -22,7 +22,7 @@
           >
         </dd>
       </dl>
-      <dl class="border-b border-[#ccc] sm:flex">
+      <dl class="border-b border-stone-400/55 sm:flex">
         <dt class="pr-12 tracking-[0.1em]">2022/06/18</dt>
         <dd class="[overflow-wrap:anywhere]">
           <span>ページ構成をVue.jsに変更</span>
@@ -35,7 +35,7 @@
           >
         </dd>
       </dl>
-      <dl class="mt-5 border-b border-[#ccc] sm:flex">
+      <dl class="mt-5 border-b border-stone-400/55 sm:flex">
         <dt class="pr-12 tracking-[0.1em]">2022/01/01</dt>
         <dd class="[overflow-wrap:anywhere]">
           <span>Q&Aページ更新</span>
@@ -48,7 +48,7 @@
           >
         </dd>
       </dl>
-      <dl class="mt-5 border-b border-[#ccc] sm:flex">
+      <dl class="mt-5 border-b border-stone-400/55 sm:flex">
         <dt class="pr-12 tracking-[0.1em]">2022/01/01</dt>
         <dd class="[overflow-wrap:anywhere]">
           <span>negaiサーバー紹介サイト限定URL公開</span>

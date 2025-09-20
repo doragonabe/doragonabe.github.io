@@ -53,59 +53,59 @@
                 @click="useScrollTo('#main')"
                 class="block rounded-t-xl bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
               >
-                <span class="text-[#333]">トップ</span>
+                <span class="text-black/80">トップ</span>
                 <span
                   class="subtitle block text-xs tracking-widest text-blue-500"
                   >Top</span
                 >
               </NuxtLink>
             </li>
-            <li class="border-t border-[#ccc] text-center">
+            <li class="border-t border-stone-400/55 text-center">
               <NuxtLink
                 :to="{ name: 'server_rules' }"
                 @click="useScrollTo('#main')"
                 class="block bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
               >
-                <span class="text-[#333]">サーバールール</span>
+                <span class="text-black/80">サーバールール</span>
                 <span
                   class="subtitle block text-xs tracking-widest text-blue-500"
                   >Server Rules</span
                 >
               </NuxtLink>
             </li>
-            <li class="border-t border-[#ccc] text-center">
+            <li class="border-t border-stone-400/55 text-center">
               <NuxtLink
                 :to="{ name: 'server_introduction' }"
                 @click="useScrollTo('#main')"
                 class="block bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
               >
-                <span class="text-[#333]">サーバー紹介</span>
+                <span class="text-black/80">サーバー紹介</span>
                 <span
                   class="subtitle block text-xs tracking-widest text-blue-500"
                   >Server Introduction</span
                 >
               </NuxtLink>
             </li>
-            <li class="border-t border-[#ccc] text-center">
+            <li class="border-t border-stone-400/55 text-center">
               <NuxtLink
                 :to="{ name: 'server_specifications' }"
                 @click="useScrollTo('#main')"
                 class="block bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
               >
-                <span class="text-[#333]">サーバー仕様</span>
+                <span class="text-black/80">サーバー仕様</span>
                 <span
                   class="subtitle block text-xs tracking-widest text-blue-500"
                   >Server Specifications</span
                 >
               </NuxtLink>
             </li>
-            <li class="border-t border-[#ccc] text-center">
+            <li class="border-t border-stone-400/55 text-center">
               <NuxtLink
                 :to="{ name: 'q_and_a' }"
                 @click="useScrollTo('#main')"
                 class="block rounded-b-xl bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
               >
-                <span class="text-[#333]">Q & A</span>
+                <span class="text-black/80">Q & A</span>
                 <span
                   class="subtitle block text-xs tracking-widest text-blue-500"
                   >Q & A</span
@@ -122,26 +122,26 @@
                 external
                 class="block rounded-t-xl bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
               >
-                <span class="text-[#333]">dynmap</span>
-                <span class="block text-[#333]">※外部リンク</span>
+                <span class="text-black/80">dynmap</span>
+                <span class="block text-black/80">※外部リンク</span>
               </NuxtLink>
             </li>
-            <li class="border-t border-[#ccc] text-center">
+            <li class="border-t border-stone-400/55 text-center">
               <NuxtLink
                 :to="{ name: 'unique_function' }"
                 @click="useScrollTo('#main')"
                 class="block bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
               >
-                <span class="text-[#333]">独自機能</span>
+                <span class="text-black/80">独自機能</span>
               </NuxtLink>
             </li>
-            <li class="border-t border-[#ccc] text-center">
+            <li class="border-t border-stone-400/55 text-center">
               <NuxtLink
                 :to="{ name: 'original_recipes' }"
                 @click="useScrollTo('#main')"
                 class="block rounded-b-xl bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
               >
-                <span class="text-[#333]">独自レシピ</span>
+                <span class="text-black/80">独自レシピ</span>
               </NuxtLink>
             </li>
           </ul>
@@ -158,7 +158,7 @@
                 @click="menuClose()"
                 class="inline-block w-full transition duration-500"
               >
-                <span class="text-[#333]">トップ</span>
+                <span class="text-black/80">トップ</span>
               </NuxtLink>
             </li>
             <li class="border-b py-1">
@@ -167,7 +167,7 @@
                 @click="menuClose()"
                 class="inline-block w-full transition duration-500"
               >
-                <span class="text-[#333]">サーバールール</span>
+                <span class="text-black/80">サーバールール</span>
               </NuxtLink>
             </li>
             <li class="border-b py-1">
@@ -176,7 +176,7 @@
                 @click="menuClose()"
                 class="inline-block w-full transition duration-500"
               >
-                <span class="text-[#333]">サーバー紹介</span>
+                <span class="text-black/80">サーバー紹介</span>
               </NuxtLink>
             </li>
             <li class="border-b py-1">
@@ -185,7 +185,7 @@
                 @click="menuClose()"
                 class="inline-block w-full transition duration-500"
               >
-                <span class="text-[#333]">サーバー仕様</span>
+                <span class="text-black/80">サーバー仕様</span>
               </NuxtLink>
             </li>
             <li class="border-b py-1">
@@ -194,7 +194,7 @@
                 @click="menuClose()"
                 class="inline-block w-full transition duration-500"
               >
-                <span class="text-[#333]">Q & A</span>
+                <span class="text-black/80">Q & A</span>
               </NuxtLink>
             </li>
             <li class="border-b py-1">
@@ -203,7 +203,7 @@
                 @click="menuClose()"
                 class="inline-block w-full transition duration-500"
               >
-                <span class="text-[#333]">独自機能</span>
+                <span class="text-black/80">独自機能</span>
               </NuxtLink>
             </li>
             <li class="border-b py-1">
@@ -212,7 +212,7 @@
                 @click="menuClose()"
                 class="inline-block w-full transition duration-500"
               >
-                <span class="text-[#333]">独自レシピ</span>
+                <span class="text-black/80">独自レシピ</span>
               </NuxtLink>
             </li>
           </ul>
