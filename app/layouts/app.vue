@@ -22,7 +22,7 @@
               <img
                 class="w-full rounded-b"
                 src="~/assets/images/logo.webp"
-                alt="top"
+                alt="トップ"
               />
             </figure>
           </NuxtLink>

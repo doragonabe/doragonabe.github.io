@@ -11,7 +11,7 @@
         <figure class="aspect-1000/665">
           <img
             src="~/assets/images/1000x665.png"
-            alt="トップ"
+            alt=""
           />
         </figure>
         <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
@@ -40,7 +40,7 @@
         <figure class="aspect-1000/665">
           <img
             src="~/assets/images/1000x665.png"
-            alt="サーバールール"
+            alt=""
           />
         </figure>
         <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
@@ -69,7 +69,7 @@
         <figure class="aspect-1000/665">
           <img
             src="~/assets/images/1000x665.png"
-            alt="サーバー紹介"
+            alt=""
           />
         </figure>
         <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
@@ -98,7 +98,7 @@
         <figure class="aspect-1000/665">
           <img
             src="~/assets/images/1000x665.png"
-            alt="サーバー仕様"
+            alt=""
           />
         </figure>
         <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
@@ -127,7 +127,7 @@
         <figure class="aspect-1000/665">
           <img
             src="~/assets/images/1000x665.png"
-            alt="Q & A"
+            alt=""
           />
         </figure>
         <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
@@ -157,7 +157,7 @@
         <figure class="aspect-1000/665">
           <img
             src="~/assets/images/1000x665.png"
-            alt="dynmap"
+            alt=""
           />
         </figure>
         <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
@@ -187,7 +187,7 @@
         <figure class="aspect-1000/665">
           <img
             src="~/assets/images/1000x665.png"
-            alt="独自機能"
+            alt=""
           />
         </figure>
         <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
@@ -216,7 +216,7 @@
         <figure class="aspect-1000/665">
           <img
             src="~/assets/images/1000x665.png"
-            alt="独自レシピ"
+            alt=""
           />
         </figure>
         <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
