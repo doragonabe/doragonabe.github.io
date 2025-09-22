@@ -6,7 +6,7 @@
       @click="toggleMenu()"
     ></div>
     <div
-      class="home grid min-w-[340px]"
+      class="home grid min-w-md"
       id="container"
     >
       <header class="grid">
@@ -18,7 +18,7 @@
             :to="{ name: 'index' }"
             @click="useScrollTo('#main')"
           >
-            <figure class="aspect-[1/1]">
+            <figure class="aspect-square">
               <img
                 class="w-full rounded-b"
                 src="~/assets/images/logo.webp"
@@ -27,7 +27,7 @@
             </figure>
           </NuxtLink>
         </h1>
-        <div class="main-slide aspect-[2000/900]">
+        <div class="main-slide aspect-2000/900">
           <MainSlide v-if="includes(['github'], appEnv())" />
         </div>
 
@@ -46,10 +46,13 @@
           id="sub"
           ref="subRef"
         >
-          <ul class="submenu rounded-xl border-4 border-blue-500">
+          <ul
+            class="submenu overflow-hidden rounded-xl border-4 border-blue-500"
+          >
             <li class="text-center">
               <NuxtLink
-                class="block rounded-t-xl bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+                class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
+                :class="{ '!bg-yellow-100/70': $route.name === 'index' }"
                 :to="{ name: 'index' }"
                 @click="useScrollTo('#main')"
               >
@@ -62,7 +65,8 @@
             </li>
             <li class="border-t border-stone-400/55 text-center">
               <NuxtLink
-                class="block bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+                class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
+                :class="{ '!bg-yellow-100/70': $route.name === 'server_rules' }"
                 :to="{ name: 'server_rules' }"
                 @click="useScrollTo('#main')"
               >
@@ -75,7 +79,10 @@
             </li>
             <li class="border-t border-stone-400/55 text-center">
               <NuxtLink
-                class="block bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+                class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
+                :class="{
+                  '!bg-yellow-100/70': $route.name === 'server_introduction',
+                }"
                 :to="{ name: 'server_introduction' }"
                 @click="useScrollTo('#main')"
               >
@@ -88,7 +95,10 @@
             </li>
             <li class="border-t border-stone-400/55 text-center">
               <NuxtLink
-                class="block bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+                class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
+                :class="{
+                  '!bg-yellow-100/70': $route.name === 'server_specifications',
+                }"
                 :to="{ name: 'server_specifications' }"
                 @click="useScrollTo('#main')"
               >
@@ -101,7 +111,8 @@
             </li>
             <li class="border-t border-stone-400/55 text-center">
               <NuxtLink
-                class="block rounded-b-xl bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+                class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
+                :class="{ '!bg-yellow-100/70': $route.name === 'q_and_a' }"
                 :to="{ name: 'q_and_a' }"
                 @click="useScrollTo('#main')"
               >
@@ -114,10 +125,12 @@
             </li>
           </ul>
 
-          <ul class="submenu mt-5 rounded-xl border-4 border-blue-500">
+          <ul
+            class="submenu mt-5 overflow-hidden rounded-xl border-4 border-blue-500"
+          >
             <li class="text-center">
               <NuxtLink
-                class="block rounded-t-xl bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+                class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
                 to="http://soarerserver.mydns.jp:8123/"
                 target="_blank"
                 external
@@ -128,7 +141,10 @@
             </li>
             <li class="border-t border-stone-400/55 text-center">
               <NuxtLink
-                class="block bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+                class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
+                :class="{
+                  '!bg-yellow-100/70': $route.name === 'unique_function',
+                }"
                 :to="{ name: 'unique_function' }"
                 @click="useScrollTo('#main')"
               >
@@ -137,7 +153,10 @@
             </li>
             <li class="border-t border-stone-400/55 text-center">
               <NuxtLink
-                class="block rounded-b-xl bg-white px-1 py-3 transition duration-500 hover:bg-[#fbf6cc]"
+                class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
+                :class="{
+                  '!bg-yellow-100/70': $route.name === 'original_recipes',
+                }"
                 :to="{ name: 'original_recipes' }"
                 @click="useScrollTo('#main')"
               >
@@ -148,7 +167,7 @@
         </nav>
 
         <nav
-          class="sidebar fixed h-full bg-[#faf9f1]"
+          class="sidebar fixed h-full bg-stone-50"
           id="h_nav"
         >
           <ul class="h-full p-1">
@@ -218,7 +237,7 @@
           </ul>
         </nav>
       </aside>
-      <main class="min-h-[750px] pb-20 text-lg">
+      <main class="min-h-500 pb-20 text-lg">
         <slot />
       </main>
     </div>
