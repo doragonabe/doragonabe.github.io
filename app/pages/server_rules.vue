@@ -7,8 +7,8 @@
   </section>
 
   <section
-    id="main"
     class="mb-3 pt-5"
+    id="main"
   >
     <H2 class="mb-5">サーバールール</H2>
     <p class="px-5">

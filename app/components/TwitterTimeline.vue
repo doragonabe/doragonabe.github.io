@@ -1,15 +1,15 @@
 <template>
   <a
+    class="twitter-timeline"
+    :data-aria-polite="dataAriaPolite"
     :data-chrome="dataChrome.join('')"
     :data-dnt="dataDnt"
-    :data-width="dataWidth"
     :data-height="dataHeight"
     :data-lang="dataLang"
     :data-theme="dataTheme"
     :data-tweet-limit="dataTweetLimit"
-    :data-aria-polite="dataAriaPolite"
+    :data-width="dataWidth"
     :href="'https://twitter.com/' + url"
-    class="twitter-timeline"
   >
     <slot />
   </a>

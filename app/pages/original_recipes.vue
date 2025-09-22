@@ -7,13 +7,13 @@
   </section>
 
   <section
-    id="main"
     class="mb-3 pt-5"
+    id="main"
   >
     <H2 class="mb-5">レシピ一覧</H2>
     <SubSection
-      title="バンドル"
       class="mb-2"
+      title="バンドル"
     >
       <p>
         <span>1.19のバージョン時点では、アイテムID自体は存在するものの、</span
@@ -24,8 +24,8 @@
     </SubSection>
 
     <SubSection
-      title="エンチャントの瓶"
       class="mb-2"
+      title="エンチャントの瓶"
     >
       <p>
         <span>経験値を10消費して、エンチャントの瓶を作ることができます。</span>
@@ -34,8 +34,8 @@
     </SubSection>
 
     <SubSection
-      title="牛肉"
       class="mb-2"
+      title="牛肉"
     >
       <p>ゾンビ肉を焼くと、40%の確率で牛肉になります。</p>
     </SubSection>

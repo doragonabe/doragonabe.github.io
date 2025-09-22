@@ -27,18 +27,18 @@
   <p>{{ recognition }}</p>
 
   <button
-    type="button"
-    @click="start()"
-    :disabled="!isSupported || isListening"
     class="rounded border px-8 py-3 font-semibold dark:border-gray-800 dark:text-gray-800"
+    :disabled="!isSupported || isListening"
+    @click="start()"
+    type="button"
   >
     Start
   </button>
   <button
-    type="button"
-    @click="stop()"
-    :disabled="!isListening"
     class="rounded border px-8 py-3 font-semibold dark:border-gray-800 dark:text-gray-800"
+    :disabled="!isListening"
+    @click="stop()"
+    type="button"
   >
     Stop
   </button>

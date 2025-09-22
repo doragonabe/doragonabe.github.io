@@ -3,12 +3,12 @@
 
   <div>
     <div
-      id="page"
       class="home"
+      id="page"
     >
       <div
-        id="main"
         class="pt-16"
+        id="main"
       >
         <section v-if="error?.statusCode === 403">
           <H2>ブラウザサポート対象外エラー</H2>

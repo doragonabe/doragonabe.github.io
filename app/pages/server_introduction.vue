@@ -7,8 +7,8 @@
   </section>
 
   <section
-    id="main"
     class="mb-3 pt-5"
+    id="main"
   >
     <H2 class="mb-5">サーバー紹介</H2>
     <p class="px-5 pb-5">
@@ -17,8 +17,8 @@
     </p>
 
     <SubSection
-      title="無限化施設素材一覧"
       class="mb-2"
+      title="無限化施設素材一覧"
     >
       <p>
         <span>サトウキビ</span><br />
@@ -36,8 +36,8 @@
     </SubSection>
 
     <SubSection
-      title="取引可能村人一覧"
       class="mb-2"
+      title="取引可能村人一覧"
     >
       <table>
         <tbody>

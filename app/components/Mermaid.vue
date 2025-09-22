@@ -1,7 +1,7 @@
 <template>
   <pre
-    :id="mermaidId"
     class="[&>svg]:!max-w-full"
+    :id="mermaidId"
   >
     <slot />
   </pre>

@@ -7,13 +7,13 @@
   </section>
 
   <section
-    id="main"
     class="mb-3 pt-5"
+    id="main"
   >
     <H2 class="mb-5">Q & A</H2>
     <SubSection
-      title="入ったらまず何をすればいい？"
       class="mb-2"
+      title="入ったらまず何をすればいい？"
     >
       <p>
         <span>メインワールドではお好きなところに建築してOK</span><br />
@@ -26,8 +26,8 @@
     </SubSection>
 
     <SubSection
-      title="活動予定について"
       class="mb-2"
+      title="活動予定について"
     >
       <p>
         <span>現在メインワールドの整地作業を行っています。</span><br />
@@ -39,16 +39,16 @@
     </SubSection>
 
     <SubSection
-      title="このサイトについて"
       class="mb-2"
+      title="このサイトについて"
     >
       <p>
         <span>本サイトはGitHub Pagesを使用して作成されています。</span><br />
         <NuxtLink
+          class="break-all underline transition duration-500 hover:text-blue-500"
           to="https://github.com/doragonabe/doragonabe.github.io"
           target="_blank"
           external
-          class="break-all underline transition duration-500 hover:text-blue-500"
         >
           https://github.com/doragonabe/doragonabe.github.io</NuxtLink
         >
@@ -65,8 +65,8 @@
     </SubSection>
 
     <SubSection
-      title="サイト仕様"
       class="mb-2"
+      title="サイト仕様"
     >
       <ol>
         <li>

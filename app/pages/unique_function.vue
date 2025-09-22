@@ -7,13 +7,13 @@
   </section>
 
   <section
-    id="main"
     class="mb-3 pt-5"
+    id="main"
   >
     <H2 class="mb-5">独自機能</H2>
     <SubSection
-      title="MyPet"
       class="mb-2"
+      title="MyPet"
     >
       <p>
         <span>リードで敵MOBや動物に止めを刺すとそのMOBが仲間になるよ</span
@@ -23,8 +23,8 @@
     </SubSection>
 
     <SubSection
-      title="Skript"
       class="mb-2"
+      title="Skript"
     >
       <p>
         <span>javaのコードを書かなくてもプラグインが作れる</span><br />
@@ -202,8 +202,8 @@
     </SubSection>
 
     <SubSection
-      title="RecipeManager/CustomCrafting"
       class="mb-2"
+      title="RecipeManager/CustomCrafting"
     >
       <p>
         <router-link to="/original_recipes">独自レシピ</router-link>
@@ -212,8 +212,8 @@
     </SubSection>
 
     <SubSection
-      title="TreeAssist"
       class="mb-2"
+      title="TreeAssist"
     >
       <p>
         <span
