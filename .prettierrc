@@ -2,5 +2,32 @@
   "semi": true,
   "trailingComma": "es5",
   "singleAttributePerLine": true,
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "plugins": [
+    "prettier-plugin-organize-attributes",
+    "prettier-plugin-tailwindcss"
+  ],
+  "pluginSearchDirs": false,
+  "attributeGroups": [
+    "^class$",
+    "^(id|name)$",
+    "^:is$|^is$",
+    "^v-for$",
+    "^key$",
+    "^v-(if|else-if|else|show)$",
+    "^ref$",
+    "^v-slot(?::.*)?$|^slot$",
+    "^(to|href)$",
+    "^(target|rel|download)$",
+    "^(src|srcset|sizes)$",
+    "^(width|height)$",
+    "^(alt|title)$",
+    "^(loading|decoding|fetchpriority)$",
+    "^:(?!is$)",
+    "^@|^v-on:",
+    "^data-",
+    "^role$",
+    "^aria-",
+    "$DEFAULT"
+  ],
+  "attributeSort": "ASC"
 }

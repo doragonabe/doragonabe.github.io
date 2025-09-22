@@ -65,6 +65,7 @@
     "nuxt-typed-router": "3.7.3",
     "playwright-core": "^1.55.0",
     "prettier": "^3.6.2",
+    "prettier-plugin-organize-attributes": "^1.0.0",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "sanitize-html": "^2.17.0",
     "sass": "^1.92.1",
