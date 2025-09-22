@@ -14,7 +14,7 @@
             alt=""
           />
         </figure>
-        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
+        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-600">
           トップ
         </p>
         <p
@@ -43,7 +43,7 @@
             alt=""
           />
         </figure>
-        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
+        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-600">
           サーバールール
         </p>
         <p
@@ -72,7 +72,7 @@
             alt=""
           />
         </figure>
-        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
+        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-600">
           サーバー紹介
         </p>
         <p
@@ -101,7 +101,7 @@
             alt=""
           />
         </figure>
-        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
+        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-600">
           サーバー仕様
         </p>
         <p
@@ -130,7 +130,7 @@
             alt=""
           />
         </figure>
-        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
+        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-600">
           Q & A
         </p>
         <p
@@ -160,7 +160,7 @@
             alt=""
           />
         </figure>
-        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
+        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-600">
           dynmap
         </p>
         <p
@@ -190,7 +190,7 @@
             alt=""
           />
         </figure>
-        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
+        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-600">
           独自機能
         </p>
         <p
@@ -219,7 +219,7 @@
             alt=""
           />
         </figure>
-        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-500">
+        <p class="text-center text-[clamp(1rem,3vw,1.375rem)] text-blue-600">
           独自レシピ
         </p>
         <p

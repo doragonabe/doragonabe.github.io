@@ -58,7 +58,7 @@
               >
                 <span class="text-black/80">トップ</span>
                 <span
-                  class="subtitle block text-xs tracking-widest text-blue-500"
+                  class="subtitle block text-xs tracking-widest text-blue-600"
                   >Top</span
                 >
               </NuxtLink>
@@ -72,7 +72,7 @@
               >
                 <span class="text-black/80">サーバールール</span>
                 <span
-                  class="subtitle block text-xs tracking-widest text-blue-500"
+                  class="subtitle block text-xs tracking-widest text-blue-600"
                   >Server Rules</span
                 >
               </NuxtLink>
@@ -88,7 +88,7 @@
               >
                 <span class="text-black/80">サーバー紹介</span>
                 <span
-                  class="subtitle block text-xs tracking-widest text-blue-500"
+                  class="subtitle block text-xs tracking-widest text-blue-600"
                   >Server Introduction</span
                 >
               </NuxtLink>
@@ -104,7 +104,7 @@
               >
                 <span class="text-black/80">サーバー仕様</span>
                 <span
-                  class="subtitle block text-xs tracking-widest text-blue-500"
+                  class="subtitle block text-xs tracking-widest text-blue-600"
                   >Server Specifications</span
                 >
               </NuxtLink>
@@ -118,7 +118,7 @@
               >
                 <span class="text-black/80">Q & A</span>
                 <span
-                  class="subtitle block text-xs tracking-widest text-blue-500"
+                  class="subtitle block text-xs tracking-widest text-blue-600"
                   >Q & A</span
                 >
               </NuxtLink>
