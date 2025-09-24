@@ -15,6 +15,7 @@
             href="~/assets/images/slide1.webp"
             height="180"
             width="400"
+            fetchpriority="high"
             clip-path="url(#clipPath)"
           />
           <path
@@ -38,6 +39,7 @@
             href="~/assets/images/slide2.webp"
             height="180"
             width="400"
+            fetchpriority="high"
             clip-path="url(#clipPath)"
           />
           <path
@@ -61,6 +63,7 @@
             href="~/assets/images/slide3.webp"
             height="180"
             width="400"
+            fetchpriority="high"
             clip-path="url(#clipPath)"
           />
           <path
