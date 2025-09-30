@@ -1,6 +1,6 @@
 <template>
-  <div class="slider-container">
-    <div class="slider-area">
+  <div class="slider-container w-full">
+    <div class="slider-area w-full">
       <div class="slider-item">
         <svg
           viewBox="0, 0, 400, 180"
@@ -78,13 +78,11 @@
 </template>
 <style scoped>
 .slider-container {
-  width: 100%;
   height: -webkit-fill-available;
 }
 
 .slider-area {
   position: relative;
-  width: 100%;
   height: inherit;
 }
 

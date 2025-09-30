@@ -3,7 +3,6 @@
     class="drawer_open flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-blue-500"
     :aria-expanded="isActive"
     :aria-label="isActive ? 'メニューを閉じる' : 'メニューを開く'"
-    :class="{ is_open: isActive }"
     aria-controls="h_nav"
     type="button"
   >
