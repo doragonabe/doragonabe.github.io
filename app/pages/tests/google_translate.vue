@@ -8,10 +8,19 @@
 <script lang="ts" setup>
 import { useScriptTag } from "@vueuse/core";
 
+type GoogleTranslateApi = {
+  translate: {
+    TranslateElement: new (
+      options: { pageLanguage: string },
+      element: string
+    ) => unknown;
+  };
+};
+
 declare global {
   interface Window {
     googleTranslateElementInit: () => void;
-    google: any;
+    google: GoogleTranslateApi;
   }
 }
 

@@ -1,31 +1,25 @@
 <template>
   <input
     :type="type"
-    :value="modelValue"
-    @input="updateValue"
+    v-model="modelValue"
   />
 </template>
 <script lang="ts" setup>
+defineOptions({
+  name: "FormTextBasic",
+});
+
 type TypeKey = "text" | "tel" | "email";
 
 interface Props {
   type?: TypeKey;
-  modelValue?: string;
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   type: "text",
-  modelValue: "",
 });
 
-const emit = defineEmits(["update:modelValue"]);
-const updateValue = (event: Event): void => {
-  emit("update:modelValue", (event.target as HTMLInputElement).value);
-};
-
-onMounted(() => {
-  if (props.modelValue === "") {
-    emit("update:modelValue", props.modelValue);
-  }
+const modelValue = defineModel<string>({
+  default: "",
 });
 </script>

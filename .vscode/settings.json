@@ -81,8 +81,7 @@
   "debug.javascript.codelens.npmScripts": "all",
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.codeActionsOnSave": {
-    "quickfix.biome": "explicit",
-    "source.organizeImports.biome": "explicit"
+    "source.fixAll.biome": "explicit"
   },
   "editor.detectIndentation": false,
   "editor.formatOnPaste": true,

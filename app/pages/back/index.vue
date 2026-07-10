@@ -51,6 +51,6 @@ import {
 const selectedBackgroundType = ref<BackgroundType>(DEFAULT_BACKGROUND_TYPE);
 const selectedLogoType = ref<LogoType>(DEFAULT_LOGO_TYPE);
 const userInfo = ref<VirtualBackgroundUserInfo>(
-  createInitialVirtualBackgroundUserInfo(),
+  createInitialVirtualBackgroundUserInfo()
 );
 </script>

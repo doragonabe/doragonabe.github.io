@@ -7,31 +7,33 @@
 </template>
 
 <script lang="ts" setup>
+defineOptions({
+  name: "FormTextValidated",
+});
+
+type ValidationKey =
+  | "numeric3"
+  | "numeric4"
+  | "tel1"
+  | "tel2"
+  | "tel3"
+  | "zip1"
+  | "zip2"
+  | "auth-code";
+
+type ValidationAttributes = {
+  type?: "tel";
+  inputmode?: "numeric";
+  maxlength?: number;
+  pattern?: string;
+  title?: string;
+  placeholder?: string;
+};
+
 interface Props {
   type?: "text" | "tel";
-  validation?:
-    | "numeric3"
-    | "numeric4"
-    | "tel1"
-    | "tel2"
-    | "tel3"
-    | "zip1"
-    | "zip2"
-    | "auth-code"
-    | "";
+  validation?: ValidationKey | "";
 }
-
-type Lists = Record<
-  string,
-  {
-    type?: string;
-    inputmode?: string;
-    maxlength?: number;
-    pattern?: string;
-    title?: string;
-    placeholder?: string;
-  }
->;
 
 const { type = "text", validation = "" } = defineProps<Props>();
 
@@ -92,18 +94,13 @@ const validationLists = {
     pattern: "^\\d{6}$",
     title: "6桁の数字を入力してください。",
   },
-};
+} as const satisfies Record<ValidationKey, ValidationAttributes>;
 
-const validationBind = computed((): Lists => {
+const validationBind = computed((): ValidationAttributes => {
   if (validation === "") {
     return {};
   }
 
-  const list = validationLists[validation] as Lists;
-  if (list === undefined) {
-    return {};
-  }
-
-  return list;
+  return validationLists[validation];
 });
 </script>

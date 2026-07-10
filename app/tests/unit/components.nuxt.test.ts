@@ -19,10 +19,10 @@ it("HTML スナップショットとマッチする", async () => {
 
   const color_mode_wrapper = await mountSuspended(ColorMode);
   expect(color_mode_wrapper.html()).toMatchInlineSnapshot(`
-    "<button type="button" aria-label="Theme" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors text-sm gap-1.5 text-primary hover:bg-primary/10 active:bg-primary/10 focus:outline-none focus-visible:bg-primary/10 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent p-1.5"><span class="iconify i-heroicons:sun-20-solid shrink-0 size-5" aria-hidden="true"></span>
-  <!--v-if-->
-  <!--v-if-->
-</button>"
+    "<button type="button" aria-label="Theme" data-slot="base" class="rounded-md font-medium inline-flex items-center disabled:cursor-not-allowed aria-disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:opacity-75 transition-colors text-sm gap-1.5 text-primary hover:bg-primary/10 active:bg-primary/10 outline-primary/25 focus-visible:outline-3 disabled:bg-transparent aria-disabled:bg-transparent dark:disabled:bg-transparent dark:aria-disabled:bg-transparent p-1.5"><span class="iconify i-heroicons:sun-20-solid shrink-0 size-5" aria-hidden="true" data-slot="leadingIcon"></span>
+      <!--v-if-->
+      <!--v-if-->
+    </button>"
   `);
 
   const hamburger_menu_wrapper_default = await mountSuspended(HamburgerMenu);

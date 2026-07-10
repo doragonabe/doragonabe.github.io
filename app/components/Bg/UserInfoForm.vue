@@ -1,30 +1,30 @@
 <template>
   <form class="my-6 space-y-6">
     <div
-      v-for="group in textFieldGroups"
-      :key="group.label"
-      :class="group.gridClass"
       class="grid items-center gap-3"
+      v-for="group in textFieldGroups"
+      :class="group.gridClass"
+      :key="group.label"
     >
       <label class="text-sm font-semibold text-gray-700">
         {{ group.label }}
       </label>
 
       <div
-        v-for="(field, index) in group.fields"
-        :key="field.id"
-        :class="field.columnClass"
         class="flex rounded-lg shadow-sm"
+        v-for="(field, index) in group.fields"
+        :class="field.columnClass"
+        :key="field.id"
       >
         <span :class="inputPrefixClass">
           {{ field.prefix ?? index + 1 }}
         </span>
         <input
+          class="block w-full rounded-r-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
           :id="field.id"
-          v-model="userInfo[field.key]"
           :placeholder="field.placeholder"
           :type="field.type ?? 'text'"
-          class="block w-full rounded-r-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          v-model="userInfo[field.key]"
         />
       </div>
     </div>
@@ -36,16 +36,16 @@
 
       <div class="flex flex-wrap gap-2">
         <label
+          class="relative"
           v-for="option in STRENGTHS_FINDER_POSITION_OPTIONS"
           :key="option.value || 'none'"
-          class="relative"
         >
           <input
-            :id="`sf-position-${option.value || 'none'}`"
-            v-model="userInfo.sf_position"
-            :value="option.value"
             class="peer hidden"
+            :id="`sf-position-${option.value || 'none'}`"
+            :value="option.value"
             type="radio"
+            v-model="userInfo.sf_position"
           />
           <span :class="radioLabelClass">
             {{ option.label }}
@@ -55,16 +55,16 @@
 
       <div class="flex flex-wrap gap-2">
         <label
+          class="relative"
           v-for="option in STRENGTHS_FINDER_LANGUAGE_OPTIONS"
           :key="option.value"
-          class="relative"
         >
           <input
-            :id="`sf-lang-${option.value}`"
-            v-model="userInfo.sf_lang"
-            :value="option.value"
             class="peer hidden"
+            :id="`sf-lang-${option.value}`"
+            :value="option.value"
             type="radio"
+            v-model="userInfo.sf_lang"
           />
           <span :class="radioLabelClass">
             {{ option.label }}
@@ -74,18 +74,18 @@
     </div>
 
     <div
+      class="grid gap-2 sm:grid-cols-2 md:grid-cols-5"
       v-for="(indexes, rowIndex) in strengthRows"
       :key="`strength-row-${rowIndex}`"
-      class="grid gap-2 sm:grid-cols-2 md:grid-cols-5"
     >
       <div
+        class="w-full"
         v-for="index in indexes"
         :key="`strength-${index}`"
-        class="w-full"
       >
         <select
-          v-model="userInfo.sf[index]"
           class="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+          v-model="userInfo.sf[index]"
         >
           <option value=""></option>
           <option
@@ -107,11 +107,11 @@
         URL (QRコード)
       </label>
       <input
-        id="url"
-        v-model="userInfo.url"
         class="block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        id="url"
         placeholder="URLを入力"
         type="url"
+        v-model="userInfo.url"
       />
     </div>
   </form>

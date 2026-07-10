@@ -9,6 +9,10 @@
 <script lang="ts" setup>
 import * as yup from "yup";
 
+defineOptions({
+  name: "FormTextInput",
+});
+
 type TypeKey = "text" | "tel" | "email" | "password" | "radio" | "date";
 
 interface Props {
@@ -23,35 +27,39 @@ const { type = "text", name, validate, schema } = defineProps<Props>();
 const inputRef = ref<HTMLInputElement | null>(null);
 
 const modelValue = defineModel<string>({
-  required: true,
   default: "",
-  get: (value) => {
-    if (inputRef.value) {
-      inputRef.value.setCustomValidity("");
+});
 
-      let message = "";
-      if (inputRef.value.checkValidity()) {
-        if (schema) {
-          try {
-            schema.validateSync(value);
-          } catch (err) {
-            if (err instanceof yup.ValidationError) {
-              message = err.message;
-            }
-          }
-        }
+const validateInput = () => {
+  const input = inputRef.value;
+  if (!input) {
+    return;
+  }
 
-        if (validate && message === "") {
-          message = validate(value) ?? "";
-        }
+  input.setCustomValidity("");
 
-        if (message) {
-          inputRef.value.setCustomValidity(message);
-        }
+  if (!input.checkValidity()) {
+    return;
+  }
+
+  let message = "";
+  if (schema) {
+    try {
+      schema.validateSync(modelValue.value);
+    } catch (err) {
+      if (err instanceof yup.ValidationError) {
+        message = err.message;
       }
     }
+  }
 
-    return value;
-  },
-});
+  if (validate && message === "") {
+    message = validate(modelValue.value) ?? "";
+  }
+
+  input.setCustomValidity(message);
+};
+
+onMounted(validateInput);
+watch(modelValue, validateInput, { flush: "post" });
 </script>

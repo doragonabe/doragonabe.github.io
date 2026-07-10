@@ -25,10 +25,7 @@ export type StrengthsFinderLanguage =
   (typeof STRENGTHS_FINDER_LANGUAGE_OPTIONS)[number]["value"];
 
 export type StrengthsFinderBackgroundColor =
-  | "#419262"
-  | "#2f6ec4"
-  | "#da792d"
-  | "#712a7d";
+  "#419262" | "#2f6ec4" | "#da792d" | "#712a7d";
 export type StrengthsFinderTextColor = "#000" | "#fff";
 
 export interface StrengthsFinderTrait {
@@ -303,7 +300,7 @@ export const STRENGTHS_FINDER_TRAITS = [
 
 export const getVirtualBackgroundImagePath = (
   backgroundType: BackgroundType,
-  logoType: LogoType,
+  logoType: LogoType
 ) => `/background/${backgroundType}-${logoType}.png`;
 
 export const createInitialVirtualBackgroundUserInfo =

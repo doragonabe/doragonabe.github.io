@@ -33,6 +33,18 @@ interface DateOptions {
   monthsToAdd?: number;
 }
 
+const pad2 = (value: number): string => value.toString().padStart(2, "0");
+
+const formatYearMonth = (date: Date): string => {
+  return `${date.getFullYear()}-${pad2(date.getMonth() + 1)}`;
+};
+
+const formatYearMonthDay = (date: Date): string => {
+  return `${formatYearMonth(date)}-${pad2(date.getDate())}`;
+};
+
+const parseDateParts = (date: DateString): string[] => date.split("-");
+
 export const getCurrentDate = ({
   yearFlag = true,
   monthFlag = true,
@@ -51,14 +63,10 @@ export const getCurrentDate = ({
     parts.push(year);
   }
   if (monthFlag) {
-    // 月は0から始まるため+1し、2桁になるようにパディング
-    const month: string = (date.getMonth() + 1).toString().padStart(2, "0");
-    parts.push(month);
+    parts.push(pad2(date.getMonth() + 1));
   }
-  // 日を2桁になるようにパディング
   if (dayFlag) {
-    const day: string = date.getDate().toString().padStart(2, "0");
-    parts.push(day);
+    parts.push(pad2(date.getDate()));
   }
 
   return parts.join("-") as DateString;
@@ -69,25 +77,16 @@ export const getCurrentDate = ({
  * YYYY-MM形式の場合は、YYYY年MM月に変換
  */
 export const formatDate = (date: string): string => {
-  // 入力された日付を'-'で分割
-  const dateParts: string[] = date.split("-");
+  const [year = "", month = "", day = "", ...rest] = date.split("-");
 
-  // 年と月を取得
-  const year: string = dateParts[0] ?? "";
-  const month: string = dateParts[1] ?? "";
-
-  // YYYY-MM-DD形式の場合
-  if (dateParts.length === 3) {
-    const day: string = dateParts[2] ?? "";
+  if (year && month && day && rest.length === 0) {
     return `${year}年${month}月${day}日`;
   }
 
-  // YYYY-MM形式の場合
-  if (dateParts.length === 2) {
+  if (year && month && rest.length === 0) {
     return `${year}年${month}月`;
   }
 
-  // 不正な日付形式の場合
   throw new Error("不正な日付です");
 };
 
@@ -98,8 +97,8 @@ export const getDateLists = (
   startDate: DateString,
   endDate: DateString
 ): string[] => {
-  const startParts: string[] = startDate.split("-").map(String);
-  const endParts: string[] = endDate.split("-").map(String);
+  const startParts = parseDateParts(startDate);
+  const endParts = parseDateParts(endDate);
 
   if (!(
     (startParts.length === 2 && endParts.length === 2) ||
@@ -126,18 +125,12 @@ export const getDateLists = (
 
   if (startParts.length === 2 && endParts.length === 2) {
     while (start <= end) {
-      const setY: string = start.getFullYear().toString();
-      const setM: string = (start.getMonth() + 1).toString().padStart(2, "0");
-      options.push(`${setY}-${setM}`);
+      options.push(formatYearMonth(start));
       start.setMonth(start.getMonth() + 1);
     }
   } else {
     while (start <= end) {
-      const setY: string = start.getFullYear().toString();
-      const setM: string = (start.getMonth() + 1).toString().padStart(2, "0");
-      const setD: string = start.getDate().toString().padStart(2, "0");
-      const value: string = `${setY}-${setM}-${setD}`;
-      options.push(value);
+      options.push(formatYearMonthDay(start));
       start.setDate(start.getDate() + 1);
     }
   }

@@ -2,8 +2,8 @@
   <div class="my-3 rounded-xl bg-gray-100 p-4">
     <div class="overflow-auto">
       <canvas
-        ref="previewCanvas"
         class="h-[540px] w-[960px]"
+        ref="previewCanvas"
         height="1080"
         width="1920"
       ></canvas>
@@ -13,8 +13,8 @@
   <div class="my-5 flex">
     <button
       class="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow hover:bg-emerald-700 focus:ring-2 focus:ring-emerald-500 focus:outline-none"
-      type="button"
       @click="downloadBackground"
+      type="button"
     >
       背景画像をダウンロードする
     </button>
@@ -49,7 +49,7 @@ const TEXT_COLOR_BY_BACKGROUND: Record<BackgroundType, string> = {
 };
 
 const strengthsFinderTraitMap = new Map<string, StrengthsFinderTrait>(
-  STRENGTHS_FINDER_TRAITS.map((trait) => [trait.name, trait]),
+  STRENGTHS_FINDER_TRAITS.map((trait) => [trait.name, trait])
 );
 
 const props = defineProps<{
@@ -67,7 +67,7 @@ const qrCodeSource = useQRCode(
   {
     width: 160,
     margin: 0,
-  },
+  }
 );
 
 let renderVersion = 0;
@@ -86,7 +86,7 @@ const loadImage = (src: string) => {
 
 const loadBackgroundImage = (
   backgroundType: BackgroundType,
-  logoType: LogoType,
+  logoType: LogoType
 ) => loadImage(getVirtualBackgroundImagePath(backgroundType, logoType));
 
 const getCanvasContext = () => {
@@ -106,7 +106,7 @@ const renderPreview = async () => {
 
   const background = await loadBackgroundImage(
     props.backgroundType,
-    props.logoType,
+    props.logoType
   );
   if (version !== renderVersion) {
     return;
@@ -125,7 +125,7 @@ const drawUserInfo = (
   context: CanvasRenderingContext2D,
   canvas: HTMLCanvasElement,
   info: VirtualBackgroundUserInfo,
-  backgroundType: BackgroundType,
+  backgroundType: BackgroundType
 ) => {
   context.fillStyle = TEXT_COLOR_BY_BACKGROUND[backgroundType];
 
@@ -133,7 +133,7 @@ const drawUserInfo = (
     context,
     canvas,
     [info.department, info.section, info.group],
-    360,
+    360
   );
   drawJoinedLine(context, canvas, [info.role, info.role2, info.role3], 405);
   drawJoinedLine(context, canvas, [info.other1, info.other2, info.other3], 450);
@@ -146,7 +146,7 @@ const drawJoinedLine = (
   context: CanvasRenderingContext2D,
   canvas: HTMLCanvasElement,
   values: string[],
-  y: number,
+  y: number
 ) => {
   const text = values.filter(Boolean).join("  ");
   if (!text) {
@@ -161,7 +161,7 @@ const drawJoinedLine = (
 const drawName = (
   context: CanvasRenderingContext2D,
   canvas: HTMLCanvasElement,
-  info: VirtualBackgroundUserInfo,
+  info: VirtualBackgroundUserInfo
 ) => {
   if (info.name) {
     context.font = "bold 78px YuGothic";
@@ -171,7 +171,7 @@ const drawName = (
       info.name,
       canvas.width - RIGHT_MARGIN,
       560,
-      8,
+      8
     );
   }
 
@@ -185,7 +185,7 @@ const drawName = (
 const drawContactInfo = (
   context: CanvasRenderingContext2D,
   canvas: HTMLCanvasElement,
-  info: VirtualBackgroundUserInfo,
+  info: VirtualBackgroundUserInfo
 ) => {
   const lines = [
     info.slack ? `Slack : @${info.slack}` : "",
@@ -203,7 +203,7 @@ const drawContactInfo = (
 
 const drawStrengthsFinder = (
   context: CanvasRenderingContext2D,
-  info: VirtualBackgroundUserInfo,
+  info: VirtualBackgroundUserInfo
 ) => {
   if (!info.sf_position) {
     return;
@@ -224,7 +224,7 @@ const drawStrengthsFinder = (
       STRENGTH_BOX.width,
       STRENGTH_BOX.height,
       trait,
-      info.sf_lang,
+      info.sf_lang
     );
   });
 };
@@ -246,7 +246,7 @@ const drawStrengthsFinderBox = (
   width: number,
   height: number,
   trait: StrengthsFinderTrait,
-  language: StrengthsFinderLanguage,
+  language: StrengthsFinderLanguage
 ) => {
   context.fillStyle = trait.backgroundColor;
   context.fillRect(x, y, width, height);
@@ -264,7 +264,7 @@ const drawQrCode = async (
   context: CanvasRenderingContext2D,
   qrCode: string,
   url: string,
-  version: number,
+  version: number
 ) => {
   if (!url || !qrCode) {
     return;
@@ -283,7 +283,7 @@ const drawTextWithSpacingAlignRight = (
   text: string,
   x: number,
   y: number,
-  letterSpacing: number,
+  letterSpacing: number
 ) => {
   let currentPosition = x;
   const chars = Array.from(text).reverse();
@@ -317,6 +317,6 @@ watch(
     () => qrCodeSource.value,
   ],
   renderPreview,
-  { deep: true },
+  { deep: true }
 );
 </script>

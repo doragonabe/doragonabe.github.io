@@ -1,9 +1,12 @@
 <template>
-  <div class="main-content">
+  <div
+    class="main-content"
+    :class="{ 'menu-active': isActive }"
+  >
     <div
       class="overlay z-40"
-      ref="overlay"
-      @click="toggleMenu()"
+      :class="{ 'overlay-active': isActive }"
+      @click="toggleMenu"
     ></div>
     <div
       class="home grid min-w-md"
@@ -28,12 +31,12 @@
           </NuxtLink>
         </h1>
         <div class="main-slide aspect-2000/900">
-          <MainSlide v-if="includes(['github'], appEnv())" />
+          <MainSlide v-if="showGithubWidgets" />
         </div>
 
         <HamburgerMenu
           class="nav sticky z-50"
-          @click="toggleMenu()"
+          @click="toggleMenu"
           v-model="isActive"
         />
       </header>
@@ -48,119 +51,40 @@
         >
           <ul
             class="submenu overflow-hidden rounded-xl border-4 border-blue-500"
+            v-for="(section, sectionIndex) in desktopMenuSections"
+            :class="{ 'mt-5': sectionIndex > 0 }"
+            :key="sectionIndex"
           >
-            <li class="text-center">
+            <li
+              class="text-center"
+              v-for="(item, itemIndex) in section"
+              :class="{ 'border-t border-stone-400/55': itemIndex > 0 }"
+              :key="item.label"
+            >
               <NuxtLink
                 class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
-                :class="{ '!bg-yellow-100/70': $route.name === 'index' }"
-                :to="{ name: 'index' }"
+                v-if="item.kind === 'route'"
+                :class="{ '!bg-yellow-100/70': isCurrentRoute(item.name) }"
+                :to="{ name: item.name }"
                 @click="useScrollTo('#main')"
               >
-                <span class="text-black/80">トップ</span>
+                <span class="text-black/80">{{ item.label }}</span>
                 <span
                   class="subtitle block text-xs tracking-widest text-blue-600"
-                  >Top</span
+                  v-if="item.subtitle"
+                  >{{ item.subtitle }}</span
                 >
               </NuxtLink>
-            </li>
-            <li class="border-t border-stone-400/55 text-center">
-              <NuxtLink
-                class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
-                :class="{ '!bg-yellow-100/70': $route.name === 'server_rules' }"
-                :to="{ name: 'server_rules' }"
-                @click="useScrollTo('#main')"
-              >
-                <span class="text-black/80">サーバールール</span>
-                <span
-                  class="subtitle block text-xs tracking-widest text-blue-600"
-                  >Server Rules</span
-                >
-              </NuxtLink>
-            </li>
-            <li class="border-t border-stone-400/55 text-center">
-              <NuxtLink
-                class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
-                :class="{
-                  '!bg-yellow-100/70': $route.name === 'server_introduction',
-                }"
-                :to="{ name: 'server_introduction' }"
-                @click="useScrollTo('#main')"
-              >
-                <span class="text-black/80">サーバー紹介</span>
-                <span
-                  class="subtitle block text-xs tracking-widest text-blue-600"
-                  >Server Introduction</span
-                >
-              </NuxtLink>
-            </li>
-            <li class="border-t border-stone-400/55 text-center">
-              <NuxtLink
-                class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
-                :class="{
-                  '!bg-yellow-100/70': $route.name === 'server_specifications',
-                }"
-                :to="{ name: 'server_specifications' }"
-                @click="useScrollTo('#main')"
-              >
-                <span class="text-black/80">サーバー仕様</span>
-                <span
-                  class="subtitle block text-xs tracking-widest text-blue-600"
-                  >Server Specifications</span
-                >
-              </NuxtLink>
-            </li>
-            <li class="border-t border-stone-400/55 text-center">
-              <NuxtLink
-                class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
-                :class="{ '!bg-yellow-100/70': $route.name === 'q_and_a' }"
-                :to="{ name: 'q_and_a' }"
-                @click="useScrollTo('#main')"
-              >
-                <span class="text-black/80">Q & A</span>
-                <span
-                  class="subtitle block text-xs tracking-widest text-blue-600"
-                  >Q & A</span
-                >
-              </NuxtLink>
-            </li>
-          </ul>
 
-          <ul
-            class="submenu mt-5 overflow-hidden rounded-xl border-4 border-blue-500"
-          >
-            <li class="text-center">
               <NuxtLink
                 class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
-                to="http://soarerserver.mydns.jp:8123/"
+                v-else
                 target="_blank"
+                :to="item.href"
                 external
               >
-                <span class="text-black/80">dynmap</span>
-                <span class="block text-black/80">※外部リンク</span>
-              </NuxtLink>
-            </li>
-            <li class="border-t border-stone-400/55 text-center">
-              <NuxtLink
-                class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
-                :class="{
-                  '!bg-yellow-100/70': $route.name === 'unique_function',
-                }"
-                :to="{ name: 'unique_function' }"
-                @click="useScrollTo('#main')"
-              >
-                <span class="text-black/80">独自機能</span>
-              </NuxtLink>
-            </li>
-            <li class="border-t border-stone-400/55 text-center">
-              <NuxtLink
-                class="block bg-white px-1 py-3 transition duration-500 hover:bg-yellow-100/70"
-                :class="{
-                  '!bg-yellow-100/70': $route.name === 'original_recipes',
-                }"
-                :to="{ name: 'original_recipes' }"
-                @click="useScrollTo('#main')"
-              >
-                <span class="text-black/80">独自レシピ</span>
+                <span class="text-black/80">{{ item.label }}</span>
+                <span class="block text-black/80">{{ item.note }}</span>
               </NuxtLink>
             </li>
           </ul>
@@ -171,67 +95,17 @@
           id="h_nav"
         >
           <ul class="h-full p-1">
-            <li class="border-b py-1">
+            <li
+              class="border-b py-1"
+              v-for="item in sidebarMenuItems"
+              :key="item.name"
+            >
               <NuxtLink
                 class="inline-block w-full transition duration-500"
-                :to="{ name: 'index' }"
-                @click="menuClose()"
+                :to="{ name: item.name }"
+                @click="closeMenu"
               >
-                <span class="text-black/80">トップ</span>
-              </NuxtLink>
-            </li>
-            <li class="border-b py-1">
-              <NuxtLink
-                class="inline-block w-full transition duration-500"
-                :to="{ name: 'server_rules' }"
-                @click="menuClose()"
-              >
-                <span class="text-black/80">サーバールール</span>
-              </NuxtLink>
-            </li>
-            <li class="border-b py-1">
-              <NuxtLink
-                class="inline-block w-full transition duration-500"
-                :to="{ name: 'server_introduction' }"
-                @click="menuClose()"
-              >
-                <span class="text-black/80">サーバー紹介</span>
-              </NuxtLink>
-            </li>
-            <li class="border-b py-1">
-              <NuxtLink
-                class="inline-block w-full transition duration-500"
-                :to="{ name: 'server_specifications' }"
-                @click="menuClose()"
-              >
-                <span class="text-black/80">サーバー仕様</span>
-              </NuxtLink>
-            </li>
-            <li class="border-b py-1">
-              <NuxtLink
-                class="inline-block w-full transition duration-500"
-                :to="{ name: 'q_and_a' }"
-                @click="menuClose()"
-              >
-                <span class="text-black/80">Q & A</span>
-              </NuxtLink>
-            </li>
-            <li class="border-b py-1">
-              <NuxtLink
-                class="inline-block w-full transition duration-500"
-                :to="{ name: 'unique_function' }"
-                @click="menuClose()"
-              >
-                <span class="text-black/80">独自機能</span>
-              </NuxtLink>
-            </li>
-            <li class="border-b py-1">
-              <NuxtLink
-                class="inline-block w-full transition duration-500"
-                :to="{ name: 'original_recipes' }"
-                @click="menuClose()"
-              >
-                <span class="text-black/80">独自レシピ</span>
+                <span class="text-black/80">{{ item.label }}</span>
               </NuxtLink>
             </li>
           </ul>
@@ -335,7 +209,7 @@ main {
   right: 0;
 }
 
-.menu-active .main-content {
+.main-content.menu-active {
   /* メインコンテンツを右にずらす */
   right: 250px;
 }
@@ -373,7 +247,7 @@ main {
 }
 </style>
 <script lang="ts" setup>
-import { includes } from "es-toolkit/compat";
+import type { RoutesNamesList } from "@typed-router";
 
 const mainTitle = "doragonabe site";
 useHead({
@@ -385,29 +259,103 @@ useHead({
   },
 });
 
-const isActive = ref<boolean>(false);
-const overlay = ref<HTMLDivElement | null>(null);
+type MenuRouteName = Exclude<RoutesNamesList, "slug">;
 
-const menuClose = () => {
-  toggleMenu();
+type RouteMenuItem = {
+  kind: "route";
+  label: string;
+  name: MenuRouteName;
+  subtitle?: string;
+};
+
+type ExternalMenuItem = {
+  kind: "external";
+  label: string;
+  href: string;
+  note: string;
+};
+
+type DesktopMenuItem = RouteMenuItem | ExternalMenuItem;
+
+const primaryMenuItems: RouteMenuItem[] = [
+  {
+    kind: "route",
+    label: "トップ",
+    name: "index",
+    subtitle: "Top",
+  },
+  {
+    kind: "route",
+    label: "サーバールール",
+    name: "server_rules",
+    subtitle: "Server Rules",
+  },
+  {
+    kind: "route",
+    label: "サーバー紹介",
+    name: "server_introduction",
+    subtitle: "Server Introduction",
+  },
+  {
+    kind: "route",
+    label: "サーバー仕様",
+    name: "server_specifications",
+    subtitle: "Server Specifications",
+  },
+  {
+    kind: "route",
+    label: "Q & A",
+    name: "q_and_a",
+    subtitle: "Q & A",
+  },
+] as const;
+
+const secondaryMenuItems: DesktopMenuItem[] = [
+  {
+    kind: "external",
+    label: "dynmap",
+    href: "http://soarerserver.mydns.jp:8123/",
+    note: "※外部リンク",
+  },
+  {
+    kind: "route",
+    label: "独自機能",
+    name: "unique_function",
+  },
+  {
+    kind: "route",
+    label: "独自レシピ",
+    name: "original_recipes",
+  },
+] as const;
+
+const isRouteMenuItem = (item: DesktopMenuItem): item is RouteMenuItem => {
+  return item.kind === "route";
+};
+
+const sidebarMenuItems: RouteMenuItem[] = [
+  ...primaryMenuItems,
+  ...secondaryMenuItems.filter(isRouteMenuItem),
+];
+const desktopMenuSections: DesktopMenuItem[][] = [
+  primaryMenuItems,
+  secondaryMenuItems,
+];
+const showGithubWidgets = appEnv() === "github";
+
+const isActive = ref<boolean>(false);
+const route = useRoute();
+
+const closeMenu = () => {
+  isActive.value = false;
   useScrollTo("#main");
 };
 
 const toggleMenu = () => {
-  if (!overlay.value) {
-    return;
-  }
-
-  if (isActive.value) {
-    isActive.value = false;
-    document.body.classList.remove("menu-active");
-    overlay.value.classList.remove("overlay-active");
-  } else {
-    isActive.value = true;
-    document.body.classList.add("menu-active");
-    overlay.value.classList.add("overlay-active");
-  }
+  isActive.value = !isActive.value;
 };
+
+const isCurrentRoute = (name: MenuRouteName) => route.name === name;
 
 const contentsRef = ref<HTMLDivElement | null>(null);
 const subRef = ref<HTMLDivElement | null>(null);

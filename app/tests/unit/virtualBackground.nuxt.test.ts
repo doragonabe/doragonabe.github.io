@@ -10,7 +10,7 @@ import {
 describe("virtualBackground", () => {
   it("デフォルトの背景画像パスを生成できる", () => {
     expect(
-      getVirtualBackgroundImagePath(DEFAULT_BACKGROUND_TYPE, DEFAULT_LOGO_TYPE),
+      getVirtualBackgroundImagePath(DEFAULT_BACKGROUND_TYPE, DEFAULT_LOGO_TYPE)
     ).toStrictEqual("/background/tate-test1.png");
   });
 

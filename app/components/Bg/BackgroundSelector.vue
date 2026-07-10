@@ -74,7 +74,7 @@ const selectedBackgroundType = defineModel<BackgroundType>(
   "selectedBackgroundType",
   {
     required: true,
-  },
+  }
 );
 
 const selectedLogoType = defineModel<LogoType>("selectedLogoType", {

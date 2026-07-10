@@ -8,13 +8,31 @@
       "!.nuxt",
       "!.output",
       "!.pnpm-store",
+      "!app/assets/images",
       "!dist",
       "!node_modules",
       "!playwright-report",
+      "!public",
       "!test-results",
     ],
   },
   "formatter": {
     "indentStyle": "space",
   },
+  "overrides": [
+    {
+      "includes": ["**/*.vue"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUnusedImports": "off",
+            "noUnusedVariables": "off",
+          },
+          "style": {
+            "useVueMultiWordComponentNames": "off",
+          },
+        },
+      },
+    },
+  ],
 }

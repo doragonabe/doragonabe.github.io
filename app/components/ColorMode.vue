@@ -2,7 +2,7 @@
   <ClientOnly>
     <UButton
       :icon="isDark ? 'i-heroicons-moon-20-solid' : 'i-heroicons-sun-20-solid'"
-      @click="isDark = !isDark"
+      @click="toggleColorMode"
       aria-label="Theme"
       color="primary"
       variant="ghost"
@@ -22,4 +22,8 @@ const isDark = computed({
     colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
   },
 });
+
+const toggleColorMode = () => {
+  isDark.value = !isDark.value;
+};
 </script>
