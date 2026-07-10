@@ -206,7 +206,11 @@
       title="RecipeManager/CustomCrafting"
     >
       <p>
-        <router-link to="/original_recipes">独自レシピ</router-link>
+        <router-link
+          class="text-blue-500 underline decoration-transparent underline-offset-2 transition-colors duration-500 hover:decoration-blue-500"
+          to="/original_recipes"
+          >独自レシピ</router-link
+        >
         <span>のページにてレシピ一覧参照</span>
       </p>
     </SubSection>

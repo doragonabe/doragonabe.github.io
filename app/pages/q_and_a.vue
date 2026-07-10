@@ -45,7 +45,7 @@
       <p>
         <span>本サイトはGitHub Pagesを使用して作成されています。</span><br />
         <NuxtLink
-          class="break-all underline transition duration-500 hover:text-blue-500"
+          class="break-all text-blue-500 underline decoration-transparent underline-offset-2 transition-colors duration-500 hover:decoration-blue-500"
           to="https://github.com/doragonabe/doragonabe.github.io"
           target="_blank"
           external
