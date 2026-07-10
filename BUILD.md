@@ -16,9 +16,6 @@ mise i
 ## 2. Nuxt3 インストール
 
 ```bash
-# pnpx nuxi init nuxt3-app --packageManager pnpm --gitInit false
-
-# new
 pnpm create nuxt --packageManager pnpm --gitInit false
 
 cd nuxt3-app
