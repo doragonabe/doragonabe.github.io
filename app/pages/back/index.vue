@@ -11,7 +11,7 @@
           <h1
             class="text-base font-semibold tracking-wide text-white sm:text-lg"
           >
-            IRET オンライン会議背景画像ジェネレータ
+            オンライン会議背景画像ジェネレータ
           </h1>
         </div>
       </div>
@@ -38,7 +38,7 @@
 </template>
 <script lang="ts" setup>
 const selectedBackgroundType = ref<string>("tate");
-const selectedLogoType = ref<string>("cloudpack");
+const selectedLogoType = ref<string>("aaaaa");
 const userInfo = ref({
   name: "虎ノ門 太郎",
   name_alpha: "Taro Toranomon",
