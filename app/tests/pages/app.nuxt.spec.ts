@@ -2,19 +2,18 @@ import { expect, test } from "@nuxt/test-utils/playwright";
 
 const title = "doragonabe site";
 
-test.describe
-  .parallel("test", () => {
-    test("index", async ({ page, goto }) => {
-      await goto("/", { waitUntil: "hydration" });
-      await expect(page).toHaveURL("/");
-      await expect(page).toHaveTitle(`トップ | ${title}`);
-      await expect(page).toHaveScreenshot({ fullPage: true });
+test.describe.parallel("test", () => {
+  test("index", async ({ page, goto }) => {
+    await goto("/", { waitUntil: "hydration" });
+    await expect(page).toHaveURL("/");
+    await expect(page).toHaveTitle(`トップ | ${title}`);
+    await expect(page).toHaveScreenshot({ fullPage: true });
 
-      await page.locator(".drawer_open").click();
-      await expect(page).toHaveScreenshot({ fullPage: true });
-    });
+    await page.locator(".drawer_open").click();
+    await expect(page).toHaveScreenshot({ fullPage: true });
+  });
 
-    /*
+  /*
   test("server_rules", async ({ page, goto }) => {
     await goto("/server_rules/", { waitUntil: "hydration" });
     await expect(page).toHaveURL("/server_rules");
@@ -75,4 +74,4 @@ test.describe
     await expect(page).toHaveScreenshot({ fullPage: true });
   });
   */
-  });
+});

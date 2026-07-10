@@ -96,17 +96,15 @@ export const formatDate = (date: string): string => {
  */
 export const getDateLists = (
   startDate: DateString,
-  endDate: DateString,
+  endDate: DateString
 ): string[] => {
   const startParts: string[] = startDate.split("-").map(String);
   const endParts: string[] = endDate.split("-").map(String);
 
-  if (
-    !(
-      (startParts.length === 2 && endParts.length === 2) ||
-      (startParts.length === 3 && endParts.length === 3)
-    )
-  ) {
+  if (!(
+    (startParts.length === 2 && endParts.length === 2) ||
+    (startParts.length === 3 && endParts.length === 3)
+  )) {
     throw new Error("不正な日付です");
   }
 
@@ -158,7 +156,7 @@ export const transformDates = (dates: string[]): Record<string, string> => {
 
       return acc;
     },
-    {} as Record<string, string>,
+    {} as Record<string, string>
   );
 };
 

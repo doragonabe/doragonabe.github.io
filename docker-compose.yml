@@ -1,0 +1,30 @@
+services:
+  e2e:
+    build:
+      context: docker/e2e
+    working_dir: /app
+    volumes:
+      # ソースコード全体をマウント
+      - ./:/app:delegated
+
+      # ホストと共有しない
+      - node_modules_e2e:/app/node_modules
+      - node-compile-cache_e2e:/app/node-compile-cache
+
+      # テスト結果をホストの test-results に出力
+      - ./test-results:/app/test-results:delegated
+
+      # スナップショットをホストに同期
+      - ./tests/pages/app.nuxt.spec.ts-snapshots:/app/tests/pages/app.nuxt.spec.ts-snapshots:delegated
+    environment:
+      PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
+      LANG: C.UTF-8
+    stdin_open: true
+    tty: true
+    # command: >
+    #   sh -lc "pnpm install --frozen-lockfile && pnpm run test:e2e"
+
+volumes:
+  # node_modules をコンテナ専用に切り離す
+  node_modules_e2e:
+  node-compile-cache_e2e:

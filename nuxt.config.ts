@@ -25,7 +25,7 @@ export default defineNuxtConfig({
    * https://nuxt.com/docs/getting-started/styling#the-css-property
    */
   css: [
-    "assets/css/main.css",
+    "assets/css/globals.css",
     "assets/css/style.scss",
     "assets/css/craft.scss",
   ],
@@ -43,6 +43,7 @@ export default defineNuxtConfig({
     "@nuxt/test-utils/module",
     "@pinia/nuxt",
     "pinia-plugin-persistedstate/nuxt",
+    "@nuxt/image",
   ],
 
   /**
@@ -80,6 +81,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       appEnv: "local",
+      apiBase: process.env.NUXT_PUBLIC_API_BASE,
     },
   },
 
@@ -150,4 +152,10 @@ export default defineNuxtConfig({
   colorMode: {
     preference: "light",
   },
+
+  /*
+  image: {
+    dir: "app/assets/images",
+  },
+  */
 });

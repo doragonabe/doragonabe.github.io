@@ -12,5 +12,5 @@ export default defineNuxtRouteMiddleware(
     const nextRoute = { path: nextPath, query, hash };
 
     return navigateTo(nextRoute, { redirectCode: 301 });
-  },
+  }
 );

@@ -8,10 +8,19 @@ echo 'eval "$(~/.local/bin/mise activate zsh)"' >> ~/.zshrc
 echo 'eval "$(mise activate zsh --shims)"' >> ~/.zprofile
 ```
 
+```bash
+touch .mise.toml # nodeとpnpm記入
+mise i
+```
+
 ## 2. Nuxt3 インストール
 
 ```bash
-pnpx nuxi init nuxt3-app --packageManager pnpm --gitInit false
+# pnpx nuxi init nuxt3-app --packageManager pnpm --gitInit false
+
+# new
+pnpm create nuxt --packageManager pnpm --gitInit false
+
 cd nuxt3-app
 pnpm install
 ```
@@ -50,6 +59,12 @@ app.vue を以下に修正
 nuxt
 vue
 vue-router
+```
+
+### tsconfig.json IDEエラー対策用
+
+```bash
+pnpm add -D vite
 ```
 
 ### 自動コードフォーマッター
@@ -96,8 +111,8 @@ pnpm add -D sanitize-html @types/sanitize-html
 
 ### VueUse
 
-<https://vueuse.org/functions.html>
-<https://vueuse.org/nuxt/README.html>
+[https://vueuse.org/functions.html](https://vueuse.org/functions.html)
+[https://vueuse.org/nuxt/README.html](https://vueuse.org/nuxt/README.html)
 
 ```bash
 pnpm add -D @vueuse/core @vueuse/nuxt
@@ -124,6 +139,8 @@ export default defineNuxtConfig({
   modules: ["nuxt-lodash"],
 });
 ```
+
+pnpx nuxi@latest module add @selemondev/nuxt-es-tool-kit
 
 ### dayjs
 
@@ -208,4 +225,48 @@ nuxt.config.tsに追加
 export default defineNuxtConfig({
   modules: ["@nuxt/test-utils/module"],
 });
+```
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+```bash
+pnpm add nuxt-vue3-google-signin
+```
+
+pnpm add pinia @pinia/nuxt
+
+pnpm add -D vitest @vue/test-utils happy-dom playwright-core @vitejs/plugin-vue @vitejs/plugin-vue @vue/test-utils playwright-core nuxt-vitest
+
+pnpm add -D unplugin-auto-import
+
+[https://github.com/nuxt/nuxt/issues/20040](https://github.com/nuxt/nuxt/issues/20040)
+pnpm add -D @types/node
+
+[https://github.com/nuxt/nuxt/issues/20851](https://github.com/nuxt/nuxt/issues/20851)
+
+```bash
+pnpm add -D vite-plugin-checker @types/node
+```
+
+pnpm add -D @headlessui/tailwindcss
+
+```text
+    "nuxt-swiper": "^2.0.0",
+```
+
+### ✕ unmet peer vue-tsc@~2.1.6: found 2.2.0 対策
+
+```text
+ WARN  Issues with peer dependencies found
+.
+└─┬ nuxt 3.14.1592
+  └─┬ @nuxt/vite-builder 3.14.1592
+    └─┬ vite-plugin-checker 0.8.0
+      └── ✕ unmet peer vue-tsc@~2.1.6: found 2.2.0
+```
+
+[https://github.com/fi3ework/vite-plugin-checker/issues/427](https://github.com/fi3ework/vite-plugin-checker/issues/427)
+
+```text
+"vue-tsc": "2.1.6"
 ```

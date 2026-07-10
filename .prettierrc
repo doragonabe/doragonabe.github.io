@@ -1,12 +1,4 @@
 {
-  "semi": true,
-  "trailingComma": "es5",
-  "singleAttributePerLine": true,
-  "plugins": [
-    "prettier-plugin-organize-attributes",
-    "prettier-plugin-tailwindcss"
-  ],
-  "pluginSearchDirs": false,
   "attributeGroups": [
     "^class$",
     "^(id|name)$",
@@ -29,5 +21,13 @@
     "^aria-",
     "$DEFAULT"
   ],
-  "attributeSort": "ASC"
+  "attributeSort": "ASC",
+  "plugins": [
+    "prettier-plugin-organize-attributes",
+    "prettier-plugin-sort-json",
+    "prettier-plugin-tailwindcss"
+  ],
+  "semi": true,
+  "singleAttributePerLine": true,
+  "trailingComma": "es5"
 }

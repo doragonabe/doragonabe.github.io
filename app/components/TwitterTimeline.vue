@@ -30,11 +30,7 @@ type Range<
     : Range<N, M, Result, [...C, never], Flag>;
 
 type DataChromeOptions =
-  | "noheader"
-  | "nofooter"
-  | "noborders"
-  | "noscrollbar"
-  | "transparent";
+  "noheader" | "nofooter" | "noborders" | "noscrollbar" | "transparent";
 
 const {
   dataLang = "ja",

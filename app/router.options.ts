@@ -1,6 +1,6 @@
 import type { RouterOptions } from "@nuxt/schema";
 
-export default (<RouterOptions>{
+export default <RouterOptions>{
   // composables/useScrollToと併せて使う
   scrollBehavior(to, from, savedPosition) {
     const { setState } = useScrollTo();
@@ -15,4 +15,4 @@ export default (<RouterOptions>{
       };
     }
   },
-});
+};

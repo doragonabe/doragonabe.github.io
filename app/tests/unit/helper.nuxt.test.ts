@@ -48,7 +48,7 @@ describe("helper", (): void => {
     ]);
 
     expect(() => getDateLists("2023-02", "2023-03-03")).toThrowError(
-      "不正な日付です",
+      "不正な日付です"
     );
   });
 
@@ -63,7 +63,7 @@ describe("helper", (): void => {
       "2024-02": "2024年02月",
     });
     expect(
-      transformDates(getDateLists("2023-01-25", "2023-02-03")),
+      transformDates(getDateLists("2023-01-25", "2023-02-03"))
     ).toStrictEqual({
       "2023-01-25": "2023年01月25日",
       "2023-01-26": "2023年01月26日",
@@ -77,7 +77,7 @@ describe("helper", (): void => {
       "2023-02-03": "2023年02月03日",
     });
     expect(
-      transformDates(getDateLists("2023-02-25", "2023-03-03")),
+      transformDates(getDateLists("2023-02-25", "2023-03-03"))
     ).toStrictEqual({
       "2023-02-25": "2023年02月25日",
       "2023-02-26": "2023年02月26日",
@@ -89,7 +89,7 @@ describe("helper", (): void => {
     });
 
     expect(() =>
-      transformDates(getDateLists("2023-02-25", "2023-03")),
+      transformDates(getDateLists("2023-02-25", "2023-03"))
     ).toThrowError("不正な日付です");
   });
 

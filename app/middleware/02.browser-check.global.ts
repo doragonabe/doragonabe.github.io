@@ -70,8 +70,8 @@ export default defineNuxtRouteMiddleware(
       return abortNavigation(
         createError({
           statusCode: 403,
-        }),
+        })
       );
     }
-  },
+  }
 );

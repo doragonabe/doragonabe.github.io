@@ -1,23 +1,12 @@
-// .vscode内のjsonはjsonc形式として扱われる
 {
-  // https://ui.nuxt.com/getting-started/installation/nuxt
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
-  "editor.quickSuggestions": {
-    "strings": "on"
-  },
-  "tailwindCSS.classAttributes": ["class", "ui"],
-  "tailwindCSS.experimental.classRegex": [
-    ["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
-  ],
-  // https://prettier.io/
   "[html][vue][css][scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // https://biomejs.dev/ja/internals/language-support/
-  "[javascript][typescript][json][jsonc]": {
+  "[javascript][typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[json][jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
@@ -25,10 +14,16 @@
   "[yml][yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  // 検索除外
-  "search.exclude": {
-    "pnpm-lock.yaml": true
-  },
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/{info,lfs,logs,refs,objects}/**",
+    ".git/{index,*refs,*HEAD}",
+    ".vscode",
+    ".vscode-insiders",
+    ".nuxt"
+  ],
   "cSpell.words": [
     "anchorscroll",
     "autodocs",
@@ -83,43 +78,47 @@
     "vueuse",
     "webp"
   ],
-  "cSpell.ignorePaths": [
-    "package-lock.json",
-    "node_modules",
-    "vscode-extension",
-    ".git/{info,lfs,logs,refs,objects}/**",
-    ".git/{index,*refs,*HEAD}",
-    ".vscode",
-    ".vscode-insiders",
-    ".nuxt"
-  ],
-  "editor.detectIndentation": false, // 必須：falseにしないとtabSizeとinsertSpacesの設定が効かない
-  "editor.tabSize": 2, // 必須
-  "editor.insertSpaces": true, // 必須
-  "editor.formatOnSave": true, // 必須
-  "editor.formatOnSaveMode": "file", // 必須
-  "editor.formatOnPaste": true, // 必須
-  "editor.formatOnType": false, // 必須：リアルタイムのフォーマットは作業の邪魔になるので無し
+  "debug.javascript.codelens.npmScripts": "all",
+  "diffEditor.ignoreTrimWhitespace": false,
   "editor.codeActionsOnSave": {
     "quickfix.biome": "explicit",
     "source.organizeImports.biome": "explicit"
   },
-  "editor.renderWhitespace": "boundary", // 必須
+  "editor.detectIndentation": false,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.formatOnType": false,
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.insertSpaces": true,
   "editor.linkedEditing": true,
-  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "editor.renderWhitespace": "boundary",
+  "editor.tabSize": 2,
   "editor.unicodeHighlight.ambiguousCharacters": false,
-  "files.autoSave": "afterDelay", // 必須
-  "files.trimTrailingWhitespace": true, // 必須
-  "files.eol": "\n", // 必須
-  "files.insertFinalNewline": true, // 必須
-  "debug.javascript.codelens.npmScripts": "all", // 非必須：package.jsonから実行できるようになる
-  "diffEditor.ignoreTrimWhitespace": false, // 必須
-  "workbench.iconTheme": "vscode-icons", // 非必須：ファイルアイコン表示
-  "workbench.editor.enablePreview": false, // 常に新しいタブでファイルを開くようになる
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "files.autoSave": "afterDelay",
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true,
+  "npm.packageManager": "pnpm",
+  "search.exclude": {
+    "pnpm-lock.yaml": true
+  },
+  "svg.preview.background": "dark-transparent",
+  "tailwindCSS.classAttributes": ["class", "ui"],
+  "tailwindCSS.experimental.classRegex": [
+    ["ui:\\s*{([^)]*)\\s*}", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+  ],
+  "typescript.inlayHints.parameterNames.enabled": "literals",
   "workbench.activityBar.location": "top",
   "workbench.colorTheme": "JetBrains Rider Dark Theme",
-  "npm.packageManager": "pnpm", // 必須
-  "svg.preview.background": "dark-transparent",
-  "typescript.inlayHints.parameterNames.enabled": "literals",
-  "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true
+  "workbench.editor.enablePreview": false,
+  "workbench.iconTheme": "vscode-icons"
 }
