@@ -47,7 +47,12 @@
           <img
             class="m-1 h-auto w-[400px] cursor-pointer rounded-lg border-2 border-transparent bg-gray-100 p-2"
             alt="背景"
-            :src="`/background/${selectedBackgroundType}-${selectedLogoType}.png`"
+            :src="
+              getVirtualBackgroundImagePath(
+                selectedBackgroundType,
+                selectedLogoType
+              )
+            "
           />
         </div>
       </div>
@@ -55,14 +60,24 @@
   </div>
 </template>
 <script lang="ts" setup>
-const backgroundTypes = ref(["tate", "yoko", "naname"]);
-const logoTypes = ref(["iret", "cloudpack"]);
+import type { BackgroundType, LogoType } from "~/utils/virtualBackground";
+import {
+  BACKGROUND_TYPES,
+  LOGO_TYPES,
+  getVirtualBackgroundImagePath,
+} from "~/utils/virtualBackground";
 
-const selectedBackgroundType = defineModel<string>("selectedBackgroundType", {
-  required: true,
-});
+const backgroundTypes = BACKGROUND_TYPES;
+const logoTypes = LOGO_TYPES;
 
-const selectedLogoType = defineModel<string>("selectedLogoType", {
+const selectedBackgroundType = defineModel<BackgroundType>(
+  "selectedBackgroundType",
+  {
+    required: true,
+  },
+);
+
+const selectedLogoType = defineModel<LogoType>("selectedLogoType", {
   required: true,
 });
 </script>

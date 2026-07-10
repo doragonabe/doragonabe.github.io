@@ -1,11 +1,11 @@
 export const BACKGROUND_TYPES = ["tate", "yoko", "naname"] as const;
 export type BackgroundType = (typeof BACKGROUND_TYPES)[number];
 
-export const LOGO_TYPES = ["iret", "cloudpack"] as const;
+export const LOGO_TYPES = ["test1", "test2"] as const;
 export type LogoType = (typeof LOGO_TYPES)[number];
 
 export const DEFAULT_BACKGROUND_TYPE: BackgroundType = "tate";
-export const DEFAULT_LOGO_TYPE: LogoType = "iret";
+export const DEFAULT_LOGO_TYPE: LogoType = "test1";
 
 export const STRENGTHS_FINDER_POSITION_OPTIONS = [
   { value: "", label: "表示なし" },
@@ -303,7 +303,7 @@ export const STRENGTHS_FINDER_TRAITS = [
 
 export const getVirtualBackgroundImagePath = (
   backgroundType: BackgroundType,
-  logoType: LogoType
+  logoType: LogoType,
 ) => `/background/${backgroundType}-${logoType}.png`;
 
 export const createInitialVirtualBackgroundUserInfo =
@@ -319,9 +319,9 @@ export const createInitialVirtualBackgroundUserInfo =
     other1: "",
     other2: "",
     other3: "",
-    email: "toranomon@iret.co.jp",
+    email: "aaaaa@test.co.jp",
     phone: "999-9999-9999",
-    slack: "toranomon",
+    slack: "aaaaa",
     url: "http://localhost:3000/back",
     sf_position: "",
     sf_lang: "ja",

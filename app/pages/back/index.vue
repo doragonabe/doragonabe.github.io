@@ -37,26 +37,20 @@
   </div>
 </template>
 <script lang="ts" setup>
-const selectedBackgroundType = ref<string>("tate");
-const selectedLogoType = ref<string>("aaaaa");
-const userInfo = ref({
-  name: "虎ノ門 太郎",
-  name_alpha: "Taro Toranomon",
-  department: "虎ノ門事業部",
-  section: "虎ノ門セクション",
-  group: "虎ノ門グループ",
-  role: "",
-  role2: "",
-  role3: "",
-  other1: "",
-  other2: "",
-  other3: "",
-  email: "toranomon@iret.co.jp",
-  phone: "999-9999-9999",
-  slack: "toranomon",
-  url: "http://localhost:3000/back",
-  sf_position: "",
-  sf_lang: "ja",
-  sf: [],
-});
+import type {
+  BackgroundType,
+  LogoType,
+  VirtualBackgroundUserInfo,
+} from "~/utils/virtualBackground";
+import {
+  DEFAULT_BACKGROUND_TYPE,
+  DEFAULT_LOGO_TYPE,
+  createInitialVirtualBackgroundUserInfo,
+} from "~/utils/virtualBackground";
+
+const selectedBackgroundType = ref<BackgroundType>(DEFAULT_BACKGROUND_TYPE);
+const selectedLogoType = ref<LogoType>(DEFAULT_LOGO_TYPE);
+const userInfo = ref<VirtualBackgroundUserInfo>(
+  createInitialVirtualBackgroundUserInfo(),
+);
 </script>
